@@ -1,0 +1,695 @@
+=== LOGFILE: logs/log_diachronic.pt_sv_20251203_000134.txt ===
+Language codes: sv
+Using pretrained model: diachronic.pt
+
+Running: python prepare-train-val-test.py sv
+Reading: /mimer/NOBACKUP/groups/dionysus/cleland/stanza-digphil/ud-treebanks-sv/sv_lines-ud-dev.conllu
+Reading: /mimer/NOBACKUP/groups/dionysus/cleland/stanza-digphil/ud-treebanks-sv/sv_swell-ud-test.conllu
+Reading: /mimer/NOBACKUP/groups/dionysus/cleland/stanza-digphil/ud-treebanks-sv/sv_pud-ud-test.conllu
+Reading: /mimer/NOBACKUP/groups/dionysus/cleland/stanza-digphil/ud-treebanks-sv/sv_talbanken-ud-test.conllu
+Reading: /mimer/NOBACKUP/groups/dionysus/cleland/stanza-digphil/ud-treebanks-sv/sv_swell-ud-test-trg.conllu
+Reading: /mimer/NOBACKUP/groups/dionysus/cleland/stanza-digphil/ud-treebanks-sv/sv_talbanken-ud-dev.conllu
+Reading: /mimer/NOBACKUP/groups/dionysus/cleland/stanza-digphil/ud-treebanks-sv/ucxn_ud_swedish-talbanken.conllu
+Reading: /mimer/NOBACKUP/groups/dionysus/cleland/stanza-digphil/ud-treebanks-sv/sv_talbanken-ud-train.conllu
+Reading: /mimer/NOBACKUP/groups/dionysus/cleland/stanza-digphil/ud-treebanks-sv/sv_old-ud-test.conllu
+Reading: /mimer/NOBACKUP/groups/dionysus/cleland/stanza-digphil/ud-treebanks-sv/sv_lines-ud-train.conllu
+Reading: /mimer/NOBACKUP/groups/dionysus/cleland/stanza-digphil/ud-treebanks-sv/sv_lines-ud-test.conllu
+Skipping DigPhil MACHINE (diachron not requested).
+Reading GOLD: /mimer/NOBACKUP/groups/dionysus/cleland/stanza-digphil/alanev_raw_files/diachron-validated/svediakorp-sec330-GyllenborgC_SwenskaSpratthoken.conllu
+Reading GOLD: /mimer/NOBACKUP/groups/dionysus/cleland/stanza-digphil/alanev_raw_files/diachron-validated/svediakorp-sec254-CederborghF_BerattelseOmJohnHall.conllu
+Reading GOLD: /mimer/NOBACKUP/groups/dionysus/cleland/stanza-digphil/alanev_raw_files/diachron-validated/svediakorp-sec277-EnbomPU_MedborgeligtSkalde.conllu
+Reading GOLD: /mimer/NOBACKUP/groups/dionysus/cleland/stanza-digphil/alanev_raw_files/diachron-validated/svediakorp-sec268-DulciU_VitterhetsNojen3.conllu
+Reading GOLD: /mimer/NOBACKUP/groups/dionysus/cleland/stanza-digphil/alanev_raw_files/diachron-validated/svediakorp-sec1063-spf220.conllu
+Reading GOLD: /mimer/NOBACKUP/groups/dionysus/cleland/stanza-digphil/alanev_raw_files/diachron-validated/svediakorp-sec397-AngeredStrandbergH_UnderSodernsSol.conllu
+Reading GOLD: /mimer/NOBACKUP/groups/dionysus/cleland/stanza-digphil/alanev_raw_files/diachron-validated/svediakorp-sec324-GranbergPA_Enslighetsalskaren.conllu
+Reading GOLD: /mimer/NOBACKUP/groups/dionysus/cleland/stanza-digphil/alanev_raw_files/diachron-validated/svediakorp-sec252-BremerF_Teckningar1.conllu
+Reading GOLD: /mimer/NOBACKUP/groups/dionysus/cleland/stanza-digphil/alanev_raw_files/diachron-validated/svediakorp-sec988-spf145.conllu
+Reading GOLD: /mimer/NOBACKUP/groups/dionysus/cleland/stanza-digphil/alanev_raw_files/diachron-validated/svediakorp-sec987-spf144.conllu
+Reading GOLD: /mimer/NOBACKUP/groups/dionysus/cleland/stanza-digphil/alanev_raw_files/diachron-validated/svediakorp-sec631-HasselskogN_HallaHallaGronkoping.conllu
+Reading GOLD: /mimer/NOBACKUP/groups/dionysus/cleland/stanza-digphil/alanev_raw_files/diachron-validated/svediakorp-letter141673-Stalhammar.conllu
+Reading GOLD: /mimer/NOBACKUP/groups/dionysus/cleland/stanza-digphil/alanev_raw_files/diachron-validated/svediakorp-sec1033-spf190.conllu
+Reading GOLD: /mimer/NOBACKUP/groups/dionysus/cleland/stanza-digphil/alanev_raw_files/diachron-validated/svediakorp-sec25-Runius.conllu
+Reading GOLD: /mimer/NOBACKUP/groups/dionysus/cleland/stanza-digphil/alanev_raw_files/diachron-validated/svediakorp-sec486-SchwartzMS_BellmansSkor.conllu
+Reading GOLD: /mimer/NOBACKUP/groups/dionysus/cleland/stanza-digphil/alanev_raw_files/diachron-validated/svediakorp-sec452-NyblomH_FantasierFyra.conllu
+Reading GOLD: /mimer/NOBACKUP/groups/dionysus/cleland/stanza-digphil/alanev_raw_files/diachron-validated/svediakorp-sec613-EngstromA_StrindbergOchJag.conllu
+Reading GOLD: /mimer/NOBACKUP/groups/dionysus/cleland/stanza-digphil/alanev_raw_files/diachron-validated/svediakorp-sec208-Anonym_DetGrasligaMordet.conllu
+Reading GOLD: /mimer/NOBACKUP/groups/dionysus/cleland/stanza-digphil/alanev_raw_files/diachron-validated/svediakorp-sec639-HeidenstamV_Proletarfilosofiens.conllu
+Reading GOLD: /mimer/NOBACKUP/groups/dionysus/cleland/stanza-digphil/alanev_raw_files/diachron-validated/svediakorp-sec1102-spf259.conllu
+Reading GOLD: /mimer/NOBACKUP/groups/dionysus/cleland/stanza-digphil/alanev_raw_files/diachron-validated/svediakorp-sec991-spf148.conllu
+Cleaning TRAIN...
+Cleaning DEV...
+[REMOVED] sent_id=33  ERRORS=['Token 15: Missing deprel']
+Cleaning TEST...
+Writing TRAIN → /mimer/NOBACKUP/groups/dionysus/cleland/stanza-digphil/ud/UD_Swedish-diachronic/sv_diachronic-ud-train.conllu (19820 valid sentences)
+Writing DEV → /mimer/NOBACKUP/groups/dionysus/cleland/stanza-digphil/ud/UD_Swedish-diachronic/sv_diachronic-ud-dev.conllu (9 valid sentences)
+Writing TEST → /mimer/NOBACKUP/groups/dionysus/cleland/stanza-digphil/ud/UD_Swedish-diachronic/sv_diachronic-ud-test.conllu (99 valid sentences)
+Done.
+Sourcing scripts/config_alvis.sh
+Running stanza dataset preparation…
+2025-12-03 00:01:41 INFO: Datasets program called with:
+/mimer/NOBACKUP/groups/dionysus/cleland/stanza-digphil/stanza/utils/datasets/prepare_depparse_treebank.py UD_Swedish-diachronic --wordvec_pretrain_file /cephyr/users/cleland/Alvis/stanza_resources/sv/pretrain/diachronic.pt
+2025-12-03 00:01:41 DEBUG: Downloading resource file from https://raw.githubusercontent.com/stanfordnlp/stanza-resources/main/resources_1.11.0.json
+Downloading https://raw.githubusercontent.com/stanfordnlp/stanza-resources/main/resourceDownloading https://raw.githubusercontent.com/stanfordnlp/stanza-resources/main/resources_1.11.0.json: 435kB [00:00, 130MB/s]
+2025-12-03 00:01:41 INFO: Downloaded file to /cephyr/users/cleland/Alvis/stanza_resources/resources.json
+2025-12-03 00:01:41 DEBUG: Processing parameter "processors"...
+2025-12-03 00:01:41 WARNING: Can not find pos: diachronic from official model list. Ignoring it.
+2025-12-03 00:01:41 INFO: Downloading these customized packages for language: sv (Swedish)...
+=======================
+| Processor | Package |
+-----------------------
+=======================
+
+2025-12-03 00:01:41 INFO: Finished downloading models and saved to /cephyr/users/cleland/Alvis/stanza_resources
+2025-12-03 00:01:41 INFO: Using tagger model in /cephyr/users/cleland/Alvis/stanza_resources/sv/pos/diachronic.pt for sv_diachronic
+2025-12-03 00:01:41 INFO: Using model /cephyr/users/cleland/Alvis/stanza_resources/sv/forward_charlm/conll17.pt for forward charlm
+2025-12-03 00:01:41 INFO: Using model /cephyr/users/cleland/Alvis/stanza_resources/sv/backward_charlm/conll17.pt for backward charlm
+Augmented 56 quotes: Counter({'„”': 9, '″″': 9, '""': 8, '「」': 8, '””': 5, '““': 4, '《》': 4, '»«': 3, '„“': 3, '«»': 3})
+2025-12-03 00:01:42 INFO: Running tagger to retag /local/tmp.5437491/tmpr9ew7a9i/sv_diachronic.train.gold.conllu to /mimer/NOBACKUP/groups/dionysus/cleland/stanza-digphil/data/depparse/sv_diachronic.train.in.conllu
+  Args: ['--wordvec_dir', '/cephyr/users/cleland/Alvis/stanza_resources/sv/pretrain', '--lang', 'sv', '--shorthand', 'sv_diachronic', '--mode', 'predict', '--save_dir', '/cephyr/users/cleland/Alvis/stanza_resources/sv/pos', '--save_name', 'diachronic.pt', '--wordvec_pretrain_file', '/cephyr/users/cleland/Alvis/stanza_resources/sv/pretrain/diachronic.pt', '--charlm', '--charlm_shorthand', 'sv_conll17', '--charlm_forward_file', '/cephyr/users/cleland/Alvis/stanza_resources/sv/forward_charlm/conll17.pt', '--charlm_backward_file', '/cephyr/users/cleland/Alvis/stanza_resources/sv/backward_charlm/conll17.pt', '--eval_file', '/local/tmp.5437491/tmpr9ew7a9i/sv_diachronic.train.gold.conllu', '--output_file', '/mimer/NOBACKUP/groups/dionysus/cleland/stanza-digphil/data/depparse/sv_diachronic.train.in.conllu']
+2025-12-03 00:01:42 INFO: Running tagger in predict mode
+2025-12-03 00:01:42 INFO: Loading model from: /cephyr/users/cleland/Alvis/stanza_resources/sv/pos/diachronic.pt
+2025-12-03 00:01:45 DEBUG: Loaded pretrain from /cephyr/users/cleland/Alvis/stanza_resources/sv/pretrain/diachronic.pt
+2025-12-03 00:01:45 DEBUG: POS model loading charmodels: /cephyr/users/cleland/Alvis/stanza_resources/sv/forward_charlm/conll17.pt and /cephyr/users/cleland/Alvis/stanza_resources/sv/backward_charlm/conll17.pt
+2025-12-03 00:01:45 DEBUG: Loading charlm from /cephyr/users/cleland/Alvis/stanza_resources/sv/forward_charlm/conll17.pt
+2025-12-03 00:01:45 DEBUG: Loading charlm from /cephyr/users/cleland/Alvis/stanza_resources/sv/backward_charlm/conll17.pt
+2025-12-03 00:01:45 DEBUG: Building Adam with lr=0.003000, betas=(0.9, 0.95), eps=0.000001
+2025-12-03 00:01:48 INFO: Loading data with batch size 250...
+2025-12-03 00:02:02 INFO: Start evaluation...
+2025-12-03 00:03:09 INFO: UPOS	XPOS	UFeats	AllTags
+2025-12-03 00:03:09 INFO: 97.53	61.74	92.12	59.25
+2025-12-03 00:03:09 INFO: POS Tagger score: sv_diachronic 59.25
+2025-12-03 00:03:09 INFO: Running tagger to retag /local/tmp.5437491/tmpr9ew7a9i/sv_diachronic.dev.gold.conllu to /mimer/NOBACKUP/groups/dionysus/cleland/stanza-digphil/data/depparse/sv_diachronic.dev.in.conllu
+  Args: ['--wordvec_dir', '/cephyr/users/cleland/Alvis/stanza_resources/sv/pretrain', '--lang', 'sv', '--shorthand', 'sv_diachronic', '--mode', 'predict', '--save_dir', '/cephyr/users/cleland/Alvis/stanza_resources/sv/pos', '--save_name', 'diachronic.pt', '--wordvec_pretrain_file', '/cephyr/users/cleland/Alvis/stanza_resources/sv/pretrain/diachronic.pt', '--charlm', '--charlm_shorthand', 'sv_conll17', '--charlm_forward_file', '/cephyr/users/cleland/Alvis/stanza_resources/sv/forward_charlm/conll17.pt', '--charlm_backward_file', '/cephyr/users/cleland/Alvis/stanza_resources/sv/backward_charlm/conll17.pt', '--eval_file', '/local/tmp.5437491/tmpr9ew7a9i/sv_diachronic.dev.gold.conllu', '--output_file', '/mimer/NOBACKUP/groups/dionysus/cleland/stanza-digphil/data/depparse/sv_diachronic.dev.in.conllu']
+2025-12-03 00:03:09 INFO: Running tagger in predict mode
+2025-12-03 00:03:09 INFO: Loading model from: /cephyr/users/cleland/Alvis/stanza_resources/sv/pos/diachronic.pt
+2025-12-03 00:03:12 DEBUG: Loaded pretrain from /cephyr/users/cleland/Alvis/stanza_resources/sv/pretrain/diachronic.pt
+2025-12-03 00:03:12 DEBUG: POS model loading charmodels: /cephyr/users/cleland/Alvis/stanza_resources/sv/forward_charlm/conll17.pt and /cephyr/users/cleland/Alvis/stanza_resources/sv/backward_charlm/conll17.pt
+2025-12-03 00:03:12 DEBUG: Loading charlm from /cephyr/users/cleland/Alvis/stanza_resources/sv/forward_charlm/conll17.pt
+2025-12-03 00:03:12 DEBUG: Loading charlm from /cephyr/users/cleland/Alvis/stanza_resources/sv/backward_charlm/conll17.pt
+2025-12-03 00:03:12 DEBUG: Building Adam with lr=0.003000, betas=(0.9, 0.95), eps=0.000001
+2025-12-03 00:03:12 INFO: Loading data with batch size 250...
+2025-12-03 00:03:12 INFO: Start evaluation...
+2025-12-03 00:03:12 INFO: UPOS	XPOS	UFeats	AllTags
+2025-12-03 00:03:12 INFO: 88.61	79.46	83.42	74.75
+2025-12-03 00:03:12 INFO: POS Tagger score: sv_diachronic 74.75
+2025-12-03 00:03:12 INFO: Running tagger to retag /local/tmp.5437491/tmpr9ew7a9i/sv_diachronic.test.gold.conllu to /mimer/NOBACKUP/groups/dionysus/cleland/stanza-digphil/data/depparse/sv_diachronic.test.in.conllu
+  Args: ['--wordvec_dir', '/cephyr/users/cleland/Alvis/stanza_resources/sv/pretrain', '--lang', 'sv', '--shorthand', 'sv_diachronic', '--mode', 'predict', '--save_dir', '/cephyr/users/cleland/Alvis/stanza_resources/sv/pos', '--save_name', 'diachronic.pt', '--wordvec_pretrain_file', '/cephyr/users/cleland/Alvis/stanza_resources/sv/pretrain/diachronic.pt', '--charlm', '--charlm_shorthand', 'sv_conll17', '--charlm_forward_file', '/cephyr/users/cleland/Alvis/stanza_resources/sv/forward_charlm/conll17.pt', '--charlm_backward_file', '/cephyr/users/cleland/Alvis/stanza_resources/sv/backward_charlm/conll17.pt', '--eval_file', '/local/tmp.5437491/tmpr9ew7a9i/sv_diachronic.test.gold.conllu', '--output_file', '/mimer/NOBACKUP/groups/dionysus/cleland/stanza-digphil/data/depparse/sv_diachronic.test.in.conllu']
+2025-12-03 00:03:12 INFO: Running tagger in predict mode
+2025-12-03 00:03:12 INFO: Loading model from: /cephyr/users/cleland/Alvis/stanza_resources/sv/pos/diachronic.pt
+2025-12-03 00:03:15 DEBUG: Loaded pretrain from /cephyr/users/cleland/Alvis/stanza_resources/sv/pretrain/diachronic.pt
+2025-12-03 00:03:15 DEBUG: POS model loading charmodels: /cephyr/users/cleland/Alvis/stanza_resources/sv/forward_charlm/conll17.pt and /cephyr/users/cleland/Alvis/stanza_resources/sv/backward_charlm/conll17.pt
+2025-12-03 00:03:15 DEBUG: Loading charlm from /cephyr/users/cleland/Alvis/stanza_resources/sv/forward_charlm/conll17.pt
+2025-12-03 00:03:15 DEBUG: Loading charlm from /cephyr/users/cleland/Alvis/stanza_resources/sv/backward_charlm/conll17.pt
+2025-12-03 00:03:15 DEBUG: Building Adam with lr=0.003000, betas=(0.9, 0.95), eps=0.000001
+2025-12-03 00:03:15 INFO: Loading data with batch size 250...
+2025-12-03 00:03:15 INFO: Start evaluation...
+2025-12-03 00:03:16 INFO: UPOS	XPOS	UFeats	AllTags
+2025-12-03 00:03:16 INFO: 89.61	86.64	86.69	81.18
+2025-12-03 00:03:16 INFO: POS Tagger score: sv_diachronic 81.18
+Preparing data for UD_Swedish-diachronic: sv_diachronic, sv
+Reading from /mimer/NOBACKUP/groups/dionysus/cleland/stanza-digphil/ud/UD_Swedish-diachronic/sv_diachronic-ud-train.conllu and writing to /local/tmp.5437491/tmpr9ew7a9i/sv_diachronic.train.gold.conllu
+Swapped 'w1, w2' for 'w1 ,w2' 122 times
+Added 100 new sentences with asdf, zzzz -> asdf,zzzz
+Reading from /mimer/NOBACKUP/groups/dionysus/cleland/stanza-digphil/ud/UD_Swedish-diachronic/sv_diachronic-ud-dev.conllu and writing to /local/tmp.5437491/tmpr9ew7a9i/sv_diachronic.dev.gold.conllu
+Reading from /mimer/NOBACKUP/groups/dionysus/cleland/stanza-digphil/ud/UD_Swedish-diachronic/sv_diachronic-ud-test.conllu and writing to /local/tmp.5437491/tmpr9ew7a9i/sv_diachronic.test.gold.conllu
+Running stanza dependency parser training…
+2025-12-03 00:03:26 INFO: Training program called with:
+/mimer/NOBACKUP/groups/dionysus/cleland/stanza-digphil/stanza/utils/training/run_depparse.py UD_Swedish-diachronic --wordvec_pretrain_file /cephyr/users/cleland/Alvis/stanza_resources/sv/pretrain/diachronic.pt --batch_size 16 --dropout 0.33
+2025-12-03 00:03:26 DEBUG: UD_Swedish-diachronic: sv_diachronic
+2025-12-03 00:03:26 INFO: Using model /cephyr/users/cleland/Alvis/stanza_resources/sv/forward_charlm/conll17.pt for forward charlm
+2025-12-03 00:03:26 INFO: Using model /cephyr/users/cleland/Alvis/stanza_resources/sv/backward_charlm/conll17.pt for backward charlm
+2025-12-03 00:03:26 INFO: UD_Swedish-diachronic: saved_models/depparse/sv_diachronic_charlm_parser.pt does not exist, training new model
+2025-12-03 00:03:26 INFO: Using model /cephyr/users/cleland/Alvis/stanza_resources/sv/forward_charlm/conll17.pt for forward charlm
+2025-12-03 00:03:26 INFO: Using model /cephyr/users/cleland/Alvis/stanza_resources/sv/backward_charlm/conll17.pt for backward charlm
+2025-12-03 00:03:26 INFO: Running train depparse for UD_Swedish-diachronic with args ['--wordvec_dir', '/cephyr/users/cleland/Alvis/stanza_resources/sv/pretrain', '--train_file', '/mimer/NOBACKUP/groups/dionysus/cleland/stanza-digphil/data/depparse/sv_diachronic.train.in.conllu', '--eval_file', '/mimer/NOBACKUP/groups/dionysus/cleland/stanza-digphil/data/depparse/sv_diachronic.dev.in.conllu', '--batch_size', '5000', '--lang', 'sv', '--shorthand', 'sv_diachronic', '--mode', 'train', '--charlm', '--charlm_shorthand', 'sv_conll17', '--charlm_forward_file', '/cephyr/users/cleland/Alvis/stanza_resources/sv/forward_charlm/conll17.pt', '--charlm_backward_file', '/cephyr/users/cleland/Alvis/stanza_resources/sv/backward_charlm/conll17.pt', '--wordvec_pretrain_file', '/cephyr/users/cleland/Alvis/stanza_resources/sv/pretrain/diachronic.pt', '--batch_size', '16', '--dropout', '0.33']
+2025-12-03 00:03:26 INFO: Running parser in train mode
+2025-12-03 00:03:26 INFO: Using pretrained contextualized char embedding
+2025-12-03 00:03:26 INFO: Loading data with batch size 16...
+2025-12-03 00:03:28 INFO: Train File /mimer/NOBACKUP/groups/dionysus/cleland/stanza-digphil/data/depparse/sv_diachronic.train.in.conllu, Data Size: 19920
+2025-12-03 00:03:28 INFO: Original data size: 19920
+2025-12-03 00:03:29 INFO: Augmented data size: 20844
+2025-12-03 00:03:36 WARNING: sv_diachronic is not a known dataset.  Examining the data to choose which xpos vocab to use
+2025-12-03 00:03:36 INFO: Original length = 20844
+2025-12-03 00:03:36 INFO: Filtered length = 20844
+2025-12-03 00:03:42 WARNING: Chose XPOSDescription(xpos_type=<XPOSType.XPOS: 1>, sep='|') for the xpos factory for sv_diachronic
+2025-12-03 00:03:46 DEBUG: Loaded pretrain from /cephyr/users/cleland/Alvis/stanza_resources/sv/pretrain/diachronic.pt
+2025-12-03 00:03:51 DEBUG: 18895 batches created.
+2025-12-03 00:03:51 DEBUG: 9 batches created.
+2025-12-03 00:03:51 INFO: Training parser...
+2025-12-03 00:03:51 DEBUG: Depparse model loading charmodels: /cephyr/users/cleland/Alvis/stanza_resources/sv/forward_charlm/conll17.pt and /cephyr/users/cleland/Alvis/stanza_resources/sv/backward_charlm/conll17.pt
+2025-12-03 00:03:51 DEBUG: Loading charlm from /cephyr/users/cleland/Alvis/stanza_resources/sv/forward_charlm/conll17.pt
+2025-12-03 00:03:51 DEBUG: Loading charlm from /cephyr/users/cleland/Alvis/stanza_resources/sv/backward_charlm/conll17.pt
+2025-12-03 00:03:52 DEBUG: Building Adam with lr=0.003000, betas=(0.9, 0.95), eps=0.000001
+2025-12-03 00:03:55 INFO: Finished STEP 20/50000, loss = 0.000000 (0.031 sec/batch), lr: 0.003000
+2025-12-03 00:03:55 INFO: Finished STEP 40/50000, loss = 2.786552 (0.032 sec/batch), lr: 0.003000
+2025-12-03 00:03:56 INFO: Finished STEP 60/50000, loss = 2.014541 (0.032 sec/batch), lr: 0.003000
+2025-12-03 00:03:57 INFO: Finished STEP 80/50000, loss = 3.657895 (0.032 sec/batch), lr: 0.003000
+2025-12-03 00:03:57 INFO: Finished STEP 100/50000, loss = 2.003451 (0.031 sec/batch), lr: 0.003000
+2025-12-03 00:03:57 INFO: Evaluating on dev set...
+2025-12-03 00:03:58 INFO: LAS	MLAS	BLEX
+2025-12-03 00:03:58 INFO: 1.49	0.82	1.64
+2025-12-03 00:03:58 INFO: step 100: train_loss = 5559.849305, dev_score = 0.0149
+2025-12-03 00:03:58 INFO: Model saved to saved_models/depparse/sv_diachronic_charlm_parser.pt
+2025-12-03 00:03:58 INFO: new best model saved.
+2025-12-03 00:03:59 INFO: Model saved to saved_models/depparse/sv_diachronic_charlm_parser_checkpoint.pt
+2025-12-03 00:03:59 INFO: new model checkpoint saved.
+2025-12-03 00:03:59 INFO: Finished STEP 120/50000, loss = 2.080929 (0.031 sec/batch), lr: 0.003000
+2025-12-03 00:04:00 INFO: Finished STEP 140/50000, loss = 1.784714 (0.032 sec/batch), lr: 0.003000
+2025-12-03 00:04:00 INFO: Finished STEP 160/50000, loss = 3.210406 (0.034 sec/batch), lr: 0.003000
+2025-12-03 00:04:01 INFO: Finished STEP 180/50000, loss = 3.367260 (0.033 sec/batch), lr: 0.003000
+2025-12-03 00:04:02 INFO: Finished STEP 200/50000, loss = 2.319421 (0.034 sec/batch), lr: 0.003000
+2025-12-03 00:04:02 INFO: Evaluating on dev set...
+2025-12-03 00:04:03 INFO: LAS	MLAS	BLEX
+2025-12-03 00:04:03 INFO: 4.95	4.09	4.09
+2025-12-03 00:04:03 INFO: step 200: train_loss = 2.658702, dev_score = 0.0495
+2025-12-03 00:04:03 INFO: Model saved to saved_models/depparse/sv_diachronic_charlm_parser.pt
+2025-12-03 00:04:03 INFO: new best model saved.
+2025-12-03 00:04:04 INFO: Model saved to saved_models/depparse/sv_diachronic_charlm_parser_checkpoint.pt
+2025-12-03 00:04:04 INFO: new model checkpoint saved.
+2025-12-03 00:04:04 INFO: Finished STEP 220/50000, loss = 2.646727 (0.035 sec/batch), lr: 0.003000
+2025-12-03 00:04:05 INFO: Finished STEP 240/50000, loss = 2.225141 (0.034 sec/batch), lr: 0.003000
+2025-12-03 00:04:06 INFO: Finished STEP 260/50000, loss = 2.439486 (0.033 sec/batch), lr: 0.003000
+2025-12-03 00:04:06 INFO: Finished STEP 280/50000, loss = 3.247507 (0.033 sec/batch), lr: 0.003000
+2025-12-03 00:04:07 INFO: Finished STEP 300/50000, loss = 3.285990 (0.031 sec/batch), lr: 0.003000
+2025-12-03 00:04:07 INFO: Evaluating on dev set...
+2025-12-03 00:04:07 INFO: LAS	MLAS	BLEX
+2025-12-03 00:04:07 INFO: 3.22	3.76	4.10
+2025-12-03 00:04:07 INFO: step 300: train_loss = 2.677451, dev_score = 0.0322
+2025-12-03 00:04:08 INFO: Model saved to saved_models/depparse/sv_diachronic_charlm_parser_checkpoint.pt
+2025-12-03 00:04:08 INFO: new model checkpoint saved.
+2025-12-03 00:04:09 INFO: Finished STEP 320/50000, loss = 3.132120 (0.032 sec/batch), lr: 0.003000
+2025-12-03 00:04:09 INFO: Finished STEP 340/50000, loss = 3.690158 (0.033 sec/batch), lr: 0.003000
+2025-12-03 00:04:10 INFO: Finished STEP 360/50000, loss = 3.325933 (0.035 sec/batch), lr: 0.003000
+2025-12-03 00:04:11 INFO: Finished STEP 380/50000, loss = 2.511281 (0.034 sec/batch), lr: 0.003000
+2025-12-03 00:04:11 INFO: Finished STEP 400/50000, loss = 2.801303 (0.032 sec/batch), lr: 0.003000
+2025-12-03 00:04:11 INFO: Evaluating on dev set...
+2025-12-03 00:04:12 INFO: LAS	MLAS	BLEX
+2025-12-03 00:04:12 INFO: 7.18	4.41	6.10
+2025-12-03 00:04:12 INFO: step 400: train_loss = 3.131062, dev_score = 0.0718
+2025-12-03 00:04:12 INFO: Model saved to saved_models/depparse/sv_diachronic_charlm_parser.pt
+2025-12-03 00:04:12 INFO: new best model saved.
+2025-12-03 00:04:13 INFO: Model saved to saved_models/depparse/sv_diachronic_charlm_parser_checkpoint.pt
+2025-12-03 00:04:13 INFO: new model checkpoint saved.
+2025-12-03 00:04:13 INFO: Finished STEP 420/50000, loss = 2.566988 (0.036 sec/batch), lr: 0.003000
+2025-12-03 00:04:14 INFO: Finished STEP 440/50000, loss = 3.315584 (0.033 sec/batch), lr: 0.003000
+2025-12-03 00:04:15 INFO: Finished STEP 460/50000, loss = 4.081317 (0.034 sec/batch), lr: 0.003000
+2025-12-03 00:04:15 INFO: Finished STEP 480/50000, loss = 3.782612 (0.032 sec/batch), lr: 0.003000
+2025-12-03 00:04:16 INFO: Finished STEP 500/50000, loss = 3.673034 (0.032 sec/batch), lr: 0.003000
+2025-12-03 00:04:16 INFO: Evaluating on dev set...
+2025-12-03 00:04:17 INFO: LAS	MLAS	BLEX
+2025-12-03 00:04:17 INFO: 12.38	5.35	5.74
+2025-12-03 00:04:17 INFO: step 500: train_loss = 2.978255, dev_score = 0.1238
+2025-12-03 00:04:17 INFO: Model saved to saved_models/depparse/sv_diachronic_charlm_parser.pt
+2025-12-03 00:04:17 INFO: new best model saved.
+2025-12-03 00:04:17 INFO: Model saved to saved_models/depparse/sv_diachronic_charlm_parser_checkpoint.pt
+2025-12-03 00:04:17 INFO: new model checkpoint saved.
+2025-12-03 00:04:18 INFO: Finished STEP 520/50000, loss = 2.025372 (0.031 sec/batch), lr: 0.003000
+2025-12-03 00:04:19 INFO: Finished STEP 540/50000, loss = 2.984106 (0.037 sec/batch), lr: 0.003000
+2025-12-03 00:04:20 INFO: Finished STEP 560/50000, loss = 2.716340 (0.035 sec/batch), lr: 0.003000
+2025-12-03 00:04:20 INFO: Finished STEP 580/50000, loss = 2.306678 (0.033 sec/batch), lr: 0.003000
+2025-12-03 00:04:21 INFO: Finished STEP 600/50000, loss = 4.008360 (0.035 sec/batch), lr: 0.003000
+2025-12-03 00:04:21 INFO: Evaluating on dev set...
+2025-12-03 00:04:21 INFO: LAS	MLAS	BLEX
+2025-12-03 00:04:21 INFO: 19.31	6.94	8.48
+2025-12-03 00:04:21 INFO: step 600: train_loss = 3.075830, dev_score = 0.1931
+2025-12-03 00:04:22 INFO: Model saved to saved_models/depparse/sv_diachronic_charlm_parser.pt
+2025-12-03 00:04:22 INFO: new best model saved.
+2025-12-03 00:04:22 INFO: Model saved to saved_models/depparse/sv_diachronic_charlm_parser_checkpoint.pt
+2025-12-03 00:04:22 INFO: new model checkpoint saved.
+2025-12-03 00:04:23 INFO: Finished STEP 620/50000, loss = 4.868780 (0.034 sec/batch), lr: 0.003000
+2025-12-03 00:04:24 INFO: Finished STEP 640/50000, loss = 2.631726 (0.033 sec/batch), lr: 0.003000
+2025-12-03 00:04:24 INFO: Finished STEP 660/50000, loss = 2.899960 (0.035 sec/batch), lr: 0.003000
+2025-12-03 00:04:25 INFO: Finished STEP 680/50000, loss = 2.961294 (0.035 sec/batch), lr: 0.003000
+2025-12-03 00:04:26 INFO: Finished STEP 700/50000, loss = 3.054440 (0.035 sec/batch), lr: 0.003000
+2025-12-03 00:04:26 INFO: Evaluating on dev set...
+2025-12-03 00:04:26 INFO: LAS	MLAS	BLEX
+2025-12-03 00:04:26 INFO: 18.32	8.55	12.22
+2025-12-03 00:04:26 INFO: step 700: train_loss = 3.234651, dev_score = 0.1832
+2025-12-03 00:04:27 INFO: Model saved to saved_models/depparse/sv_diachronic_charlm_parser_checkpoint.pt
+2025-12-03 00:04:27 INFO: new model checkpoint saved.
+2025-12-03 00:04:27 INFO: Finished STEP 720/50000, loss = 3.635537 (0.034 sec/batch), lr: 0.003000
+2025-12-03 00:04:28 INFO: Finished STEP 740/50000, loss = 3.526119 (0.034 sec/batch), lr: 0.003000
+2025-12-03 00:04:29 INFO: Finished STEP 760/50000, loss = 2.225143 (0.035 sec/batch), lr: 0.003000
+2025-12-03 00:04:29 INFO: Finished STEP 780/50000, loss = 3.277092 (0.034 sec/batch), lr: 0.003000
+2025-12-03 00:04:30 INFO: Finished STEP 800/50000, loss = 4.215595 (0.037 sec/batch), lr: 0.003000
+2025-12-03 00:04:30 INFO: Evaluating on dev set...
+2025-12-03 00:04:31 INFO: LAS	MLAS	BLEX
+2025-12-03 00:04:31 INFO: 24.50	10.20	12.24
+2025-12-03 00:04:31 INFO: step 800: train_loss = 3.332544, dev_score = 0.2450
+2025-12-03 00:04:31 INFO: Model saved to saved_models/depparse/sv_diachronic_charlm_parser.pt
+2025-12-03 00:04:31 INFO: new best model saved.
+2025-12-03 00:04:31 INFO: Model saved to saved_models/depparse/sv_diachronic_charlm_parser_checkpoint.pt
+2025-12-03 00:04:31 INFO: new model checkpoint saved.
+2025-12-03 00:04:32 INFO: Finished STEP 820/50000, loss = 2.911338 (0.035 sec/batch), lr: 0.003000
+2025-12-03 00:04:33 INFO: Finished STEP 840/50000, loss = 3.892157 (0.035 sec/batch), lr: 0.003000
+2025-12-03 00:04:34 INFO: Finished STEP 860/50000, loss = 4.334442 (0.035 sec/batch), lr: 0.003000
+2025-12-03 00:04:34 INFO: Finished STEP 880/50000, loss = 4.049129 (0.035 sec/batch), lr: 0.003000
+2025-12-03 00:04:35 INFO: Finished STEP 900/50000, loss = 3.475506 (0.034 sec/batch), lr: 0.003000
+2025-12-03 00:04:35 INFO: Evaluating on dev set...
+2025-12-03 00:04:35 INFO: LAS	MLAS	BLEX
+2025-12-03 00:04:35 INFO: 23.02	8.61	11.35
+2025-12-03 00:04:35 INFO: step 900: train_loss = 3.328322, dev_score = 0.2302
+2025-12-03 00:04:36 INFO: Model saved to saved_models/depparse/sv_diachronic_charlm_parser_checkpoint.pt
+2025-12-03 00:04:36 INFO: new model checkpoint saved.
+2025-12-03 00:04:37 INFO: Finished STEP 920/50000, loss = 3.209418 (0.032 sec/batch), lr: 0.003000
+2025-12-03 00:04:37 INFO: Finished STEP 940/50000, loss = 2.384030 (0.032 sec/batch), lr: 0.003000
+2025-12-03 00:04:38 INFO: Finished STEP 960/50000, loss = 2.963456 (0.033 sec/batch), lr: 0.003000
+2025-12-03 00:04:39 INFO: Finished STEP 980/50000, loss = 2.940459 (0.037 sec/batch), lr: 0.003000
+2025-12-03 00:04:39 INFO: Finished STEP 1000/50000, loss = 4.433736 (0.035 sec/batch), lr: 0.003000
+2025-12-03 00:04:39 INFO: Evaluating on dev set...
+2025-12-03 00:04:40 INFO: LAS	MLAS	BLEX
+2025-12-03 00:04:40 INFO: 28.47	14.06	17.19
+2025-12-03 00:04:40 INFO: step 1000: train_loss = 3.266401, dev_score = 0.2847
+2025-12-03 00:04:40 INFO: Model saved to saved_models/depparse/sv_diachronic_charlm_parser.pt
+2025-12-03 00:04:40 INFO: new best model saved.
+2025-12-03 00:04:41 INFO: Model saved to saved_models/depparse/sv_diachronic_charlm_parser_checkpoint.pt
+2025-12-03 00:04:41 INFO: new model checkpoint saved.
+2025-12-03 00:04:41 INFO: Finished STEP 1020/50000, loss = 3.496134 (0.037 sec/batch), lr: 0.003000
+2025-12-03 00:04:42 INFO: Finished STEP 1040/50000, loss = 3.133940 (0.038 sec/batch), lr: 0.003000
+2025-12-03 00:04:43 INFO: Finished STEP 1060/50000, loss = 2.935402 (0.036 sec/batch), lr: 0.003000
+2025-12-03 00:04:44 INFO: Finished STEP 1080/50000, loss = 3.080907 (0.036 sec/batch), lr: 0.003000
+2025-12-03 00:04:44 INFO: Finished STEP 1100/50000, loss = 3.513608 (0.035 sec/batch), lr: 0.003000
+2025-12-03 00:04:44 INFO: Evaluating on dev set...
+2025-12-03 00:04:45 INFO: LAS	MLAS	BLEX
+2025-12-03 00:04:45 INFO: 24.50	6.39	7.58
+2025-12-03 00:04:45 INFO: step 1100: train_loss = 3.337082, dev_score = 0.2450
+2025-12-03 00:04:45 INFO: Model saved to saved_models/depparse/sv_diachronic_charlm_parser_checkpoint.pt
+2025-12-03 00:04:45 INFO: new model checkpoint saved.
+2025-12-03 00:04:46 INFO: Finished STEP 1120/50000, loss = 3.239853 (0.037 sec/batch), lr: 0.003000
+2025-12-03 00:04:47 INFO: Finished STEP 1140/50000, loss = 2.648186 (0.037 sec/batch), lr: 0.003000
+2025-12-03 00:04:48 INFO: Finished STEP 1160/50000, loss = 2.736733 (0.034 sec/batch), lr: 0.003000
+2025-12-03 00:04:48 INFO: Finished STEP 1180/50000, loss = 4.440369 (0.035 sec/batch), lr: 0.003000
+2025-12-03 00:04:49 INFO: Finished STEP 1200/50000, loss = 3.411217 (0.034 sec/batch), lr: 0.003000
+2025-12-03 00:04:49 INFO: Evaluating on dev set...
+2025-12-03 00:04:49 INFO: LAS	MLAS	BLEX
+2025-12-03 00:04:49 INFO: 28.71	11.49	13.07
+2025-12-03 00:04:49 INFO: step 1200: train_loss = 3.418644, dev_score = 0.2871
+2025-12-03 00:04:50 INFO: Model saved to saved_models/depparse/sv_diachronic_charlm_parser.pt
+2025-12-03 00:04:50 INFO: new best model saved.
+2025-12-03 00:04:50 INFO: Model saved to saved_models/depparse/sv_diachronic_charlm_parser_checkpoint.pt
+2025-12-03 00:04:50 INFO: new model checkpoint saved.
+2025-12-03 00:04:51 INFO: Finished STEP 1220/50000, loss = 5.032012 (0.036 sec/batch), lr: 0.003000
+2025-12-03 00:04:52 INFO: Finished STEP 1240/50000, loss = 2.865893 (0.036 sec/batch), lr: 0.003000
+2025-12-03 00:04:52 INFO: Finished STEP 1260/50000, loss = 6.096026 (0.037 sec/batch), lr: 0.003000
+2025-12-03 00:04:53 INFO: Finished STEP 1280/50000, loss = 2.903123 (0.036 sec/batch), lr: 0.003000
+2025-12-03 00:04:54 INFO: Finished STEP 1300/50000, loss = 3.038009 (0.037 sec/batch), lr: 0.003000
+2025-12-03 00:04:54 INFO: Evaluating on dev set...
+2025-12-03 00:04:54 INFO: LAS	MLAS	BLEX
+2025-12-03 00:04:54 INFO: 33.17	18.04	19.61
+2025-12-03 00:04:54 INFO: step 1300: train_loss = 3.347368, dev_score = 0.3317
+2025-12-03 00:04:55 INFO: Model saved to saved_models/depparse/sv_diachronic_charlm_parser.pt
+2025-12-03 00:04:55 INFO: new best model saved.
+2025-12-03 00:04:55 INFO: Model saved to saved_models/depparse/sv_diachronic_charlm_parser_checkpoint.pt
+2025-12-03 00:04:55 INFO: new model checkpoint saved.
+2025-12-03 00:04:56 INFO: Finished STEP 1320/50000, loss = 1.732098 (0.036 sec/batch), lr: 0.003000
+2025-12-03 00:04:57 INFO: Finished STEP 1340/50000, loss = 2.579418 (0.034 sec/batch), lr: 0.003000
+2025-12-03 00:04:57 INFO: Finished STEP 1360/50000, loss = 2.314942 (0.034 sec/batch), lr: 0.003000
+2025-12-03 00:04:58 INFO: Finished STEP 1380/50000, loss = 3.584379 (0.035 sec/batch), lr: 0.003000
+2025-12-03 00:04:59 INFO: Finished STEP 1400/50000, loss = 3.826652 (0.032 sec/batch), lr: 0.003000
+2025-12-03 00:04:59 INFO: Evaluating on dev set...
+2025-12-03 00:04:59 INFO: LAS	MLAS	BLEX
+2025-12-03 00:04:59 INFO: 35.40	22.09	24.90
+2025-12-03 00:04:59 INFO: step 1400: train_loss = 3.463270, dev_score = 0.3540
+2025-12-03 00:04:59 INFO: Model saved to saved_models/depparse/sv_diachronic_charlm_parser.pt
+2025-12-03 00:04:59 INFO: new best model saved.
+2025-12-03 00:05:00 INFO: Model saved to saved_models/depparse/sv_diachronic_charlm_parser_checkpoint.pt
+2025-12-03 00:05:00 INFO: new model checkpoint saved.
+2025-12-03 00:05:01 INFO: Finished STEP 1420/50000, loss = 1.796135 (0.036 sec/batch), lr: 0.003000
+2025-12-03 00:05:01 INFO: Finished STEP 1440/50000, loss = 4.020522 (0.034 sec/batch), lr: 0.003000
+2025-12-03 00:05:02 INFO: Finished STEP 1460/50000, loss = 4.122330 (0.034 sec/batch), lr: 0.003000
+2025-12-03 00:05:03 INFO: Finished STEP 1480/50000, loss = 3.105598 (0.034 sec/batch), lr: 0.003000
+2025-12-03 00:05:03 INFO: Finished STEP 1500/50000, loss = 2.779820 (0.035 sec/batch), lr: 0.003000
+2025-12-03 00:05:03 INFO: Evaluating on dev set...
+2025-12-03 00:05:04 INFO: LAS	MLAS	BLEX
+2025-12-03 00:05:04 INFO: 34.90	19.88	21.87
+2025-12-03 00:05:04 INFO: step 1500: train_loss = 3.723689, dev_score = 0.3490
+2025-12-03 00:05:04 INFO: Model saved to saved_models/depparse/sv_diachronic_charlm_parser_checkpoint.pt
+2025-12-03 00:05:04 INFO: new model checkpoint saved.
+2025-12-03 00:05:05 INFO: Finished STEP 1520/50000, loss = 2.801723 (0.034 sec/batch), lr: 0.003000
+2025-12-03 00:05:06 INFO: Finished STEP 1540/50000, loss = 2.692841 (0.036 sec/batch), lr: 0.003000
+2025-12-03 00:05:07 INFO: Finished STEP 1560/50000, loss = 5.184442 (0.036 sec/batch), lr: 0.003000
+2025-12-03 00:05:07 INFO: Finished STEP 1580/50000, loss = 3.971715 (0.034 sec/batch), lr: 0.003000
+2025-12-03 00:05:08 INFO: Finished STEP 1600/50000, loss = 1.744106 (0.033 sec/batch), lr: 0.003000
+2025-12-03 00:05:08 INFO: Evaluating on dev set...
+2025-12-03 00:05:08 INFO: LAS	MLAS	BLEX
+2025-12-03 00:05:08 INFO: 33.66	18.33	19.52
+2025-12-03 00:05:08 INFO: step 1600: train_loss = 3.424519, dev_score = 0.3366
+2025-12-03 00:05:09 INFO: Model saved to saved_models/depparse/sv_diachronic_charlm_parser_checkpoint.pt
+2025-12-03 00:05:09 INFO: new model checkpoint saved.
+2025-12-03 00:05:10 INFO: Finished STEP 1620/50000, loss = 6.497481 (0.032 sec/batch), lr: 0.003000
+2025-12-03 00:05:10 INFO: Finished STEP 1640/50000, loss = 2.378686 (0.034 sec/batch), lr: 0.003000
+2025-12-03 00:05:11 INFO: Finished STEP 1660/50000, loss = 2.704184 (0.035 sec/batch), lr: 0.003000
+2025-12-03 00:05:12 INFO: Finished STEP 1680/50000, loss = 3.217742 (0.035 sec/batch), lr: 0.003000
+2025-12-03 00:05:12 INFO: Finished STEP 1700/50000, loss = 3.253656 (0.034 sec/batch), lr: 0.003000
+2025-12-03 00:05:12 INFO: Evaluating on dev set...
+2025-12-03 00:05:13 INFO: LAS	MLAS	BLEX
+2025-12-03 00:05:13 INFO: 36.14	20.12	21.73
+2025-12-03 00:05:13 INFO: step 1700: train_loss = 3.412348, dev_score = 0.3614
+2025-12-03 00:05:13 INFO: Model saved to saved_models/depparse/sv_diachronic_charlm_parser.pt
+2025-12-03 00:05:13 INFO: new best model saved.
+2025-12-03 00:05:14 INFO: Model saved to saved_models/depparse/sv_diachronic_charlm_parser_checkpoint.pt
+2025-12-03 00:05:14 INFO: new model checkpoint saved.
+2025-12-03 00:05:14 INFO: Finished STEP 1720/50000, loss = 5.873159 (0.033 sec/batch), lr: 0.003000
+2025-12-03 00:05:15 INFO: Finished STEP 1740/50000, loss = 2.128465 (0.035 sec/batch), lr: 0.003000
+2025-12-03 00:05:16 INFO: Finished STEP 1760/50000, loss = 2.606138 (0.035 sec/batch), lr: 0.003000
+2025-12-03 00:05:16 INFO: Finished STEP 1780/50000, loss = 2.763207 (0.032 sec/batch), lr: 0.003000
+2025-12-03 00:05:17 INFO: Finished STEP 1800/50000, loss = 1.491771 (0.035 sec/batch), lr: 0.003000
+2025-12-03 00:05:17 INFO: Evaluating on dev set...
+2025-12-03 00:05:18 INFO: LAS	MLAS	BLEX
+2025-12-03 00:05:18 INFO: 33.42	17.50	19.48
+2025-12-03 00:05:18 INFO: step 1800: train_loss = 3.318562, dev_score = 0.3342
+2025-12-03 00:05:18 INFO: Model saved to saved_models/depparse/sv_diachronic_charlm_parser_checkpoint.pt
+2025-12-03 00:05:18 INFO: new model checkpoint saved.
+2025-12-03 00:05:19 INFO: Finished STEP 1820/50000, loss = 5.831316 (0.035 sec/batch), lr: 0.003000
+2025-12-03 00:05:20 INFO: Finished STEP 1840/50000, loss = 3.740195 (0.033 sec/batch), lr: 0.003000
+2025-12-03 00:05:20 INFO: Finished STEP 1860/50000, loss = 2.089522 (0.037 sec/batch), lr: 0.003000
+2025-12-03 00:05:21 INFO: Finished STEP 1880/50000, loss = 2.194854 (0.038 sec/batch), lr: 0.003000
+2025-12-03 00:05:22 INFO: Finished STEP 1900/50000, loss = 2.892240 (0.036 sec/batch), lr: 0.003000
+2025-12-03 00:05:22 INFO: Evaluating on dev set...
+2025-12-03 00:05:22 INFO: LAS	MLAS	BLEX
+2025-12-03 00:05:22 INFO: 33.42	21.90	23.97
+2025-12-03 00:05:22 INFO: step 1900: train_loss = 3.385874, dev_score = 0.3342
+2025-12-03 00:05:23 INFO: Model saved to saved_models/depparse/sv_diachronic_charlm_parser_checkpoint.pt
+2025-12-03 00:05:23 INFO: new model checkpoint saved.
+2025-12-03 00:05:23 INFO: Finished STEP 1920/50000, loss = 3.134588 (0.033 sec/batch), lr: 0.003000
+2025-12-03 00:05:24 INFO: Finished STEP 1940/50000, loss = 3.754439 (0.037 sec/batch), lr: 0.003000
+2025-12-03 00:05:25 INFO: Finished STEP 1960/50000, loss = 5.545552 (0.036 sec/batch), lr: 0.003000
+2025-12-03 00:05:26 INFO: Finished STEP 1980/50000, loss = 2.778515 (0.035 sec/batch), lr: 0.003000
+2025-12-03 00:05:26 INFO: Finished STEP 2000/50000, loss = 2.672247 (0.036 sec/batch), lr: 0.003000
+2025-12-03 00:05:26 INFO: Evaluating on dev set...
+2025-12-03 00:05:27 INFO: LAS	MLAS	BLEX
+2025-12-03 00:05:27 INFO: 35.15	20.90	22.54
+2025-12-03 00:05:27 INFO: step 2000: train_loss = 3.640794, dev_score = 0.3515
+2025-12-03 00:05:27 INFO: Model saved to saved_models/depparse/sv_diachronic_charlm_parser_checkpoint.pt
+2025-12-03 00:05:27 INFO: new model checkpoint saved.
+2025-12-03 00:05:28 INFO: Finished STEP 2020/50000, loss = 2.810196 (0.035 sec/batch), lr: 0.003000
+2025-12-03 00:05:29 INFO: Finished STEP 2040/50000, loss = 1.569465 (0.033 sec/batch), lr: 0.003000
+2025-12-03 00:05:29 INFO: Finished STEP 2060/50000, loss = 3.126494 (0.034 sec/batch), lr: 0.003000
+2025-12-03 00:05:30 INFO: Finished STEP 2080/50000, loss = 2.120464 (0.034 sec/batch), lr: 0.003000
+2025-12-03 00:05:31 INFO: Finished STEP 2100/50000, loss = 4.094249 (0.036 sec/batch), lr: 0.003000
+2025-12-03 00:05:31 INFO: Evaluating on dev set...
+2025-12-03 00:05:31 INFO: LAS	MLAS	BLEX
+2025-12-03 00:05:31 INFO: 31.68	19.60	20.40
+2025-12-03 00:05:31 INFO: step 2100: train_loss = 3.533487, dev_score = 0.3168
+2025-12-03 00:05:32 INFO: Model saved to saved_models/depparse/sv_diachronic_charlm_parser_checkpoint.pt
+2025-12-03 00:05:32 INFO: new model checkpoint saved.
+2025-12-03 00:05:33 INFO: Finished STEP 2120/50000, loss = 2.959285 (0.035 sec/batch), lr: 0.003000
+2025-12-03 00:05:33 INFO: Finished STEP 2140/50000, loss = 3.287594 (0.033 sec/batch), lr: 0.003000
+2025-12-03 00:05:34 INFO: Finished STEP 2160/50000, loss = 4.220065 (0.034 sec/batch), lr: 0.003000
+2025-12-03 00:05:35 INFO: Finished STEP 2180/50000, loss = 3.364312 (0.034 sec/batch), lr: 0.003000
+2025-12-03 00:05:35 INFO: Finished STEP 2200/50000, loss = 4.725568 (0.034 sec/batch), lr: 0.003000
+2025-12-03 00:05:35 INFO: Evaluating on dev set...
+2025-12-03 00:05:36 INFO: LAS	MLAS	BLEX
+2025-12-03 00:05:36 INFO: 30.45	15.95	16.77
+2025-12-03 00:05:36 INFO: step 2200: train_loss = 3.346921, dev_score = 0.3045
+2025-12-03 00:05:36 INFO: Model saved to saved_models/depparse/sv_diachronic_charlm_parser_checkpoint.pt
+2025-12-03 00:05:36 INFO: new model checkpoint saved.
+2025-12-03 00:05:37 INFO: Finished STEP 2220/50000, loss = 2.388415 (0.034 sec/batch), lr: 0.003000
+2025-12-03 00:05:38 INFO: Finished STEP 2240/50000, loss = 5.593441 (0.033 sec/batch), lr: 0.003000
+2025-12-03 00:05:39 INFO: Finished STEP 2260/50000, loss = 3.226351 (0.035 sec/batch), lr: 0.003000
+2025-12-03 00:05:39 INFO: Finished STEP 2280/50000, loss = 2.496039 (0.037 sec/batch), lr: 0.003000
+2025-12-03 00:05:40 INFO: Finished STEP 2300/50000, loss = 3.316859 (0.037 sec/batch), lr: 0.003000
+2025-12-03 00:05:40 INFO: Evaluating on dev set...
+2025-12-03 00:05:40 INFO: LAS	MLAS	BLEX
+2025-12-03 00:05:40 INFO: 36.39	21.67	23.33
+2025-12-03 00:05:40 INFO: step 2300: train_loss = 3.677127, dev_score = 0.3639
+2025-12-03 00:05:41 INFO: Model saved to saved_models/depparse/sv_diachronic_charlm_parser.pt
+2025-12-03 00:05:41 INFO: new best model saved.
+2025-12-03 00:05:41 INFO: Model saved to saved_models/depparse/sv_diachronic_charlm_parser_checkpoint.pt
+2025-12-03 00:05:41 INFO: new model checkpoint saved.
+2025-12-03 00:05:42 INFO: Finished STEP 2320/50000, loss = 4.229099 (0.034 sec/batch), lr: 0.003000
+2025-12-03 00:05:43 INFO: Finished STEP 2340/50000, loss = 4.050467 (0.035 sec/batch), lr: 0.003000
+2025-12-03 00:05:43 INFO: Finished STEP 2360/50000, loss = 4.414966 (0.037 sec/batch), lr: 0.003000
+2025-12-03 00:05:44 INFO: Finished STEP 2380/50000, loss = 2.851241 (0.037 sec/batch), lr: 0.003000
+2025-12-03 00:05:45 INFO: Finished STEP 2400/50000, loss = 4.186286 (0.034 sec/batch), lr: 0.003000
+2025-12-03 00:05:45 INFO: Evaluating on dev set...
+2025-12-03 00:05:45 INFO: LAS	MLAS	BLEX
+2025-12-03 00:05:45 INFO: 38.86	21.95	23.60
+2025-12-03 00:05:45 INFO: step 2400: train_loss = 3.684238, dev_score = 0.3886
+2025-12-03 00:05:46 INFO: Model saved to saved_models/depparse/sv_diachronic_charlm_parser.pt
+2025-12-03 00:05:46 INFO: new best model saved.
+2025-12-03 00:05:46 INFO: Model saved to saved_models/depparse/sv_diachronic_charlm_parser_checkpoint.pt
+2025-12-03 00:05:46 INFO: new model checkpoint saved.
+2025-12-03 00:05:47 INFO: Finished STEP 2420/50000, loss = 1.748532 (0.037 sec/batch), lr: 0.003000
+2025-12-03 00:05:47 INFO: Finished STEP 2440/50000, loss = 3.137299 (0.034 sec/batch), lr: 0.003000
+2025-12-03 00:05:48 INFO: Finished STEP 2460/50000, loss = 3.227959 (0.035 sec/batch), lr: 0.003000
+2025-12-03 00:05:49 INFO: Finished STEP 2480/50000, loss = 2.614409 (0.039 sec/batch), lr: 0.003000
+2025-12-03 00:05:50 INFO: Finished STEP 2500/50000, loss = 7.968997 (0.037 sec/batch), lr: 0.003000
+2025-12-03 00:05:50 INFO: Evaluating on dev set...
+2025-12-03 00:05:50 INFO: LAS	MLAS	BLEX
+2025-12-03 00:05:50 INFO: 35.64	18.18	21.21
+2025-12-03 00:05:50 INFO: step 2500: train_loss = 3.618949, dev_score = 0.3564
+2025-12-03 00:05:51 INFO: Model saved to saved_models/depparse/sv_diachronic_charlm_parser_checkpoint.pt
+2025-12-03 00:05:51 INFO: new model checkpoint saved.
+2025-12-03 00:05:51 INFO: Finished STEP 2520/50000, loss = 2.584875 (0.033 sec/batch), lr: 0.003000
+2025-12-03 00:05:52 INFO: Finished STEP 2540/50000, loss = 2.403082 (0.033 sec/batch), lr: 0.003000
+2025-12-03 00:05:53 INFO: Finished STEP 2560/50000, loss = 2.680532 (0.037 sec/batch), lr: 0.003000
+2025-12-03 00:05:54 INFO: Finished STEP 2580/50000, loss = 3.621366 (0.036 sec/batch), lr: 0.003000
+2025-12-03 00:05:54 INFO: Finished STEP 2600/50000, loss = 2.256649 (0.035 sec/batch), lr: 0.003000
+2025-12-03 00:05:54 INFO: Evaluating on dev set...
+2025-12-03 00:05:55 INFO: LAS	MLAS	BLEX
+2025-12-03 00:05:55 INFO: 39.11	24.37	26.47
+2025-12-03 00:05:55 INFO: step 2600: train_loss = 3.325648, dev_score = 0.3911
+2025-12-03 00:05:55 INFO: Model saved to saved_models/depparse/sv_diachronic_charlm_parser.pt
+2025-12-03 00:05:55 INFO: new best model saved.
+2025-12-03 00:05:56 INFO: Model saved to saved_models/depparse/sv_diachronic_charlm_parser_checkpoint.pt
+2025-12-03 00:05:56 INFO: new model checkpoint saved.
+2025-12-03 00:05:56 INFO: Finished STEP 2620/50000, loss = 5.835835 (0.035 sec/batch), lr: 0.003000
+2025-12-03 00:05:57 INFO: Finished STEP 2640/50000, loss = 3.077916 (0.035 sec/batch), lr: 0.003000
+2025-12-03 00:05:58 INFO: Finished STEP 2660/50000, loss = 4.020663 (0.036 sec/batch), lr: 0.003000
+2025-12-03 00:05:59 INFO: Finished STEP 2680/50000, loss = 4.354639 (0.033 sec/batch), lr: 0.003000
+2025-12-03 00:05:59 INFO: Finished STEP 2700/50000, loss = 2.966883 (0.035 sec/batch), lr: 0.003000
+2025-12-03 00:05:59 INFO: Evaluating on dev set...
+2025-12-03 00:06:00 INFO: LAS	MLAS	BLEX
+2025-12-03 00:06:00 INFO: 42.33	29.11	31.19
+2025-12-03 00:06:00 INFO: step 2700: train_loss = 3.449816, dev_score = 0.4233
+2025-12-03 00:06:00 INFO: Model saved to saved_models/depparse/sv_diachronic_charlm_parser.pt
+2025-12-03 00:06:00 INFO: new best model saved.
+2025-12-03 00:06:01 INFO: Model saved to saved_models/depparse/sv_diachronic_charlm_parser_checkpoint.pt
+2025-12-03 00:06:01 INFO: new model checkpoint saved.
+2025-12-03 00:06:01 INFO: Finished STEP 2720/50000, loss = 4.358669 (0.036 sec/batch), lr: 0.003000
+2025-12-03 00:06:02 INFO: Finished STEP 2740/50000, loss = 1.960829 (0.037 sec/batch), lr: 0.003000
+2025-12-03 00:06:03 INFO: Finished STEP 2760/50000, loss = 3.342113 (0.034 sec/batch), lr: 0.003000
+2025-12-03 00:06:03 INFO: Finished STEP 2780/50000, loss = 1.876661 (0.036 sec/batch), lr: 0.003000
+2025-12-03 00:06:04 INFO: Finished STEP 2800/50000, loss = 1.878595 (0.040 sec/batch), lr: 0.003000
+2025-12-03 00:06:04 INFO: Evaluating on dev set...
+2025-12-03 00:06:05 INFO: LAS	MLAS	BLEX
+2025-12-03 00:06:05 INFO: 32.43	17.26	20.21
+2025-12-03 00:06:05 INFO: step 2800: train_loss = 3.684543, dev_score = 0.3243
+2025-12-03 00:06:05 INFO: Model saved to saved_models/depparse/sv_diachronic_charlm_parser_checkpoint.pt
+2025-12-03 00:06:05 INFO: new model checkpoint saved.
+2025-12-03 00:06:06 INFO: Finished STEP 2820/50000, loss = 7.423325 (0.033 sec/batch), lr: 0.003000
+2025-12-03 00:06:07 INFO: Finished STEP 2840/50000, loss = 3.846512 (0.038 sec/batch), lr: 0.003000
+2025-12-03 00:06:07 INFO: Finished STEP 2860/50000, loss = 4.674613 (0.035 sec/batch), lr: 0.003000
+2025-12-03 00:06:08 INFO: Finished STEP 2880/50000, loss = 5.598680 (0.034 sec/batch), lr: 0.003000
+2025-12-03 00:06:09 INFO: Finished STEP 2900/50000, loss = 4.584077 (0.038 sec/batch), lr: 0.003000
+2025-12-03 00:06:09 INFO: Evaluating on dev set...
+2025-12-03 00:06:10 INFO: LAS	MLAS	BLEX
+2025-12-03 00:06:10 INFO: 37.13	21.10	23.21
+2025-12-03 00:06:10 INFO: step 2900: train_loss = 3.578357, dev_score = 0.3713
+2025-12-03 00:06:10 INFO: Model saved to saved_models/depparse/sv_diachronic_charlm_parser_checkpoint.pt
+2025-12-03 00:06:10 INFO: new model checkpoint saved.
+2025-12-03 00:06:11 INFO: Finished STEP 2920/50000, loss = 2.098350 (0.035 sec/batch), lr: 0.003000
+2025-12-03 00:06:11 INFO: Finished STEP 2940/50000, loss = 7.716115 (0.036 sec/batch), lr: 0.003000
+2025-12-03 00:06:12 INFO: Finished STEP 2960/50000, loss = 3.773098 (0.035 sec/batch), lr: 0.003000
+2025-12-03 00:06:13 INFO: Finished STEP 2980/50000, loss = 2.773946 (0.036 sec/batch), lr: 0.003000
+2025-12-03 00:06:14 INFO: Finished STEP 3000/50000, loss = 3.093710 (0.039 sec/batch), lr: 0.003000
+2025-12-03 00:06:14 INFO: Evaluating on dev set...
+2025-12-03 00:06:14 INFO: LAS	MLAS	BLEX
+2025-12-03 00:06:14 INFO: 38.12	20.92	23.85
+2025-12-03 00:06:14 INFO: step 3000: train_loss = 3.502959, dev_score = 0.3812
+2025-12-03 00:06:15 INFO: Model saved to saved_models/depparse/sv_diachronic_charlm_parser_checkpoint.pt
+2025-12-03 00:06:15 INFO: new model checkpoint saved.
+2025-12-03 00:06:16 INFO: Finished STEP 3020/50000, loss = 2.860210 (0.039 sec/batch), lr: 0.003000
+2025-12-03 00:06:16 INFO: Finished STEP 3040/50000, loss = 3.387549 (0.036 sec/batch), lr: 0.003000
+2025-12-03 00:06:17 INFO: Finished STEP 3060/50000, loss = 3.077563 (0.036 sec/batch), lr: 0.003000
+2025-12-03 00:06:18 INFO: Finished STEP 3080/50000, loss = 2.989982 (0.033 sec/batch), lr: 0.003000
+2025-12-03 00:06:19 INFO: Finished STEP 3100/50000, loss = 3.402043 (0.038 sec/batch), lr: 0.003000
+2025-12-03 00:06:19 INFO: Evaluating on dev set...
+2025-12-03 00:06:19 INFO: LAS	MLAS	BLEX
+2025-12-03 00:06:19 INFO: 37.38	22.04	24.08
+2025-12-03 00:06:19 INFO: step 3100: train_loss = 3.450367, dev_score = 0.3738
+2025-12-03 00:06:20 INFO: Model saved to saved_models/depparse/sv_diachronic_charlm_parser_checkpoint.pt
+2025-12-03 00:06:20 INFO: new model checkpoint saved.
+2025-12-03 00:06:20 INFO: Finished STEP 3120/50000, loss = 3.050076 (0.034 sec/batch), lr: 0.003000
+2025-12-03 00:06:21 INFO: Finished STEP 3140/50000, loss = 3.250776 (0.037 sec/batch), lr: 0.003000
+2025-12-03 00:06:22 INFO: Finished STEP 3160/50000, loss = 3.034782 (0.034 sec/batch), lr: 0.003000
+2025-12-03 00:06:22 INFO: Finished STEP 3180/50000, loss = 2.803900 (0.033 sec/batch), lr: 0.003000
+2025-12-03 00:06:23 INFO: Finished STEP 3200/50000, loss = 3.034755 (0.038 sec/batch), lr: 0.003000
+2025-12-03 00:06:23 INFO: Evaluating on dev set...
+2025-12-03 00:06:24 INFO: LAS	MLAS	BLEX
+2025-12-03 00:06:24 INFO: 36.63	19.29	21.80
+2025-12-03 00:06:24 INFO: step 3200: train_loss = 3.493535, dev_score = 0.3663
+2025-12-03 00:06:24 INFO: Model saved to saved_models/depparse/sv_diachronic_charlm_parser_checkpoint.pt
+2025-12-03 00:06:24 INFO: new model checkpoint saved.
+2025-12-03 00:06:25 INFO: Finished STEP 3220/50000, loss = 2.634099 (0.036 sec/batch), lr: 0.003000
+2025-12-03 00:06:26 INFO: Finished STEP 3240/50000, loss = 7.289287 (0.036 sec/batch), lr: 0.003000
+2025-12-03 00:06:27 INFO: Finished STEP 3260/50000, loss = 3.269890 (0.039 sec/batch), lr: 0.003000
+2025-12-03 00:06:27 INFO: Finished STEP 3280/50000, loss = 3.867342 (0.039 sec/batch), lr: 0.003000
+2025-12-03 00:06:28 INFO: Finished STEP 3300/50000, loss = 2.824182 (0.038 sec/batch), lr: 0.003000
+2025-12-03 00:06:28 INFO: Evaluating on dev set...
+2025-12-03 00:06:29 INFO: LAS	MLAS	BLEX
+2025-12-03 00:06:29 INFO: 36.63	20.37	21.62
+2025-12-03 00:06:29 INFO: step 3300: train_loss = 3.637132, dev_score = 0.3663
+2025-12-03 00:06:29 INFO: Model saved to saved_models/depparse/sv_diachronic_charlm_parser_checkpoint.pt
+2025-12-03 00:06:29 INFO: new model checkpoint saved.
+2025-12-03 00:06:30 INFO: Finished STEP 3320/50000, loss = 2.506874 (0.036 sec/batch), lr: 0.003000
+2025-12-03 00:06:31 INFO: Finished STEP 3340/50000, loss = 2.887654 (0.034 sec/batch), lr: 0.003000
+2025-12-03 00:06:31 INFO: Finished STEP 3360/50000, loss = 3.862370 (0.037 sec/batch), lr: 0.003000
+2025-12-03 00:06:32 INFO: Finished STEP 3380/50000, loss = 4.608120 (0.034 sec/batch), lr: 0.003000
+2025-12-03 00:06:33 INFO: Finished STEP 3400/50000, loss = 3.780773 (0.039 sec/batch), lr: 0.003000
+2025-12-03 00:06:33 INFO: Evaluating on dev set...
+2025-12-03 00:06:34 INFO: LAS	MLAS	BLEX
+2025-12-03 00:06:34 INFO: 38.12	21.21	23.70
+2025-12-03 00:06:34 INFO: step 3400: train_loss = 3.844786, dev_score = 0.3812
+2025-12-03 00:06:34 INFO: Model saved to saved_models/depparse/sv_diachronic_charlm_parser_checkpoint.pt
+2025-12-03 00:06:34 INFO: new model checkpoint saved.
+2025-12-03 00:06:35 INFO: Finished STEP 3420/50000, loss = 3.224651 (0.036 sec/batch), lr: 0.003000
+2025-12-03 00:06:36 INFO: Finished STEP 3440/50000, loss = 4.342725 (0.037 sec/batch), lr: 0.003000
+2025-12-03 00:06:36 INFO: Finished STEP 3460/50000, loss = 15.964293 (0.039 sec/batch), lr: 0.003000
+2025-12-03 00:06:37 INFO: Finished STEP 3480/50000, loss = 9.027036 (0.032 sec/batch), lr: 0.003000
+2025-12-03 00:06:38 INFO: Finished STEP 3500/50000, loss = 3.789010 (0.034 sec/batch), lr: 0.003000
+2025-12-03 00:06:38 INFO: Evaluating on dev set...
+2025-12-03 00:06:38 INFO: LAS	MLAS	BLEX
+2025-12-03 00:06:38 INFO: 41.58	26.92	31.06
+2025-12-03 00:06:38 INFO: step 3500: train_loss = 3.767138, dev_score = 0.4158
+2025-12-03 00:06:39 INFO: Model saved to saved_models/depparse/sv_diachronic_charlm_parser_checkpoint.pt
+2025-12-03 00:06:39 INFO: new model checkpoint saved.
+2025-12-03 00:06:40 INFO: Finished STEP 3520/50000, loss = 6.266014 (0.035 sec/batch), lr: 0.003000
+2025-12-03 00:06:40 INFO: Finished STEP 3540/50000, loss = 2.677692 (0.036 sec/batch), lr: 0.003000
+2025-12-03 00:06:41 INFO: Finished STEP 3560/50000, loss = 2.750907 (0.037 sec/batch), lr: 0.003000
+2025-12-03 00:06:42 INFO: Finished STEP 3580/50000, loss = 2.846963 (0.036 sec/batch), lr: 0.003000
+2025-12-03 00:06:43 INFO: Finished STEP 3600/50000, loss = 3.642042 (0.038 sec/batch), lr: 0.003000
+2025-12-03 00:06:43 INFO: Evaluating on dev set...
+2025-12-03 00:06:43 INFO: LAS	MLAS	BLEX
+2025-12-03 00:06:43 INFO: 40.59	27.00	30.80
+2025-12-03 00:06:43 INFO: step 3600: train_loss = 3.839358, dev_score = 0.4059
+2025-12-03 00:06:44 INFO: Model saved to saved_models/depparse/sv_diachronic_charlm_parser_checkpoint.pt
+2025-12-03 00:06:44 INFO: new model checkpoint saved.
+2025-12-03 00:06:44 INFO: Finished STEP 3620/50000, loss = 3.241040 (0.039 sec/batch), lr: 0.003000
+2025-12-03 00:06:45 INFO: Finished STEP 3640/50000, loss = 2.835604 (0.036 sec/batch), lr: 0.003000
+2025-12-03 00:06:46 INFO: Finished STEP 3660/50000, loss = 2.748945 (0.036 sec/batch), lr: 0.003000
+2025-12-03 00:06:47 INFO: Finished STEP 3680/50000, loss = 3.752511 (0.039 sec/batch), lr: 0.003000
+2025-12-03 00:06:47 INFO: Finished STEP 3700/50000, loss = 2.389401 (0.036 sec/batch), lr: 0.003000
+2025-12-03 00:06:47 INFO: Evaluating on dev set...
+2025-12-03 00:06:48 INFO: LAS	MLAS	BLEX
+2025-12-03 00:06:48 INFO: 34.16	19.70	27.41
+2025-12-03 00:06:48 INFO: step 3700: train_loss = 3.949752, dev_score = 0.3416
+2025-12-03 00:06:48 INFO: Training ended with 3700 steps.
+2025-12-03 00:06:48 INFO: Best dev F1 = 42.33, at iteration = 2700
+2025-12-03 00:06:48 INFO: Running dev depparse for UD_Swedish-diachronic with args ['--wordvec_dir', '/cephyr/users/cleland/Alvis/stanza_resources/sv/pretrain', '--eval_file', '/mimer/NOBACKUP/groups/dionysus/cleland/stanza-digphil/data/depparse/sv_diachronic.dev.in.conllu', '--lang', 'sv', '--shorthand', 'sv_diachronic', '--mode', 'predict', '--charlm', '--charlm_shorthand', 'sv_conll17', '--charlm_forward_file', '/cephyr/users/cleland/Alvis/stanza_resources/sv/forward_charlm/conll17.pt', '--charlm_backward_file', '/cephyr/users/cleland/Alvis/stanza_resources/sv/backward_charlm/conll17.pt', '--wordvec_pretrain_file', '/cephyr/users/cleland/Alvis/stanza_resources/sv/pretrain/diachronic.pt', '--batch_size', '16', '--dropout', '0.33']
+2025-12-03 00:06:48 INFO: Running parser in predict mode
+2025-12-03 00:06:48 INFO: Loading model from: saved_models/depparse/sv_diachronic_charlm_parser.pt
+2025-12-03 00:06:51 DEBUG: Loaded pretrain from /cephyr/users/cleland/Alvis/stanza_resources/sv/pretrain/diachronic.pt
+2025-12-03 00:06:51 DEBUG: Depparse model loading charmodels: /cephyr/users/cleland/Alvis/stanza_resources/sv/forward_charlm/conll17.pt and /cephyr/users/cleland/Alvis/stanza_resources/sv/backward_charlm/conll17.pt
+2025-12-03 00:06:51 DEBUG: Loading charlm from /cephyr/users/cleland/Alvis/stanza_resources/sv/forward_charlm/conll17.pt
+2025-12-03 00:06:51 DEBUG: Loading charlm from /cephyr/users/cleland/Alvis/stanza_resources/sv/backward_charlm/conll17.pt
+2025-12-03 00:06:51 DEBUG: Building Adam with lr=0.003000, betas=(0.9, 0.95), eps=0.000001
+2025-12-03 00:06:51 INFO: Loading data with batch size 16...
+2025-12-03 00:06:51 DEBUG: 9 batches created.
+2025-12-03 00:06:52 INFO: F1 scores for each dependency:
+  Note that unlabeled attachment errors hurt the labeled attachment scores
+       acl: p 0.0000 r 0.0000 f1 0.0000 (3 actual)
+ acl:relcl: p 0.0000 r 0.0000 f1 0.0000 (7 actual)
+     advcl: p 0.0000 r 0.0000 f1 0.0000 (5 actual)
+    advmod: p 0.3243 r 0.4800 f1 0.3871 (25 actual)
+      amod: p 0.7857 r 0.7097 f1 0.7458 (31 actual)
+     appos: p 0.0000 r 0.0000 f1 0.0000 (4 actual)
+       aux: p 0.6000 r 0.5455 f1 0.5714 (11 actual)
+      case: p 0.7857 r 0.7857 f1 0.7857 (56 actual)
+        cc: p 0.5000 r 0.5385 f1 0.5185 (13 actual)
+     ccomp: p 0.0000 r 0.0000 f1 0.0000 (2 actual)
+      conj: p 0.0000 r 0.0000 f1 0.0000 (12 actual)
+       cop: p 0.0000 r 0.0000 f1 0.0000 (3 actual)
+     csubj: p 0.0000 r 0.0000 f1 0.0000 (2 actual)
+       det: p 0.8636 r 0.8636 f1 0.8636 (22 actual)
+      expl: p 0.0000 r 0.0000 f1 0.0000 (1 actual)
+      iobj: p 0.0000 r 0.0000 f1 0.0000 (2 actual)
+      mark: p 1.0000 r 0.1667 f1 0.2857 (12 actual)
+      nmod: p 0.1311 r 0.5333 f1 0.2105 (15 actual)
+ nmod:poss: p 0.0000 r 0.0000 f1 0.0000 (19 actual)
+     nsubj: p 0.1569 r 0.4706 f1 0.2353 (17 actual)
+nsubj:pass: p 0.0000 r 0.0000 f1 0.0000 (5 actual)
+       obj: p 0.8333 r 0.2273 f1 0.3571 (22 actual)
+       obl: p 0.2778 r 0.3659 f1 0.3158 (41 actual)
+ obl:agent: p 0.0000 r 0.0000 f1 0.0000 (1 actual)
+    orphan: p 0.0000 r 0.0000 f1 0.0000 (1 actual)
+ parataxis: p 0.0000 r 0.0000 f1 0.0000 (3 actual)
+     punct: p 0.3462 r 0.3462 f1 0.3462 (52 actual)
+      root: p 0.4444 r 0.4444 f1 0.4444 (9 actual)
+     xcomp: p 0.0000 r 0.0000 f1 0.0000 (8 actual)
+2025-12-03 00:06:52 INFO: LAS	MLAS	BLEX
+2025-12-03 00:06:52 INFO: 42.33	29.11	31.19
+2025-12-03 00:06:52 INFO: Parser score:
+2025-12-03 00:06:52 INFO: sv_diachronic 42.33
+2025-12-03 00:06:52 INFO: Finished running dev set on
+UD_Swedish-diachronic
+  UAS   LAS  CLAS  MLAS  BLEX
+56.19 42.33 31.19 29.11 31.19
+2025-12-03 00:06:52 INFO: Running test depparse for UD_Swedish-diachronic with args ['--wordvec_dir', '/cephyr/users/cleland/Alvis/stanza_resources/sv/pretrain', '--eval_file', '/mimer/NOBACKUP/groups/dionysus/cleland/stanza-digphil/data/depparse/sv_diachronic.test.in.conllu', '--lang', 'sv', '--shorthand', 'sv_diachronic', '--mode', 'predict', '--charlm', '--charlm_shorthand', 'sv_conll17', '--charlm_forward_file', '/cephyr/users/cleland/Alvis/stanza_resources/sv/forward_charlm/conll17.pt', '--charlm_backward_file', '/cephyr/users/cleland/Alvis/stanza_resources/sv/backward_charlm/conll17.pt', '--wordvec_pretrain_file', '/cephyr/users/cleland/Alvis/stanza_resources/sv/pretrain/diachronic.pt', '--batch_size', '16', '--dropout', '0.33']
+2025-12-03 00:06:52 INFO: Running parser in predict mode
+2025-12-03 00:06:52 INFO: Loading model from: saved_models/depparse/sv_diachronic_charlm_parser.pt
+2025-12-03 00:06:55 DEBUG: Loaded pretrain from /cephyr/users/cleland/Alvis/stanza_resources/sv/pretrain/diachronic.pt
+2025-12-03 00:06:55 DEBUG: Depparse model loading charmodels: /cephyr/users/cleland/Alvis/stanza_resources/sv/forward_charlm/conll17.pt and /cephyr/users/cleland/Alvis/stanza_resources/sv/backward_charlm/conll17.pt
+2025-12-03 00:06:55 DEBUG: Loading charlm from /cephyr/users/cleland/Alvis/stanza_resources/sv/forward_charlm/conll17.pt
+2025-12-03 00:06:55 DEBUG: Loading charlm from /cephyr/users/cleland/Alvis/stanza_resources/sv/backward_charlm/conll17.pt
+2025-12-03 00:06:55 DEBUG: Building Adam with lr=0.003000, betas=(0.9, 0.95), eps=0.000001
+2025-12-03 00:06:55 INFO: Loading data with batch size 16...
+2025-12-03 00:06:55 DEBUG: 98 batches created.
+2025-12-03 00:07:00 INFO: F1 scores for each dependency:
+  Note that unlabeled attachment errors hurt the labeled attachment scores
+         acl: p 0.0000 r 0.0000 f1 0.0000 (32 actual)
+   acl:cleft: p 0.0000 r 0.0000 f1 0.0000 (2 actual)
+   acl:relcl: p 0.0000 r 0.0000 f1 0.0000 (75 actual)
+       advcl: p 0.0000 r 0.0000 f1 0.0000 (60 actual)
+ advcl:relcl: p 0.0000 r 0.0000 f1 0.0000 (2 actual)
+      advmod: p 0.3673 r 0.5373 f1 0.4364 (268 actual)
+        amod: p 0.7559 r 0.7000 f1 0.7269 (230 actual)
+       appos: p 0.0000 r 0.0000 f1 0.0000 (13 actual)
+         aux: p 0.5926 r 0.7619 f1 0.6667 (84 actual)
+    aux:pass: p 0.0000 r 0.0000 f1 0.0000 (2 actual)
+        case: p 0.7021 r 0.7265 f1 0.7141 (373 actual)
+          cc: p 0.5075 r 0.4387 f1 0.4706 (155 actual)
+       ccomp: p 0.0000 r 0.0000 f1 0.0000 (35 actual)
+compound:prt: p 0.0000 r 0.0000 f1 0.0000 (21 actual)
+        conj: p 0.0000 r 0.0000 f1 0.0000 (158 actual)
+         cop: p 0.7143 r 0.1087 f1 0.1887 (46 actual)
+       csubj: p 0.0000 r 0.0000 f1 0.0000 (4 actual)
+         dep: p 0.0000 r 0.0000 f1 0.0000 (1 actual)
+         det: p 0.7980 r 0.7788 f1 0.7883 (208 actual)
+   discourse: p 0.0000 r 0.0000 f1 0.0000 (7 actual)
+  dislocated: p 0.0000 r 0.0000 f1 0.0000 (1 actual)
+        expl: p 0.0000 r 0.0000 f1 0.0000 (11 actual)
+     expl:pv: p 0.0000 r 0.0000 f1 0.0000 (1 actual)
+       fixed: p 0.0000 r 0.0000 f1 0.0000 (8 actual)
+        flat: p 0.0000 r 0.0000 f1 0.0000 (4 actual)
+   flat:name: p 0.0000 r 0.0000 f1 0.0000 (12 actual)
+    goeswith: p 0.0000 r 0.0000 f1 0.0000 (2 actual)
+        iobj: p 0.0000 r 0.0000 f1 0.0000 (14 actual)
+        mark: p 0.8333 r 0.2614 f1 0.3980 (153 actual)
+        nmod: p 0.1290 r 0.4706 f1 0.2025 (102 actual)
+   nmod:poss: p 0.0000 r 0.0000 f1 0.0000 (142 actual)
+       nsubj: p 0.2644 r 0.5071 f1 0.3476 (280 actual)
+  nsubj:pass: p 0.0000 r 0.0000 f1 0.0000 (25 actual)
+      nummod: p 0.0000 r 0.0000 f1 0.0000 (10 actual)
+         obj: p 0.4595 r 0.0929 f1 0.1545 (183 actual)
+         obl: p 0.1677 r 0.4029 f1 0.2368 (278 actual)
+   obl:agent: p 0.0000 r 0.0000 f1 0.0000 (4 actual)
+      orphan: p 0.0000 r 0.0000 f1 0.0000 (1 actual)
+   parataxis: p 0.0000 r 0.0000 f1 0.0000 (18 actual)
+       punct: p 0.3357 r 0.3365 f1 0.3361 (425 actual)
+  reparandum: p 0.0000 r 0.0000 f1 0.0000 (1 actual)
+        root: p 0.4444 r 0.4444 f1 0.4444 (99 actual)
+    vocative: p 0.0000 r 0.0000 f1 0.0000 (5 actual)
+       xcomp: p 0.0000 r 0.0000 f1 0.0000 (75 actual)
+2025-12-03 00:07:00 INFO: LAS	MLAS	BLEX
+2025-12-03 00:07:00 INFO: 39.53	27.99	30.21
+2025-12-03 00:07:00 INFO: Parser score:
+2025-12-03 00:07:00 INFO: sv_diachronic 39.53
+2025-12-03 00:07:00 INFO: Finished running test set on
+UD_Swedish-diachronic
+  UAS   LAS  CLAS  MLAS  BLEX
+56.75 39.53 30.21 27.99 30.21
+DONE.
+Full log saved to: logs/log_diachronic.pt_sv_20251203_000134.txt
+Symlink updated: logs/latest.txt → log_diachronic.pt_sv_20251203_000134.txt

@@ -1,0 +1,109 @@
+=== LOGFILE: logs/log_bert-base-swedish-cased_sv_20260318_132248.txt ===
+Language codes: sv
+Using pretrained model: KBLab/bert-base-swedish-cased
+
+Running: python prepare-train-val-SILVER.py sv
+Reading: /home/urdatorn/git/stanza-digphil/ud-treebanks-sv/sv_pud-ud-test.conllu
+Reading: /home/urdatorn/git/stanza-digphil/ud-treebanks-sv/sv_lines-ud-train.conllu
+Reading: /home/urdatorn/git/stanza-digphil/ud-treebanks-sv/sv_swell-ud-test-trg.conllu
+Reading: /home/urdatorn/git/stanza-digphil/ud-treebanks-sv/sv_swell-ud-test.conllu
+Reading: /home/urdatorn/git/stanza-digphil/ud-treebanks-sv/sv_talbanken-ud-test.conllu
+Reading: /home/urdatorn/git/stanza-digphil/ud-treebanks-sv/sv_old-ud-test.conllu
+Reading: /home/urdatorn/git/stanza-digphil/ud-treebanks-sv/sv_talbanken-ud-dev.conllu
+Reading: /home/urdatorn/git/stanza-digphil/ud-treebanks-sv/sv_talbanken-ud-train.conllu
+Reading: /home/urdatorn/git/stanza-digphil/ud-treebanks-sv/sv_lines-ud-dev.conllu
+Reading: /home/urdatorn/git/stanza-digphil/ud-treebanks-sv/sv_lines-ud-test.conllu
+Loading DigPhil MACHINE for SILVER (minus gold overlap)…
+Reading GOLD: /home/urdatorn/git/Diachronic_Treebanks_DigPhil/parsed_data/validated/svediakorp-sec987-spf144.conllu
+Reading GOLD: /home/urdatorn/git/Diachronic_Treebanks_DigPhil/parsed_data/validated/svediakorp-sec613-EngstromA_StrindbergOchJag.conllu
+Reading GOLD: /home/urdatorn/git/Diachronic_Treebanks_DigPhil/parsed_data/validated/svediakorp-sec268-DulciU_VitterhetsNojen3.conllu
+Reading GOLD: /home/urdatorn/git/Diachronic_Treebanks_DigPhil/parsed_data/validated/svediakorp-sec25-Runius.conllu
+Reading GOLD: /home/urdatorn/git/Diachronic_Treebanks_DigPhil/parsed_data/validated/svediakorp-sec208-Anonym_DetGrasligaMordet.conllu
+Reading GOLD: /home/urdatorn/git/Diachronic_Treebanks_DigPhil/parsed_data/validated/svediakorp-sec324-GranbergPA_Enslighetsalskaren.conllu
+Reading GOLD: /home/urdatorn/git/Diachronic_Treebanks_DigPhil/parsed_data/validated/svediakorp-sec254-CederborghF_BerattelseOmJohnHall.conllu
+Reading GOLD: /home/urdatorn/git/Diachronic_Treebanks_DigPhil/parsed_data/validated/svediakorp-sec397-AngeredStrandbergH_UnderSodernsSol.conllu
+Reading GOLD: /home/urdatorn/git/Diachronic_Treebanks_DigPhil/parsed_data/validated/svediakorp-sec452-NyblomH_FantasierFyra.conllu
+Reading GOLD: /home/urdatorn/git/Diachronic_Treebanks_DigPhil/parsed_data/validated/svediakorp-sec252-BremerF_Teckningar1.conllu
+Reading GOLD: /home/urdatorn/git/Diachronic_Treebanks_DigPhil/parsed_data/validated/svediakorp-sec486-SchwartzMS_BellmansSkor.conllu
+Reading GOLD: /home/urdatorn/git/Diachronic_Treebanks_DigPhil/parsed_data/validated/svediakorp-sec330-GyllenborgC_SwenskaSpratthoken.conllu
+Reading GOLD: /home/urdatorn/git/Diachronic_Treebanks_DigPhil/parsed_data/validated/svediakorp-sec631-HasselskogN_HallaHallaGronkoping.conllu
+Reading GOLD: /home/urdatorn/git/Diachronic_Treebanks_DigPhil/parsed_data/validated/svediakorp-sec277-EnbomPU_MedborgeligtSkalde.conllu
+Reading GOLD: /home/urdatorn/git/Diachronic_Treebanks_DigPhil/parsed_data/validated/svediakorp-sec1102-spf259.conllu
+Reading GOLD: /home/urdatorn/git/Diachronic_Treebanks_DigPhil/parsed_data/validated/svediakorp-sec991-spf148.conllu
+Reading GOLD: /home/urdatorn/git/Diachronic_Treebanks_DigPhil/parsed_data/validated/svediakorp-sec639-HeidenstamV_Proletarfilosofiens.conllu
+Reading GOLD: /home/urdatorn/git/Diachronic_Treebanks_DigPhil/parsed_data/validated/svediakorp-sec988-spf145.conllu
+Reading GOLD: /home/urdatorn/git/Diachronic_Treebanks_DigPhil/parsed_data/validated/svediakorp-sec1063-spf220.conllu
+Reading GOLD: /home/urdatorn/git/Diachronic_Treebanks_DigPhil/parsed_data/validated/svediakorp-sec1033-spf190.conllu
+Reading GOLD: /home/urdatorn/git/Diachronic_Treebanks_DigPhil/parsed_data/validated/svediakorp-letter141673-Stalhammar.conllu
+Adding 77 remaining gold sentences to TRAIN
+Cleaning TRAIN...
+Cleaning SILVER...
+[REMOVED] sent_id=909  ERRORS=['Token 2: Missing form']
+[REMOVED] sent_id=912  ERRORS=['Token 2: Missing form']
+[REMOVED] sent_id=396  ERRORS=['Token 2: Missing form']
+[REMOVED] sent_id=416  ERRORS=['Token 2: Missing form']
+[REMOVED] sent_id=589  ERRORS=['Token 2: Missing form']
+[REMOVED] sent_id=25  ERRORS=['Token 2: Missing form']
+[REMOVED] sent_id=136  ERRORS=['Token 2: Missing form']
+[REMOVED] sent_id=208  ERRORS=['Token 2: Missing form']
+[REMOVED] sent_id=230  ERRORS=['Token 2: Missing form']
+[REMOVED] sent_id=245  ERRORS=['Token 2: Missing form']
+[REMOVED] sent_id=276  ERRORS=['Token 2: Missing form']
+[REMOVED] sent_id=320  ERRORS=['Token 2: Missing form']
+[REMOVED] sent_id=366  ERRORS=['Token 2: Missing form']
+[REMOVED] sent_id=519  ERRORS=['Token 2: Missing form']
+[REMOVED] sent_id=569  ERRORS=['Token 2: Missing form']
+[REMOVED] sent_id=119  ERRORS=['Token 2: Missing form']
+[REMOVED] sent_id=179  ERRORS=['Token 2: Missing form']
+[REMOVED] sent_id=188  ERRORS=['Token 2: Missing form']
+[REMOVED] sent_id=223  ERRORS=['Token 2: Missing form']
+[REMOVED] sent_id=268  ERRORS=['Token 2: Missing form']
+[REMOVED] sent_id=325  ERRORS=['Token 2: Missing form']
+[REMOVED] sent_id=388  ERRORS=['Token 2: Missing form']
+[REMOVED] sent_id=399  ERRORS=['Token 2: Missing form']
+[REMOVED] sent_id=475  ERRORS=['Token 2: Missing form']
+[REMOVED] sent_id=505  ERRORS=['Token 2: Missing form']
+[REMOVED] sent_id=520  ERRORS=['Token 2: Missing form']
+[REMOVED] sent_id=562  ERRORS=['Token 2: Missing form']
+[REMOVED] sent_id=669  ERRORS=['Token 2: Missing form']
+[REMOVED] sent_id=711  ERRORS=['Token 2: Missing form']
+[REMOVED] sent_id=731  ERRORS=['Token 2: Missing form']
+[REMOVED] sent_id=867  ERRORS=['Token 2: Missing form']
+[REMOVED] sent_id=884  ERRORS=['Token 2: Missing form']
+[REMOVED] sent_id=923  ERRORS=['Token 2: Missing form']
+[REMOVED] sent_id=939  ERRORS=['Token 2: Missing form']
+[REMOVED] sent_id=1086  ERRORS=['Token 2: Missing form']
+[REMOVED] sent_id=1179  ERRORS=['Token 2: Missing form']
+[REMOVED] sent_id=1251  ERRORS=['Token 2: Missing form']
+[REMOVED] sent_id=1345  ERRORS=['Token 2: Missing form']
+[REMOVED] sent_id=1459  ERRORS=['Token 2: Missing form']
+[REMOVED] sent_id=1656  ERRORS=['Token 2: Missing form']
+[REMOVED] sent_id=1669  ERRORS=['Token 2: Missing form']
+[REMOVED] sent_id=2_3  ERRORS=['Multiple roots found: [1, 5]']
+[REMOVED] sent_id=1266  ERRORS=['Token 17: Missing form']
+[REMOVED] sent_id=4897  ERRORS=['Token 46: Missing form', 'Token 47: Missing form']
+Cleaning DEV...
+[REMOVED] sent_id=33  ERRORS=['Token 15: Missing deprel']
+Cleaning TEST...
+[REMOVED] sent_id=33  ERRORS=['Token 15: Missing deprel']
+Writing TRAIN → /home/urdatorn/git/stanza-digphil/ud/UD_Swedish-diachronic/sv_diachronic-ud-train.conllu (13871 valid sentences)
+Writing SILVER → /home/urdatorn/git/stanza-digphil/ud/UD_Swedish-diachronic/sv_diachronic-ud-train-silver.conllu (51431 valid sentences)
+Writing DEV → /home/urdatorn/git/stanza-digphil/ud/UD_Swedish-diachronic/sv_diachronic-ud-dev.conllu (31 valid sentences)
+Writing TEST → /home/urdatorn/git/stanza-digphil/ud/UD_Swedish-diachronic/sv_diachronic-ud-test.conllu (all DIGPHIL_GOLD, 108 valid sentences)
+Done.
+Sourcing scripts/config.sh
+Running stanza dataset preparation…
+2026-03-18 13:22:51 INFO: Datasets program called with:
+/home/urdatorn/git/stanza-digphil/stanza/utils/datasets/prepare_depparse_treebank.py UD_Swedish-diachronic --gold
+Augmented 60 quotes: Counter({'《》': 9, '»«': 8, '″″': 8, '““': 7, '„”': 6, '""': 6, '„“': 6, '«»': 4, '””': 4, '「」': 2})
+Preparing data for UD_Swedish-diachronic: sv_diachronic, sv
+Reading from /home/urdatorn/git/stanza-digphil/ud/UD_Swedish-diachronic/sv_diachronic-ud-train.conllu and writing to /tmp/tmpw00sc1dk/sv_diachronic.train.gold.conllu
+Swapped 'w1, w2' for 'w1 ,w2' 94 times
+Added 86 new sentences with asdf, zzzz -> asdf,zzzz
+Reading from /home/urdatorn/git/stanza-digphil/ud/UD_Swedish-diachronic/sv_diachronic-ud-dev.conllu and writing to /tmp/tmpw00sc1dk/sv_diachronic.dev.gold.conllu
+Reading from /home/urdatorn/git/stanza-digphil/ud/UD_Swedish-diachronic/sv_diachronic-ud-test.conllu and writing to /tmp/tmpw00sc1dk/sv_diachronic.test.gold.conllu
+Copying from /tmp/tmpw00sc1dk/sv_diachronic.train.gold.conllu to /home/urdatorn/git/stanza-digphil/data/depparse/sv_diachronic.train.in.conllu
+Copying from /tmp/tmpw00sc1dk/sv_diachronic.dev.gold.conllu to /home/urdatorn/git/stanza-digphil/data/depparse/sv_diachronic.dev.in.conllu
+Copying from /tmp/tmpw00sc1dk/sv_diachronic.test.gold.conllu to /home/urdatorn/git/stanza-digphil/data/depparse/sv_diachronic.test.in.conllu
+Running stanza dependency parser training…
+./make_new_model_BERT_SILVER.sh: line 72: unexpected EOF while looking for matching `"'

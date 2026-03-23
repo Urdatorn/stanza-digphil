@@ -11,7 +11,7 @@
 #   UD data to some directory, set UDBASE to that directory, and
 #   uncomment this line.  Alternatively, put UDBASE in your shell
 #   config, Windows env variables, etc as relevant.
-export UDBASE=/Users/albin/git/stanza/ud
+export UDBASE=~/git/stanza-digphil/ud
 
 # Set NERBASE to the location of NER data folder
 # The data should be BIO format or convertable to that format
@@ -35,7 +35,7 @@ export UDBASE=/Users/albin/git/stanza/ud
 # $DATA_ROOT is a default home for where all the outputs from the
 #   preparation scripts will go.  The training scripts will then look
 #   for the stanza formatted data in that directory.
-export DATA_ROOT=/Users/albin/git/stanza/stanza/data
+export DATA_ROOT=~/git/stanza-digphil/data
 
 export TOKENIZE_DATA_DIR=$DATA_ROOT/tokenize
 export MWT_DATA_DIR=$DATA_ROOT/mwt
@@ -49,4 +49,4 @@ export CONSTITUENCY_DATA_DIR=$DATA_ROOT/constituency
 export SENTIMENT_DATA_DIR=$DATA_ROOT/sentiment
 
 # Set directories to store external word vector data
-export WORDVEC_DIR=/Users/albin/stanza_resources/sv/pretrain
+export WORDVEC_DIR=~/stanza_resources/sv/pretrain

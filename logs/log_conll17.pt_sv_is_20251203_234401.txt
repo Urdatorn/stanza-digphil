@@ -1,0 +1,87 @@
+=== LOGFILE: logs/log_conll17.pt_sv_is_20251203_234401.txt ===
+Language codes: sv is
+Using pretrained model: conll17.pt
+
+Running: python prepare-train-val-test.py sv is
+Reading: /mimer/NOBACKUP/groups/dionysus/cleland/stanza-digphil/ud-treebanks-sv/sv_lines-ud-dev.conllu
+Reading: /mimer/NOBACKUP/groups/dionysus/cleland/stanza-digphil/ud-treebanks-sv/sv_swell-ud-test.conllu
+Reading: /mimer/NOBACKUP/groups/dionysus/cleland/stanza-digphil/ud-treebanks-sv/sv_pud-ud-test.conllu
+Reading: /mimer/NOBACKUP/groups/dionysus/cleland/stanza-digphil/ud-treebanks-sv/sv_talbanken-ud-test.conllu
+Reading: /mimer/NOBACKUP/groups/dionysus/cleland/stanza-digphil/ud-treebanks-sv/sv_swell-ud-test-trg.conllu
+Reading: /mimer/NOBACKUP/groups/dionysus/cleland/stanza-digphil/ud-treebanks-sv/sv_talbanken-ud-dev.conllu
+Reading: /mimer/NOBACKUP/groups/dionysus/cleland/stanza-digphil/ud-treebanks-sv/ucxn_ud_swedish-talbanken.conllu
+Reading: /mimer/NOBACKUP/groups/dionysus/cleland/stanza-digphil/ud-treebanks-sv/sv_talbanken-ud-train.conllu
+Reading: /mimer/NOBACKUP/groups/dionysus/cleland/stanza-digphil/ud-treebanks-sv/sv_old-ud-test.conllu
+Reading: /mimer/NOBACKUP/groups/dionysus/cleland/stanza-digphil/ud-treebanks-sv/sv_lines-ud-train.conllu
+Reading: /mimer/NOBACKUP/groups/dionysus/cleland/stanza-digphil/ud-treebanks-sv/sv_lines-ud-test.conllu
+Reading: /mimer/NOBACKUP/groups/dionysus/cleland/stanza-digphil/ud-treebanks-is/is_gc-ud-dev.conllu
+Reading: /mimer/NOBACKUP/groups/dionysus/cleland/stanza-digphil/ud-treebanks-is/is_pud-ud-test.conllu
+Reading: /mimer/NOBACKUP/groups/dionysus/cleland/stanza-digphil/ud-treebanks-is/is_icepahc-ud-train.conllu
+Reading: /mimer/NOBACKUP/groups/dionysus/cleland/stanza-digphil/ud-treebanks-is/is_gc-ud-train.conllu
+Reading: /mimer/NOBACKUP/groups/dionysus/cleland/stanza-digphil/ud-treebanks-is/is_gc-ud-test.conllu
+Reading: /mimer/NOBACKUP/groups/dionysus/cleland/stanza-digphil/ud-treebanks-is/is_icepahc-ud-test.conllu
+Reading: /mimer/NOBACKUP/groups/dionysus/cleland/stanza-digphil/ud-treebanks-is/is_icepahc-ud-dev.conllu
+Reading: /mimer/NOBACKUP/groups/dionysus/cleland/stanza-digphil/ud-treebanks-is/modern/is_modern-ud-test.conllu
+Reading: /mimer/NOBACKUP/groups/dionysus/cleland/stanza-digphil/ud-treebanks-is/modern/is_modern-ud-dev.conllu
+Reading: /mimer/NOBACKUP/groups/dionysus/cleland/stanza-digphil/ud-treebanks-is/modern/is_modern-ud-train.conllu
+Skipping DigPhil MACHINE (diachron not requested).
+Reading GOLD: /mimer/NOBACKUP/groups/dionysus/cleland/stanza-digphil/alanev_raw_files/diachron-validated/svediakorp-sec330-GyllenborgC_SwenskaSpratthoken.conllu
+Reading GOLD: /mimer/NOBACKUP/groups/dionysus/cleland/stanza-digphil/alanev_raw_files/diachron-validated/svediakorp-sec254-CederborghF_BerattelseOmJohnHall.conllu
+Reading GOLD: /mimer/NOBACKUP/groups/dionysus/cleland/stanza-digphil/alanev_raw_files/diachron-validated/svediakorp-sec277-EnbomPU_MedborgeligtSkalde.conllu
+Reading GOLD: /mimer/NOBACKUP/groups/dionysus/cleland/stanza-digphil/alanev_raw_files/diachron-validated/svediakorp-sec268-DulciU_VitterhetsNojen3.conllu
+Reading GOLD: /mimer/NOBACKUP/groups/dionysus/cleland/stanza-digphil/alanev_raw_files/diachron-validated/svediakorp-sec1063-spf220.conllu
+Reading GOLD: /mimer/NOBACKUP/groups/dionysus/cleland/stanza-digphil/alanev_raw_files/diachron-validated/svediakorp-sec397-AngeredStrandbergH_UnderSodernsSol.conllu
+Reading GOLD: /mimer/NOBACKUP/groups/dionysus/cleland/stanza-digphil/alanev_raw_files/diachron-validated/svediakorp-sec324-GranbergPA_Enslighetsalskaren.conllu
+Reading GOLD: /mimer/NOBACKUP/groups/dionysus/cleland/stanza-digphil/alanev_raw_files/diachron-validated/svediakorp-sec252-BremerF_Teckningar1.conllu
+Reading GOLD: /mimer/NOBACKUP/groups/dionysus/cleland/stanza-digphil/alanev_raw_files/diachron-validated/svediakorp-sec988-spf145.conllu
+Reading GOLD: /mimer/NOBACKUP/groups/dionysus/cleland/stanza-digphil/alanev_raw_files/diachron-validated/svediakorp-sec987-spf144.conllu
+Reading GOLD: /mimer/NOBACKUP/groups/dionysus/cleland/stanza-digphil/alanev_raw_files/diachron-validated/svediakorp-sec631-HasselskogN_HallaHallaGronkoping.conllu
+Reading GOLD: /mimer/NOBACKUP/groups/dionysus/cleland/stanza-digphil/alanev_raw_files/diachron-validated/svediakorp-letter141673-Stalhammar.conllu
+Reading GOLD: /mimer/NOBACKUP/groups/dionysus/cleland/stanza-digphil/alanev_raw_files/diachron-validated/svediakorp-sec1033-spf190.conllu
+Reading GOLD: /mimer/NOBACKUP/groups/dionysus/cleland/stanza-digphil/alanev_raw_files/diachron-validated/svediakorp-sec25-Runius.conllu
+Reading GOLD: /mimer/NOBACKUP/groups/dionysus/cleland/stanza-digphil/alanev_raw_files/diachron-validated/svediakorp-sec486-SchwartzMS_BellmansSkor.conllu
+Reading GOLD: /mimer/NOBACKUP/groups/dionysus/cleland/stanza-digphil/alanev_raw_files/diachron-validated/svediakorp-sec452-NyblomH_FantasierFyra.conllu
+Reading GOLD: /mimer/NOBACKUP/groups/dionysus/cleland/stanza-digphil/alanev_raw_files/diachron-validated/svediakorp-sec613-EngstromA_StrindbergOchJag.conllu
+Reading GOLD: /mimer/NOBACKUP/groups/dionysus/cleland/stanza-digphil/alanev_raw_files/diachron-validated/svediakorp-sec208-Anonym_DetGrasligaMordet.conllu
+Reading GOLD: /mimer/NOBACKUP/groups/dionysus/cleland/stanza-digphil/alanev_raw_files/diachron-validated/svediakorp-sec639-HeidenstamV_Proletarfilosofiens.conllu
+Reading GOLD: /mimer/NOBACKUP/groups/dionysus/cleland/stanza-digphil/alanev_raw_files/diachron-validated/svediakorp-sec1102-spf259.conllu
+Reading GOLD: /mimer/NOBACKUP/groups/dionysus/cleland/stanza-digphil/alanev_raw_files/diachron-validated/svediakorp-sec991-spf148.conllu
+Cleaning TRAIN...
+Cleaning DEV...
+[REMOVED] sent_id=33  ERRORS=['Token 15: Missing deprel']
+Cleaning TEST...
+Writing TRAIN → /mimer/NOBACKUP/groups/dionysus/cleland/stanza-digphil/ud/UD_Swedish-diachronic/sv_diachronic-ud-train.conllu (73384 valid sentences)
+Writing DEV → /mimer/NOBACKUP/groups/dionysus/cleland/stanza-digphil/ud/UD_Swedish-diachronic/sv_diachronic-ud-dev.conllu (9 valid sentences)
+Writing TEST → /mimer/NOBACKUP/groups/dionysus/cleland/stanza-digphil/ud/UD_Swedish-diachronic/sv_diachronic-ud-test.conllu (99 valid sentences)
+Done.
+Sourcing scripts/config_alvis.sh
+Running stanza dataset preparation…
+2025-12-03 23:44:11 INFO: Datasets program called with:
+/mimer/NOBACKUP/groups/dionysus/cleland/stanza-digphil/stanza/utils/datasets/prepare_depparse_treebank.py UD_Swedish-diachronic --wordvec_pretrain_file /cephyr/users/cleland/Alvis/stanza_resources/sv/pretrain/conll17.pt
+2025-12-03 23:44:11 DEBUG: Downloading resource file from https://raw.githubusercontent.com/stanfordnlp/stanza-resources/main/resources_1.11.0.json
+Downloading https://raw.githubusercontent.com/stanfordnlp/stanza-resources/main/resources_1.11.0.json:   0%| | 0.0Downloading https://raw.githubusercontent.com/stanfordnlp/stanza-resources/main/resources_1.11.0.json: 435kB [00:00, 138MB/s]
+2025-12-03 23:44:11 INFO: Downloaded file to /cephyr/users/cleland/Alvis/stanza_resources/resources.json
+2025-12-03 23:44:11 DEBUG: Processing parameter "processors"...
+2025-12-03 23:44:11 WARNING: Can not find pos: diachronic from official model list. Ignoring it.
+2025-12-03 23:44:11 INFO: Downloading these customized packages for language: sv (Swedish)...
+=======================
+| Processor | Package |
+-----------------------
+=======================
+
+2025-12-03 23:44:11 INFO: Finished downloading models and saved to /cephyr/users/cleland/Alvis/stanza_resources
+2025-12-03 23:44:11 INFO: Using tagger model in /cephyr/users/cleland/Alvis/stanza_resources/sv/pos/diachronic.pt for sv_diachronic
+2025-12-03 23:44:11 INFO: Using model /cephyr/users/cleland/Alvis/stanza_resources/sv/forward_charlm/conll17.pt for forward charlm
+2025-12-03 23:44:11 INFO: Using model /cephyr/users/cleland/Alvis/stanza_resources/sv/backward_charlm/conll17.pt for backward charlm
+Augmented 502 quotes: Counter({'""': 57, '«»': 55, '「」': 53, '″″': 52, '《》': 51, '””': 50, '»«': 49, '„”': 48, '““': 45, '„“': 42})
+2025-12-03 23:44:16 INFO: Running tagger to retag /local/tmp.5441282/tmpeqgzmft2/sv_diachronic.train.gold.conllu to /mimer/NOBACKUP/groups/dionysus/cleland/stanza-digphil/data/depparse/sv_diachronic.train.in.conllu
+  Args: ['--wordvec_dir', '/cephyr/users/cleland/Alvis/stanza_resources/sv/pretrain', '--lang', 'sv', '--shorthand', 'sv_diachronic', '--mode', 'predict', '--save_dir', '/cephyr/users/cleland/Alvis/stanza_resources/sv/pos', '--save_name', 'diachronic.pt', '--wordvec_pretrain_file', '/cephyr/users/cleland/Alvis/stanza_resources/sv/pretrain/conll17.pt', '--charlm', '--charlm_shorthand', 'sv_conll17', '--charlm_forward_file', '/cephyr/users/cleland/Alvis/stanza_resources/sv/forward_charlm/conll17.pt', '--charlm_backward_file', '/cephyr/users/cleland/Alvis/stanza_resources/sv/backward_charlm/conll17.pt', '--eval_file', '/local/tmp.5441282/tmpeqgzmft2/sv_diachronic.train.gold.conllu', '--output_file', '/mimer/NOBACKUP/groups/dionysus/cleland/stanza-digphil/data/depparse/sv_diachronic.train.in.conllu']
+2025-12-03 23:44:16 INFO: Running tagger in predict mode
+2025-12-03 23:44:16 INFO: Loading model from: /cephyr/users/cleland/Alvis/stanza_resources/sv/pos/diachronic.pt
+2025-12-03 23:44:18 DEBUG: Loaded pretrain from /cephyr/users/cleland/Alvis/stanza_resources/sv/pretrain/conll17.pt
+2025-12-03 23:44:18 DEBUG: POS model loading charmodels: /cephyr/users/cleland/Alvis/stanza_resources/sv/forward_charlm/conll17.pt and /cephyr/users/cleland/Alvis/stanza_resources/sv/backward_charlm/conll17.pt
+2025-12-03 23:44:18 DEBUG: Loading charlm from /cephyr/users/cleland/Alvis/stanza_resources/sv/forward_charlm/conll17.pt
+2025-12-03 23:44:18 DEBUG: Loading charlm from /cephyr/users/cleland/Alvis/stanza_resources/sv/backward_charlm/conll17.pt
+2025-12-03 23:44:19 DEBUG: Building Adam with lr=0.003000, betas=(0.9, 0.95), eps=0.000001
+2025-12-03 23:44:21 INFO: Loading data with batch size 250...
+./make_new_model.sh: line 58: 1401181 Terminated              python -m stanza.utils.datasets.prepare_depparse_treebank UD_Swedish-diachronic --wordvec_pretrain_file "/cephyr/users/cleland/Alvis/stanza_resources/sv/pretrain/${PRETRAINED_MODEL}"

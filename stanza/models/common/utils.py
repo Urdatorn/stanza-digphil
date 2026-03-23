@@ -17,13 +17,22 @@ import unicodedata
 import zipfile
 
 import torch
+import torch.nn as nn
 import numpy as np
+
+try:
+    from udtools import udeval
+except ImportError:
+    from udtools.src.udtools import udeval
+
+try:
+    from udtools.udeval import UDError
+except ImportError:
+    from udtools.src.udtools.udeval import UDError
 
 from stanza.models.common.constant import lcode2lang
 import stanza.models.common.seq2seq_constant as constant
 from stanza.resources.default_packages import TRANSFORMER_NICKNAMES
-import stanza.utils.conll18_ud_eval as ud_eval
-from stanza.utils.conll18_ud_eval import UDError
 
 logger = logging.getLogger('stanza')
 
@@ -145,27 +154,27 @@ def ud_scores(gold_conllu_file, system_conllu_file):
 
     if has_readline(gold_conllu_file):
         try:
-            gold_ud = ud_eval.load_conllu(gold_conllu_file, '', {})
+            gold_ud = udeval.load_conllu(gold_conllu_file, '', {})
         except UDError as e:
             raise UDError("Could not process gold UD file") from e
     else:
         try:
-            gold_ud = ud_eval.load_conllu_file(gold_conllu_file)
+            gold_ud = udeval.load_conllu_file(gold_conllu_file)
         except UDError as e:
             raise UDError("Could not read %s" % gold_conllu_file) from e
 
     if has_readline(system_conllu_file):
         try:
-            system_ud = ud_eval.load_conllu(system_conllu_file, '', {})
+            system_ud = udeval.load_conllu(system_conllu_file, '', {})
         except UDError as e:
             raise UDError("Could not process system UD file") from e
     else:
         try:
-            system_ud = ud_eval.load_conllu_file(system_conllu_file)
+            system_ud = udeval.load_conllu_file(system_conllu_file)
         except UDError as e:
             raise UDError("Could not read %s" % system_conllu_file) from e
 
-    evaluation = ud_eval.evaluate(gold_ud, system_ud)
+    evaluation = udeval.evaluate(gold_ud, system_ud)
 
     return evaluation
 
@@ -231,6 +240,9 @@ def dispatch_optimizer(name, parameters, opt_logger, lr=None, betas=None, eps=No
             raise ModuleNotFoundError("Could not create mirror_madgrad optimizer.  Perhaps the madgrad package is not installed") from e
         opt_logger.debug("Building MirrorMADGRAD with lr=%f, momentum=%f%s", lr, momentum, extra_logging)
         return madgrad.MirrorMADGRAD(parameters, lr=lr, momentum=momentum, **extra_args)
+    elif name == 'rmsprop':
+        opt_logger.debug("Building RMSprop with lr=%f%s", lr, extra_logging)
+        return torch.optim.RMSprop(parameters, lr=lr, **extra_args)
     else:
         raise ValueError("Unsupported optimizer: {}".format(name))
 
@@ -279,7 +291,7 @@ def get_optimizer(name, model, lr, betas=(0.9, 0.999), eps=1e-8, momentum=0, wei
     return dispatch_optimizer(name, parameters, opt_logger=opt_logger, lr=lr, betas=betas, eps=eps, momentum=momentum, **extra_args)
 
 def get_split_optimizer(name, model, lr, betas=(0.9, 0.999), eps=1e-8, momentum=0, weight_decay=None, bert_learning_rate=0.0, bert_weight_decay=None, charlm_learning_rate=0.0, is_peft=False, bert_finetune_layers=None):
-    """Same as `get_optimizer`, but splits the optimizer for Bert into a seperate optimizer"""
+    """Same as `get_optimizer`, but splits the optimizer for Bert into a separate optimizer"""
     base_parameters = [p for n, p in model.named_parameters()
                        if p.requires_grad and not n.startswith("bert_model.")
                        and not n.startswith("charmodel_forward.") and not n.startswith("charmodel_backward.")]
@@ -667,6 +679,8 @@ def standard_model_file_name(args, model_type, **kwargs):
 
     if not os.path.exists(os.path.join(args['save_dir'], model_file)) and os.path.exists(model_file):
         return model_file
+    if model_dir.startswith(args['save_dir']):
+        return model_file
     return os.path.join(args['save_dir'], model_file)
 
 def escape_misc_space(space):
@@ -830,3 +844,150 @@ def build_save_each_filename(base_filename):
         pieces = os.path.splitext(model_save_each_file)
         base_filename = pieces[0] + "_%04d" + pieces[1]
     return base_filename
+
+# the constituency parser went through a large suite of experiments to
+# optimize which nonlinearity to use
+#
+# this is on a VI dataset, VLSP_22, using 1/10th of the data as a dev set
+# (no released test set at the time of the experiment)
+# original non-Bert tagger, with 1 iteration each instead of averaged over 5
+# considering the number of experiments and the length of time they would take
+#
+# Gelu had the highest score, which tracks with other experiments run.
+# Note that publicly released models have typically used Relu
+# on account of the runtime speed improvement
+#
+# Anyway, a larger experiment of 5x models on gelu or relu, using the
+# Roberta POS tagger and a corpus of silver trees, resulted in 0.8270
+# for relu and 0.8248 for gelu.  So it is not even clear that
+# switching to gelu would be an accuracy improvement.
+#
+# Gelu: 82.32
+# Relu: 82.14
+# Mish: 81.95
+# Relu6: 81.91
+# Silu: 81.90
+# ELU: 81.73
+# Hardswish: 81.67
+# Softsign: 81.63
+# Hardtanh: 81.44
+# Celu: 81.43
+# Selu: 81.17
+#   TODO: need to redo the prelu experiment with
+#         possibly different numbers of parameters
+#         and proper weight decay
+# Prelu: 80.95 (terminated early)
+# Softplus: 80.94
+# Logsigmoid: 80.91
+# Hardsigmoid: 79.03
+# RReLU: 77.00
+# Hardshrink: failed
+# Softshrink: failed
+NONLINEARITY = {
+    'none':       nn.Identity,
+    'celu':       nn.CELU,
+    'elu':        nn.ELU,
+    'gelu':       nn.GELU,
+    'glu':        nn.GLU,
+    'hardsigmoid':nn.Hardsigmoid,
+    'hardshrink': nn.Hardshrink,
+    'hardswish':  nn.Hardswish,
+    'hardtanh':   nn.Hardtanh,
+    'leaky_relu': nn.LeakyReLU,
+    'logsigmoid': nn.LogSigmoid,
+    'mish':       nn.Mish,
+    'prelu':      nn.PReLU,
+    'relu':       nn.ReLU,
+    'relu6':      nn.ReLU6,
+    'rrelu':      nn.RReLU,
+    'selu':       nn.SELU,
+    'silu':       nn.SiLU,
+    'softplus':   nn.Softplus,
+    'softshrink': nn.Softshrink,
+    'softsign':   nn.Softsign,
+    'tanhshrink': nn.Tanhshrink,
+    'tanh':       nn.Tanh,
+}
+
+def build_nonlinearity(nonlinearity):
+    """
+    Look up "nonlinearity" in a map from function name to function, build the appropriate layer.
+    """
+    if nonlinearity is None:
+        return nn.Identity()
+    if nonlinearity in NONLINEARITY:
+        return NONLINEARITY[nonlinearity]()
+    raise ValueError('Chosen value of nonlinearity, "%s", not handled' % nonlinearity)
+
+DEFAULT_WORD_CUTOFF = 7
+
+def update_word_cutoff(pt, word_cutoff):
+    """
+    If a word cutoff option wasn't set, pick a word cutoff based on the size of the pretrain
+
+    Using a lower word cutoff for the smaller pretrains helps quite a bit on the Abkhaz tagger,
+    where all we have is a very small PT.
+
+    no WV:
+    ab_abnc dev
+      UPOS    XPOS  UFeats AllTags
+    89.06   62.53   75.21   61.53
+    ab_abnc test
+      UPOS    XPOS  UFeats AllTags
+    88.96   61.37   74.85   60.29
+
+    WV, cutoff 7
+    ab_abnc dev
+      UPOS    XPOS  UFeats AllTags
+    89.15   62.76   75.43   61.62
+    ab_abnc test
+      UPOS    XPOS  UFeats AllTags
+    89.64   61.56   75.31   60.88
+
+    WV, cutoff 0
+    ab_abnc
+      UPOS    XPOS  UFeats AllTags
+    90.02   64.81   76.75   64.13
+    ab_abnc
+      UPOS    XPOS  UFeats AllTags
+    90.19   63.95   76.62   63.59
+
+    The results are less compelling for depparse, though:
+
+    no WV
+    ab_abnc dev
+      UAS   LAS  CLAS  MLAS  BLEX
+    78.85 65.27 57.31 56.27 57.31
+    ab_abnc test
+      UAS   LAS  CLAS  MLAS  BLEX
+    78.11 64.22 57.45 56.90 57.45
+
+    WV with cutoff 7
+    ab_abnc dev
+      UAS   LAS  CLAS  MLAS  BLEX
+    79.49 65.41 57.15 56.38 57.15
+    ab_abnc test
+      UAS   LAS  CLAS  MLAS  BLEX
+    77.30 64.41 57.13 56.65 57.13
+
+    WV with cutoff 0
+    ab_abnc dev
+      UAS   LAS  CLAS  MLAS  BLEX
+    80.04 65.68 56.81 56.04 56.81
+    ab_abnc test
+      UAS   LAS  CLAS  MLAS  BLEX
+    77.66 64.86 57.28 57.00 57.28
+    """
+    if word_cutoff is not None:
+        return word_cutoff
+
+    if pt is None:
+        logger.info('Using 0 as the word cutoff (no pretrain available)')
+        return 0
+
+    if len(pt) < 5000:
+        word_cutoff = 0
+    else:
+        word_cutoff = DEFAULT_WORD_CUTOFF
+    logger.info('Using %d as the word cutoff based on the size of the pretrain (%d)', word_cutoff, len(pt))
+    return word_cutoff

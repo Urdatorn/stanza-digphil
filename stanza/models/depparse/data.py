@@ -1,9 +1,11 @@
+from collections import Counter
 import random
 import logging
 import torch
 
 from stanza.models.common.bert_embedding import filter_data, needs_length_filter
 from stanza.models.common.data import map_to_ids, get_long_tensor, get_float_tensor, sort_all
+from stanza.models.common.utils import DEFAULT_WORD_CUTOFF
 from stanza.models.common.vocab import PAD_ID, VOCAB_PREFIX, ROOT_ID, CompositeVocab, CharVocab
 from stanza.models.pos.vocab import WordVocab, XPOSVocab, FeatureVocab, MultiVocab
 from stanza.models.pos.xpos_vocab_factory import xpos_vocab_factory
@@ -71,6 +73,7 @@ class DataLoader:
         self.shuffled = not self.eval
         self.sort_during_eval = sort_during_eval
         self.doc = doc
+        self.reversed = args.get('reversed', False)
         data = self.load_doc(doc)
 
         # handle vocab
@@ -106,12 +109,13 @@ class DataLoader:
 
     def init_vocab(self, data):
         assert self.eval == False # for eval vocab must exist
+        cutoff = self.args['word_cutoff'] if self.args.get('word_cutoff') is not None else DEFAULT_WORD_CUTOFF
         charvocab = CharVocab(data, self.args['shorthand'])
-        wordvocab = WordVocab(data, self.args['shorthand'], cutoff=7, lower=True)
+        wordvocab = WordVocab(data, self.args['shorthand'], cutoff=cutoff, lower=True)
         uposvocab = WordVocab(data, self.args['shorthand'], idx=1)
         xposvocab = xpos_vocab_factory(data, self.args['shorthand'])
         featsvocab = FeatureVocab(data, self.args['shorthand'], idx=3)
-        lemmavocab = WordVocab(data, self.args['shorthand'], cutoff=7, idx=4, lower=True)
+        lemmavocab = WordVocab(data, self.args['shorthand'], cutoff=cutoff, idx=4, lower=True)
         deprelvocab = WordVocab(data, self.args['shorthand'], idx=6)
         vocab = MultiVocab({'char': charvocab,
                             'word': wordvocab,
@@ -190,7 +194,19 @@ class DataLoader:
     def load_doc(self, doc):
         data = doc.get([TEXT, UPOS, XPOS, FEATS, LEMMA, HEAD, DEPREL], as_sentences=True)
         data = self.resolve_none(data)
+        if self.reversed:
+            data = self.reverse_sentences(data)
         return data
+
+    def reverse_sentences(self, data):
+        new_data = []
+        for sentence in data:
+            sentence = sentence[::-1]
+            for word in sentence:
+                if word[5] != 0 and word[5] != '_':
+                    word[5] = len(sentence) + 1 - word[5]
+            new_data.append(sentence)
+        return new_data
 
     def resolve_none(self, data):
         # replace None to '_'
@@ -230,4 +246,29 @@ def to_int(string, ignore_error=False):
         else:
             raise err
     return res
+
+class InfiniteBatch:
+    def __init__(self, *batches, weights=None):
+        self.batches = batches
+        self.iterators = [iter(batch) for batch in self.batches]
+        if weights is None:
+            self.weights = [1.0 for _ in batches]
+        else:
+            assert len(weights) == len(batches), "Got a weights parameter of a different length from the batches parameter"
+            self.weights = weights
+
+        self.counts = Counter()
+
+    def next_batch(self):
+        if len(self.batches) == 1:
+            batch_idx = 0
+        else:
+            batch_idx = random.choices(range(len(self.batches)), self.weights)[0]
+        self.counts[batch_idx] += 1
+        batch = next(self.iterators[batch_idx], None)
+        if batch is None:
+            self.batches[batch_idx].reshuffle()
+            self.iterators[batch_idx] = iter(self.batches[batch_idx])
+            batch = next(self.iterators[batch_idx])
+        return batch
 

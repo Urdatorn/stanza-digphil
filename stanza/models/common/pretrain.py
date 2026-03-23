@@ -41,6 +41,9 @@ class Pretrain:
         self._max_vocab = max_vocab
         self._save_to_file = save_to_file
 
+    def __len__(self):
+        return len(self.vocab)
+
     @property
     def vocab(self):
         if not hasattr(self, '_vocab'):
@@ -59,7 +62,6 @@ class Pretrain:
                 # TODO: after making the next release, remove the weights_only=False version
                 try:
                     data = torch.load(self.filename, lambda storage, loc: storage, weights_only=True)
-                    #data = torch.load(self.filename, map_location="cpu", weights_only=False)
                 except UnpicklingError:
                     data = torch.load(self.filename, lambda storage, loc: storage, weights_only=False)
                     warnings.warn("The saved pretrain has an old format using numpy.ndarray instead of torch to store weights.  This version of Stanza can support reading both the new and the old formats.  Future versions will only allow loading with weights_only=True.  Please resave the pretrained embedding using this version ASAP.")

@@ -188,8 +188,6 @@ def add_mwt(processors, resources, lang):
     If tokenize is in the list, but mwt is not, and there is a corresponding
     tokenize and mwt pair in the resources file, mwt is added so no missing
     mwt errors are raised.
-
-    TODO: how does this handle EWT in English?
     """
     value = processors[TOKENIZE]
     if value in resources[lang][PACKAGES] and MWT in resources[lang][PACKAGES][value]:
@@ -605,6 +603,7 @@ def download(
             md5=resources[lang]['default_md5'],
         )
         unzip(os.path.join(model_dir, lang), 'default.zip')
+        download_list = [['zip', 'default.zip']]
     # Customize: maintain download list
     else:
         download_list = maintain_processor_list(resources, lang, package, processors, allow_pretrain=True)
@@ -619,3 +618,4 @@ def download(
                         proxies=proxies,
                         log_info=True)
     logger.info(f'Finished downloading models and saved to {model_dir}')
+    return download_list

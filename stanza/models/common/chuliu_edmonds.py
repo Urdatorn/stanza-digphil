@@ -244,38 +244,19 @@ def chuliu_edmonds(scores):
 
 #===============================================================
 def chuliu_edmonds_one_root(scores):
-    """"""
+    """
+    Return the results of the dependency tree search, but with exactly one link to root (0)
 
+    scores is a numpy array, with scores[x][y] should be the cost for assigning y to be the head of x
+    """
+    # we fiddle the scores to prevent double root arcs
+    # we therefore copy the array so it doesn't get messed up at the source
+    scores = scores.copy()
     scores = scores.astype(np.float64)
+    min_score = scores[np.isfinite(scores)].min()
+    scores[:, 0] = scores[:, 0] + (min_score * scores.shape[0])
     tree = chuliu_edmonds(scores)
+    # +1 because we cut off the first column of the tree
     roots_to_try = np.where(np.equal(tree[1:], 0))[0]+1
-    if len(roots_to_try) == 1:
-        return tree
-
-    #-------------------------------------------------------------
-    def set_root(scores, root):
-        root_score = scores[root,0]
-        scores = np.array(scores)
-        scores[1:,0] = -float('inf')
-        scores[root] = -float('inf')
-        scores[root,0] = 0
-        return scores, root_score
-    #-------------------------------------------------------------
-
-    best_score, best_tree = -np.inf, None # This is what's causing it to crash
-    for root in roots_to_try:
-        _scores, root_score = set_root(scores, root)
-        _tree = chuliu_edmonds(_scores)
-        tree_probs = _scores[np.arange(len(_scores)), _tree]
-        tree_score = (tree_probs).sum()+(root_score) if (tree_probs > -np.inf).all() else -np.inf
-        if tree_score > best_score:
-            best_score = tree_score
-            best_tree = _tree
-    try:
-        assert best_tree is not None
-    except:
-        with open('debug.log', 'w') as f:
-            f.write('{}: {}, {}\n'.format(tree, scores, roots_to_try))
-            f.write('{}: {}, {}, {}\n'.format(_tree, _scores, tree_probs, tree_score))
-        raise
-    return best_tree
+    assert len(roots_to_try) == 1, "Rescaling by the lowest score should have prevented using multiple root edges"
+    return tree

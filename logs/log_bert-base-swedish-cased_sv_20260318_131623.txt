@@ -1,0 +1,271 @@
+=== LOGFILE: logs/log_bert-base-swedish-cased_sv_20260318_131623.txt ===
+Language codes: sv
+Using pretrained model: KBLab/bert-base-swedish-cased
+
+Running: python prepare-train-val-SILVER.py sv
+Reading: /home/urdatorn/git/stanza-digphil/ud-treebanks-sv/sv_pud-ud-test.conllu
+Reading: /home/urdatorn/git/stanza-digphil/ud-treebanks-sv/sv_lines-ud-train.conllu
+Reading: /home/urdatorn/git/stanza-digphil/ud-treebanks-sv/sv_swell-ud-test-trg.conllu
+Reading: /home/urdatorn/git/stanza-digphil/ud-treebanks-sv/sv_swell-ud-test.conllu
+Reading: /home/urdatorn/git/stanza-digphil/ud-treebanks-sv/sv_talbanken-ud-test.conllu
+Reading: /home/urdatorn/git/stanza-digphil/ud-treebanks-sv/sv_old-ud-test.conllu
+Reading: /home/urdatorn/git/stanza-digphil/ud-treebanks-sv/sv_talbanken-ud-dev.conllu
+Reading: /home/urdatorn/git/stanza-digphil/ud-treebanks-sv/sv_talbanken-ud-train.conllu
+Reading: /home/urdatorn/git/stanza-digphil/ud-treebanks-sv/sv_lines-ud-dev.conllu
+Reading: /home/urdatorn/git/stanza-digphil/ud-treebanks-sv/sv_lines-ud-test.conllu
+Loading DigPhil MACHINE for SILVER (minus gold overlap)…
+Reading GOLD: /home/urdatorn/git/Diachronic_Treebanks_DigPhil/parsed_data/validated/svediakorp-sec987-spf144.conllu
+Reading GOLD: /home/urdatorn/git/Diachronic_Treebanks_DigPhil/parsed_data/validated/svediakorp-sec613-EngstromA_StrindbergOchJag.conllu
+Reading GOLD: /home/urdatorn/git/Diachronic_Treebanks_DigPhil/parsed_data/validated/svediakorp-sec268-DulciU_VitterhetsNojen3.conllu
+Reading GOLD: /home/urdatorn/git/Diachronic_Treebanks_DigPhil/parsed_data/validated/svediakorp-sec25-Runius.conllu
+Reading GOLD: /home/urdatorn/git/Diachronic_Treebanks_DigPhil/parsed_data/validated/svediakorp-sec208-Anonym_DetGrasligaMordet.conllu
+Reading GOLD: /home/urdatorn/git/Diachronic_Treebanks_DigPhil/parsed_data/validated/svediakorp-sec324-GranbergPA_Enslighetsalskaren.conllu
+Reading GOLD: /home/urdatorn/git/Diachronic_Treebanks_DigPhil/parsed_data/validated/svediakorp-sec254-CederborghF_BerattelseOmJohnHall.conllu
+Reading GOLD: /home/urdatorn/git/Diachronic_Treebanks_DigPhil/parsed_data/validated/svediakorp-sec397-AngeredStrandbergH_UnderSodernsSol.conllu
+Reading GOLD: /home/urdatorn/git/Diachronic_Treebanks_DigPhil/parsed_data/validated/svediakorp-sec452-NyblomH_FantasierFyra.conllu
+Reading GOLD: /home/urdatorn/git/Diachronic_Treebanks_DigPhil/parsed_data/validated/svediakorp-sec252-BremerF_Teckningar1.conllu
+Reading GOLD: /home/urdatorn/git/Diachronic_Treebanks_DigPhil/parsed_data/validated/svediakorp-sec486-SchwartzMS_BellmansSkor.conllu
+Reading GOLD: /home/urdatorn/git/Diachronic_Treebanks_DigPhil/parsed_data/validated/svediakorp-sec330-GyllenborgC_SwenskaSpratthoken.conllu
+Reading GOLD: /home/urdatorn/git/Diachronic_Treebanks_DigPhil/parsed_data/validated/svediakorp-sec631-HasselskogN_HallaHallaGronkoping.conllu
+Reading GOLD: /home/urdatorn/git/Diachronic_Treebanks_DigPhil/parsed_data/validated/svediakorp-sec277-EnbomPU_MedborgeligtSkalde.conllu
+Reading GOLD: /home/urdatorn/git/Diachronic_Treebanks_DigPhil/parsed_data/validated/svediakorp-sec1102-spf259.conllu
+Reading GOLD: /home/urdatorn/git/Diachronic_Treebanks_DigPhil/parsed_data/validated/svediakorp-sec991-spf148.conllu
+Reading GOLD: /home/urdatorn/git/Diachronic_Treebanks_DigPhil/parsed_data/validated/svediakorp-sec639-HeidenstamV_Proletarfilosofiens.conllu
+Reading GOLD: /home/urdatorn/git/Diachronic_Treebanks_DigPhil/parsed_data/validated/svediakorp-sec988-spf145.conllu
+Reading GOLD: /home/urdatorn/git/Diachronic_Treebanks_DigPhil/parsed_data/validated/svediakorp-sec1063-spf220.conllu
+Reading GOLD: /home/urdatorn/git/Diachronic_Treebanks_DigPhil/parsed_data/validated/svediakorp-sec1033-spf190.conllu
+Reading GOLD: /home/urdatorn/git/Diachronic_Treebanks_DigPhil/parsed_data/validated/svediakorp-letter141673-Stalhammar.conllu
+Adding 76 remaining gold sentences to TRAIN
+Cleaning TRAIN...
+[REMOVED] sent_id=33  ERRORS=['Token 15: Missing deprel']
+Cleaning SILVER...
+[REMOVED] sent_id=909  ERRORS=['Token 2: Missing form']
+[REMOVED] sent_id=912  ERRORS=['Token 2: Missing form']
+[REMOVED] sent_id=396  ERRORS=['Token 2: Missing form']
+[REMOVED] sent_id=416  ERRORS=['Token 2: Missing form']
+[REMOVED] sent_id=589  ERRORS=['Token 2: Missing form']
+[REMOVED] sent_id=25  ERRORS=['Token 2: Missing form']
+[REMOVED] sent_id=136  ERRORS=['Token 2: Missing form']
+[REMOVED] sent_id=208  ERRORS=['Token 2: Missing form']
+[REMOVED] sent_id=230  ERRORS=['Token 2: Missing form']
+[REMOVED] sent_id=245  ERRORS=['Token 2: Missing form']
+[REMOVED] sent_id=276  ERRORS=['Token 2: Missing form']
+[REMOVED] sent_id=320  ERRORS=['Token 2: Missing form']
+[REMOVED] sent_id=366  ERRORS=['Token 2: Missing form']
+[REMOVED] sent_id=519  ERRORS=['Token 2: Missing form']
+[REMOVED] sent_id=569  ERRORS=['Token 2: Missing form']
+[REMOVED] sent_id=119  ERRORS=['Token 2: Missing form']
+[REMOVED] sent_id=179  ERRORS=['Token 2: Missing form']
+[REMOVED] sent_id=188  ERRORS=['Token 2: Missing form']
+[REMOVED] sent_id=223  ERRORS=['Token 2: Missing form']
+[REMOVED] sent_id=268  ERRORS=['Token 2: Missing form']
+[REMOVED] sent_id=325  ERRORS=['Token 2: Missing form']
+[REMOVED] sent_id=388  ERRORS=['Token 2: Missing form']
+[REMOVED] sent_id=399  ERRORS=['Token 2: Missing form']
+[REMOVED] sent_id=475  ERRORS=['Token 2: Missing form']
+[REMOVED] sent_id=505  ERRORS=['Token 2: Missing form']
+[REMOVED] sent_id=520  ERRORS=['Token 2: Missing form']
+[REMOVED] sent_id=562  ERRORS=['Token 2: Missing form']
+[REMOVED] sent_id=669  ERRORS=['Token 2: Missing form']
+[REMOVED] sent_id=711  ERRORS=['Token 2: Missing form']
+[REMOVED] sent_id=731  ERRORS=['Token 2: Missing form']
+[REMOVED] sent_id=867  ERRORS=['Token 2: Missing form']
+[REMOVED] sent_id=884  ERRORS=['Token 2: Missing form']
+[REMOVED] sent_id=923  ERRORS=['Token 2: Missing form']
+[REMOVED] sent_id=939  ERRORS=['Token 2: Missing form']
+[REMOVED] sent_id=1086  ERRORS=['Token 2: Missing form']
+[REMOVED] sent_id=1179  ERRORS=['Token 2: Missing form']
+[REMOVED] sent_id=1251  ERRORS=['Token 2: Missing form']
+[REMOVED] sent_id=1345  ERRORS=['Token 2: Missing form']
+[REMOVED] sent_id=1459  ERRORS=['Token 2: Missing form']
+[REMOVED] sent_id=1656  ERRORS=['Token 2: Missing form']
+[REMOVED] sent_id=1669  ERRORS=['Token 2: Missing form']
+[REMOVED] sent_id=2_3  ERRORS=['Multiple roots found: [1, 5]']
+[REMOVED] sent_id=1266  ERRORS=['Token 17: Missing form']
+[REMOVED] sent_id=4897  ERRORS=['Token 46: Missing form', 'Token 47: Missing form']
+Cleaning DEV...
+Cleaning TEST...
+[REMOVED] sent_id=33  ERRORS=['Token 15: Missing deprel']
+Writing TRAIN → /home/urdatorn/git/stanza-digphil/ud/UD_Swedish-diachronic/sv_diachronic-ud-train.conllu (13869 valid sentences)
+Writing SILVER → /home/urdatorn/git/stanza-digphil/ud/UD_Swedish-diachronic/sv_diachronic-ud-train-silver.conllu (51431 valid sentences)
+Writing DEV → /home/urdatorn/git/stanza-digphil/ud/UD_Swedish-diachronic/sv_diachronic-ud-dev.conllu (33 valid sentences)
+Writing TEST → /home/urdatorn/git/stanza-digphil/ud/UD_Swedish-diachronic/sv_diachronic-ud-test.conllu (all DIGPHIL_GOLD, 108 valid sentences)
+Done.
+Sourcing scripts/config.sh
+Running stanza dataset preparation…
+2026-03-18 13:16:26 INFO: Datasets program called with:
+/home/urdatorn/git/stanza-digphil/stanza/utils/datasets/prepare_depparse_treebank.py UD_Swedish-diachronic --gold
+Augmented 60 quotes: Counter({'《》': 9, '»«': 8, '″″': 8, '““': 7, '„”': 6, '""': 6, '„“': 6, '«»': 4, '””': 4, '「」': 2})
+Preparing data for UD_Swedish-diachronic: sv_diachronic, sv
+Reading from /home/urdatorn/git/stanza-digphil/ud/UD_Swedish-diachronic/sv_diachronic-ud-train.conllu and writing to /tmp/tmpz3gm6g6g/sv_diachronic.train.gold.conllu
+Swapped 'w1, w2' for 'w1 ,w2' 94 times
+Added 85 new sentences with asdf, zzzz -> asdf,zzzz
+Reading from /home/urdatorn/git/stanza-digphil/ud/UD_Swedish-diachronic/sv_diachronic-ud-dev.conllu and writing to /tmp/tmpz3gm6g6g/sv_diachronic.dev.gold.conllu
+Reading from /home/urdatorn/git/stanza-digphil/ud/UD_Swedish-diachronic/sv_diachronic-ud-test.conllu and writing to /tmp/tmpz3gm6g6g/sv_diachronic.test.gold.conllu
+Copying from /tmp/tmpz3gm6g6g/sv_diachronic.train.gold.conllu to /home/urdatorn/git/stanza-digphil/data/depparse/sv_diachronic.train.in.conllu
+Copying from /tmp/tmpz3gm6g6g/sv_diachronic.dev.gold.conllu to /home/urdatorn/git/stanza-digphil/data/depparse/sv_diachronic.dev.in.conllu
+Copying from /tmp/tmpz3gm6g6g/sv_diachronic.test.gold.conllu to /home/urdatorn/git/stanza-digphil/data/depparse/sv_diachronic.test.in.conllu
+Running stanza dependency parser training…
+2026-03-18 13:16:28 INFO: Training program called with:
+/home/urdatorn/git/stanza-digphil/stanza/utils/training/run_depparse.py UD_Swedish-diachronic --batch_size 32 --dropout 0.33 --use_bert --bert_model KBLab/bert-base-swedish-cased --silver_file ud/UD_Swedish-diachronic/sv_diachronic-ud-train-silver.conllu
+2026-03-18 13:16:28 DEBUG: UD_Swedish-diachronic: sv_diachronic
+2026-03-18 13:16:28 INFO: Using model /home/urdatorn/stanza_resources/sv/forward_charlm/conll17.pt for forward charlm
+2026-03-18 13:16:28 INFO: Using model /home/urdatorn/stanza_resources/sv/backward_charlm/conll17.pt for backward charlm
+2026-03-18 13:16:28 INFO: Using default pretrain for language sv, found in /home/urdatorn/stanza_resources/sv/pretrain/conll17.pt  To use a different pretrain, specify --wordvec_pretrain_file
+2026-03-18 13:16:28 INFO: UD_Swedish-diachronic: saved_models/depparse/sv_diachronic_transformer_parser.pt does not exist, training new model
+2026-03-18 13:16:28 INFO: Using model /home/urdatorn/stanza_resources/sv/forward_charlm/conll17.pt for forward charlm
+2026-03-18 13:16:28 INFO: Using model /home/urdatorn/stanza_resources/sv/backward_charlm/conll17.pt for backward charlm
+2026-03-18 13:16:28 INFO: Using default pretrain for language sv, found in /home/urdatorn/stanza_resources/sv/pretrain/conll17.pt  To use a different pretrain, specify --wordvec_pretrain_file
+2026-03-18 13:16:28 INFO: Running train depparse for UD_Swedish-diachronic with args ['--wordvec_dir', '/home/urdatorn/stanza_resources/sv/pretrain', '--train_file', '/home/urdatorn/git/stanza-digphil/data/depparse/sv_diachronic.train.in.conllu', '--eval_file', '/home/urdatorn/git/stanza-digphil/data/depparse/sv_diachronic.dev.in.conllu', '--batch_size', '5000', '--lang', 'sv', '--shorthand', 'sv_diachronic', '--mode', 'train', '--wordvec_pretrain_file', '/home/urdatorn/stanza_resources/sv/pretrain/conll17.pt', '--charlm', '--charlm_shorthand', 'sv_conll17', '--charlm_forward_file', '/home/urdatorn/stanza_resources/sv/forward_charlm/conll17.pt', '--charlm_backward_file', '/home/urdatorn/stanza_resources/sv/backward_charlm/conll17.pt', '--batch_size', '32', '--dropout', '0.33', '--bert_model', 'KBLab/bert-base-swedish-cased', '--silver_file', 'ud/UD_Swedish-diachronic/sv_diachronic-ud-train-silver.conllu']
+2026-03-18 13:16:28 INFO: Running parser in train mode
+2026-03-18 13:16:29 DEBUG: Loaded pretrain from /home/urdatorn/stanza_resources/sv/pretrain/conll17.pt
+2026-03-18 13:16:29 INFO: Using 7 as the word cutoff based on the size of the pretrain (250000)
+2026-03-18 13:16:29 INFO: Using pretrained contextualized char embedding
+2026-03-18 13:16:29 INFO: ARGS USED AT TRAINING TIME:
+augment_nopunct: None
+batch_size: 32
+bert_finetune: False
+bert_finetune_layers: None
+bert_hidden_layers: 4
+bert_learning_rate: 1.0
+bert_model: KBLab/bert-base-swedish-cased
+bert_start_finetuning: 200
+bert_warmup_steps: 200
+bert_weight_decay: 0.0
+beta2: 0.999
+char: True
+char_emb_dim: 100
+char_hidden_dim: 400
+char_num_layers: 1
+char_rec_dropout: 0
+charlm: True
+charlm_backward_file: /home/urdatorn/stanza_resources/sv/backward_charlm/conll17.pt
+charlm_forward_file: /home/urdatorn/stanza_resources/sv/forward_charlm/conll17.pt
+charlm_save_dir: saved_models/charlm
+charlm_shorthand: sv_conll17
+checkpoint: True
+checkpoint_interval: 500
+checkpoint_save_name: None
+continue_from: None
+data_dir: data/depparse
+deep_biaff_hidden_dim: 400
+deep_biaff_output_dim: 160
+device: cpu
+distance: True
+dropout: 0.33
+eval_file: /home/urdatorn/git/stanza-digphil/data/depparse/sv_diachronic.dev.in.conllu
+eval_interval: 100
+gold_labels: True
+hidden_dim: 400
+lang: sv
+linearization: True
+log_norms: False
+log_step: 20
+lora_alpha: 128
+lora_dropout: 0.1
+lora_modules_to_save: []
+lora_rank: 64
+lora_target_modules: ['query', 'value', 'output.dense', 'intermediate.dense']
+lr: 2.0
+max_grad_norm: 1.0
+max_steps: 50000
+max_steps_before_stop: 2000
+mode: train
+model_type: graph
+num_layers: 3
+optim: adadelta
+output_file: None
+output_latex: False
+pretrain: True
+pretrain_max_vocab: 250000
+rec_dropout: 0
+reversed: False
+sample_train: 1.0
+save_dir: saved_models/depparse
+save_name: {shorthand}_{embedding}_parser.pt
+second_batch_size: None
+second_bert_learning_rate: 0.001
+second_lr: 0.0002
+second_optim: adam
+second_optim_start_step: 10000
+second_warmup_steps: 200
+seed: 1234
+shorthand: sv_diachronic
+silver_file: ud/UD_Swedish-diachronic/sv_diachronic-ud-train-silver.conllu
+silver_weight: 0.5
+tag_emb_dim: 50
+train_file: /home/urdatorn/git/stanza-digphil/data/depparse/sv_diachronic.train.in.conllu
+train_size: None
+transformed_dim: 125
+transition_embedding_dim: 20
+transition_hidden_dim: 20
+transition_merge_hidden_dim: 200
+transition_subtree_combination: SubtreeCombination.NONE
+transition_subtree_nonlinearity: none
+use_arc_embedding: False
+use_peft: False
+use_ufeats: True
+use_upos: True
+use_xpos: True
+wandb: False
+wandb_name: None
+weight_decay: 1e-05
+word_cutoff: 7
+word_dropout: 0.33
+word_emb_dim: 75
+wordvec_dir: /home/urdatorn/stanza_resources/sv/pretrain
+wordvec_file: None
+wordvec_pretrain_file: /home/urdatorn/stanza_resources/sv/pretrain/conll17.pt
+
+2026-03-18 13:16:29 INFO: Loading data with batch size 32...
+2026-03-18 13:16:30 INFO: Train File /home/urdatorn/git/stanza-digphil/data/depparse/sv_diachronic.train.in.conllu, Data Size: 13954
+2026-03-18 13:16:30 INFO: Original data size: 13954
+2026-03-18 13:16:34 WARNING: sv_diachronic is not a known dataset.  Examining the data to choose which xpos vocab to use
+2026-03-18 13:16:34 INFO: Original length = 13954
+2026-03-18 13:16:34 INFO: Filtered length = 13954
+2026-03-18 13:16:37 WARNING: Chose XPOSDescription(xpos_type=<XPOSType.XPOS: 1>, sep='-') for the xpos factory for sv_diachronic
+2026-03-18 13:16:41 DEBUG: 9513 batches created.
+2026-03-18 13:16:41 INFO: Augmented data size: 14712
+2026-03-18 13:16:47 DEBUG: 10020 batches created.
+2026-03-18 13:16:48 DEBUG: 32 batches created.
+2026-03-18 13:17:10 DEBUG: 28588 batches created.
+2026-03-18 13:17:10 INFO: Training parser...
+/home/urdatorn/.pyenv/versions/xpu/lib/python3.13/site-packages/huggingface_hub/file_download.py:949: FutureWarning: `resume_download` is deprecated and will be removed in version 1.0.0. Downloads always resume when possible. If you want to force a new download, use `force_download=True`.
+  warnings.warn(
+2026-03-18 13:17:12 DEBUG: Depparse model loading charmodels: /home/urdatorn/stanza_resources/sv/forward_charlm/conll17.pt and /home/urdatorn/stanza_resources/sv/backward_charlm/conll17.pt
+2026-03-18 13:17:12 DEBUG: Loading charlm from /home/urdatorn/stanza_resources/sv/forward_charlm/conll17.pt
+2026-03-18 13:17:12 DEBUG: Loading charlm from /home/urdatorn/stanza_resources/sv/backward_charlm/conll17.pt
+2026-03-18 13:17:13 DEBUG: Not using arc embedding enhancement
+2026-03-18 13:17:13 DEBUG: Building Adadelta with lr=2.000000, weight_decay=1e-05
+2026-03-18 13:17:29 INFO: Finished STEP 20/50000, loss = 2.292368 (0.203 sec/batch), lr: 2.000000
+2026-03-18 13:17:43 INFO: Finished STEP 40/50000, loss = 7.419842 (1.468 sec/batch), lr: 2.000000
+2026-03-18 13:17:51 INFO: Finished STEP 60/50000, loss = 7.826311 (1.111 sec/batch), lr: 2.000000
+2026-03-18 13:18:01 INFO: Finished STEP 80/50000, loss = 4.187514 (0.203 sec/batch), lr: 2.000000
+2026-03-18 13:18:09 INFO: Finished STEP 100/50000, loss = 3.687605 (0.196 sec/batch), lr: 2.000000
+2026-03-18 13:18:09 INFO: Evaluating on dev set...
+2026-03-18 13:18:16 INFO: LAS	MLAS	BLEX
+2026-03-18 13:18:16 INFO: 14.77	8.39	14.11
+2026-03-18 13:18:16 INFO: step 100: train_loss = 5.880744, dev_score = 0.1477
+2026-03-18 13:18:16 DEBUG:   training batch usage: Counter({0: 68, 1: 32})
+2026-03-18 13:18:16 INFO: Model saved to saved_models/depparse/sv_diachronic_transformer_parser.pt
+2026-03-18 13:18:16 INFO: new best model saved.
+2026-03-18 13:18:16 INFO: Model saved to saved_models/depparse/sv_diachronic_transformer_parser_checkpoint.pt
+2026-03-18 13:18:16 INFO: new model checkpoint saved.
+2026-03-18 13:18:27 INFO: Finished STEP 120/50000, loss = 5.895749 (0.951 sec/batch), lr: 2.000000
+2026-03-18 13:18:38 INFO: Finished STEP 140/50000, loss = 1.609854 (0.200 sec/batch), lr: 2.000000
+2026-03-18 13:18:45 INFO: Finished STEP 160/50000, loss = 1.833139 (0.220 sec/batch), lr: 2.000000
+2026-03-18 13:18:56 INFO: Finished STEP 180/50000, loss = 1.341930 (0.204 sec/batch), lr: 2.000000
+2026-03-18 13:19:04 INFO: Finished STEP 200/50000, loss = 2.078672 (0.224 sec/batch), lr: 2.000000
+2026-03-18 13:19:04 INFO: Evaluating on dev set...
+2026-03-18 13:19:11 INFO: LAS	MLAS	BLEX
+2026-03-18 13:19:11 INFO: 42.27	32.23	37.34
+2026-03-18 13:19:11 INFO: step 200: train_loss = 3.482911, dev_score = 0.4227
+2026-03-18 13:19:11 DEBUG:   training batch usage: Counter({0: 132, 1: 68})
+2026-03-18 13:19:11 INFO: Model saved to saved_models/depparse/sv_diachronic_transformer_parser.pt
+2026-03-18 13:19:11 INFO: new best model saved.
+2026-03-18 13:19:11 INFO: Model saved to saved_models/depparse/sv_diachronic_transformer_parser_checkpoint.pt
+2026-03-18 13:19:11 INFO: new model checkpoint saved.
+2026-03-18 13:19:19 INFO: Finished STEP 220/50000, loss = 1.613766 (0.210 sec/batch), lr: 2.000000
+2026-03-18 13:19:27 INFO: Finished STEP 240/50000, loss = 4.277971 (0.822 sec/batch), lr: 2.000000
+2026-03-18 13:19:39 INFO: Finished STEP 260/50000, loss = 4.801499 (0.823 sec/batch), lr: 2.000000
+2026-03-18 13:19:48 INFO: Finished STEP 280/50000, loss = 1.559014 (0.204 sec/batch), lr: 2.000000

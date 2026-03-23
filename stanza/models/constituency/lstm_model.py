@@ -40,7 +40,7 @@ from torch.nn.utils.rnn import pack_padded_sequence
 from stanza.models.common.bert_embedding import extract_bert_embeddings
 from stanza.models.common.maxout_linear import MaxoutLinear
 from stanza.models.common.relative_attn import RelativeAttention
-from stanza.models.common.utils import attach_bert_model, unsort
+from stanza.models.common.utils import attach_bert_model, build_nonlinearity, unsort
 from stanza.models.common.vocab import PAD_ID, UNK_ID
 from stanza.models.constituency.base_model import BaseModel
 from stanza.models.constituency.label_attention import LabelAttentionModule
@@ -51,7 +51,7 @@ from stanza.models.constituency.partitioned_transformer import PartitionedTransf
 from stanza.models.constituency.positional_encoding import ConcatSinusoidalEncoding
 from stanza.models.constituency.transformer_tree_stack import TransformerTreeStack
 from stanza.models.constituency.tree_stack import TreeStack
-from stanza.models.constituency.utils import build_nonlinearity, initialize_linear
+from stanza.models.constituency.utils import initialize_linear
 
 logger = logging.getLogger('stanza')
 tlogger = logging.getLogger('stanza.constituency.trainer')
@@ -1131,6 +1131,7 @@ class LSTMModel(BaseModel, nn.Module):
         hx = torch.cat((word_hx, transition_hx, constituent_hx), axis=1)
         for idx, output_layer in enumerate(self.output_layers):
             hx = self.predict_dropout(hx)
+            # TODO: why self.output_layers - 1?
             if not self.maxout_k and idx < len(self.output_layers) - 1:
                 hx = self.nonlinearity(hx)
             hx = output_layer(hx)

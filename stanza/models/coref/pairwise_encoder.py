@@ -37,7 +37,7 @@ class PairwiseEncoder(torch.nn.Module):
         self.__full_pw = config.full_pairwise
 
         if self.__full_pw:
-            self.shape = emb_size * 3  # genre, distance, speaker\
+            self.shape = emb_size * 2  # distance, speaker
         else:
             self.shape = emb_size # distance only
 
@@ -68,14 +68,7 @@ class PairwiseEncoder(torch.nn.Module):
         same_speaker = (speaker_map[top_indices] == speaker_map.unsqueeze(1))
         same_speaker = self.speaker_emb(same_speaker.to(torch.long))
 
-
-        # if there is no genre information, use "wb" as the genre (which is what the
-        # Pipeline does
-        genre = torch.tensor(self.genre2int.get(doc["document_id"][:2], self.genre2int["wb"]),
-                             device=self.device).expand_as(top_indices)
-        genre = self.genre_emb(genre)
-
-        return self.dropout(torch.cat((same_speaker, distance, genre), dim=2))
+        return self.dropout(torch.cat((same_speaker, distance), dim=2))
 
     @staticmethod
     def _speaker_map(doc: Doc) -> List[int]:
@@ -87,8 +80,8 @@ class PairwiseEncoder(torch.nn.Module):
         
         # speaker string -> speaker id
         str2int = {s: i for i, s in enumerate(set(doc.get("speaker", ["speaker#1"
-                                                                      for _ in range(len(doc["deprel"]))])))}
+                                                                      for _ in range(len(doc["cased_words"]))])))}
 
         # word id -> speaker id
         return [str2int[s] for s in doc.get("speaker", ["speaker#1"
-                                                        for _ in range(len(doc["deprel"]))])]
+                                                        for _ in range(len(doc["cased_words"]))])]

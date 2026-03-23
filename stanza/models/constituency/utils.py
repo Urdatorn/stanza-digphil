@@ -102,86 +102,6 @@ def retag_trees(trees, pipelines, xpos=True):
     return new_trees
 
 
-# experimental results on nonlinearities
-# this is on a VI dataset, VLSP_22, using 1/10th of the data as a dev set
-# (no released test set at the time of the experiment)
-# original non-Bert tagger, with 1 iteration each instead of averaged over 5
-# considering the number of experiments and the length of time they would take
-#
-# Gelu had the highest score, which tracks with other experiments run.
-# Note that publicly released models have typically used Relu
-# on account of the runtime speed improvement
-#
-# Anyway, a larger experiment of 5x models on gelu or relu, using the
-# Roberta POS tagger and a corpus of silver trees, resulted in 0.8270
-# for relu and 0.8248 for gelu.  So it is not even clear that
-# switching to gelu would be an accuracy improvement.
-#
-# Gelu: 82.32
-# Relu: 82.14
-# Mish: 81.95
-# Relu6: 81.91
-# Silu: 81.90
-# ELU: 81.73
-# Hardswish: 81.67
-# Softsign: 81.63
-# Hardtanh: 81.44
-# Celu: 81.43
-# Selu: 81.17
-#   TODO: need to redo the prelu experiment with
-#         possibly different numbers of parameters
-#         and proper weight decay
-# Prelu: 80.95 (terminated early)
-# Softplus: 80.94
-# Logsigmoid: 80.91
-# Hardsigmoid: 79.03
-# RReLU: 77.00
-# Hardshrink: failed
-# Softshrink: failed
-NONLINEARITY = {
-    'celu':       nn.CELU,
-    'elu':        nn.ELU,
-    'gelu':       nn.GELU,
-    'hardshrink': nn.Hardshrink,
-    'hardtanh':   nn.Hardtanh,
-    'leaky_relu': nn.LeakyReLU,
-    'logsigmoid': nn.LogSigmoid,
-    'prelu':      nn.PReLU,
-    'relu':       nn.ReLU,
-    'relu6':      nn.ReLU6,
-    'rrelu':      nn.RReLU,
-    'selu':       nn.SELU,
-    'softplus':   nn.Softplus,
-    'softshrink': nn.Softshrink,
-    'softsign':   nn.Softsign,
-    'tanhshrink': nn.Tanhshrink,
-    'tanh':       nn.Tanh,
-}
-
-# separating these out allows for backwards compatibility with earlier versions of pytorch
-# NOTE torch compatibility: if we ever *release* models with these
-# activation functions, we will need to break that compatibility
-
-nonlinearity_list = [
-    'GLU',
-    'Hardsigmoid',
-    'Hardswish',
-    'Mish',
-    'SiLU',
-]
-
-for nonlinearity in nonlinearity_list:
-    if hasattr(nn, nonlinearity):
-        NONLINEARITY[nonlinearity.lower()] = getattr(nn, nonlinearity)
-
-def build_nonlinearity(nonlinearity):
-    """
-    Look up "nonlinearity" in a map from function name to function, build the appropriate layer.
-    """
-    if nonlinearity in NONLINEARITY:
-        return NONLINEARITY[nonlinearity]()
-    raise ValueError('Chosen value of nonlinearity, "%s", not handled' % nonlinearity)
-
 def build_optimizer(args, model, build_simple_adadelta=False):
     """
     Build an optimizer based on the arguments given
@@ -329,7 +249,7 @@ def check_constituents(train_constituents, trees, treebank_name, fail=True):
                     num_errors += 1
                     if first_error is None:
                         first_error = tree_idx
-            error = "Found constituent label {} in the {} set which don't exist in the train set.  This constituent label occured in {} trees, with the first tree index at {} counting from 1\nThe error tree (which may have POS tags changed from the retagger and may be missing functional tags or empty nodes) is:\n{:P}".format(con, treebank_name, num_errors, (first_error+1), trees[first_error])
+            error = "Found constituent label {} in the {} set which don't exist in the train set.  This constituent label occurred in {} trees, with the first tree index at {} counting from 1\nThe error tree (which may have POS tags changed from the retagger and may be missing functional tags or empty nodes) is:\n{:P}".format(con, treebank_name, num_errors, (first_error+1), trees[first_error])
             if fail:
                 raise RuntimeError(error)
             else:

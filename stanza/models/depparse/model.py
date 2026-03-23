@@ -1,6 +1,7 @@
 import logging
 import os
 
+from abc import ABC, abstractmethod
 import numpy as np
 import torch
 import torch.nn as nn
@@ -9,6 +10,7 @@ from torch.nn.utils.rnn import pad_packed_sequence, pack_padded_sequence, pack_s
 
 from stanza.models.common.bert_embedding import extract_bert_embeddings
 from stanza.models.common.biaffine import DeepBiaffineScorer
+from stanza.models.common.chuliu_edmonds import chuliu_edmonds_one_root
 from stanza.models.common.foundation_cache import load_charlm
 from stanza.models.common.hlstm import HighwayLSTM
 from stanza.models.common.dropout import WordDropout
@@ -19,14 +21,51 @@ from stanza.models.common import utils
 
 logger = logging.getLogger('stanza')
 
-class Parser(nn.Module):
-    def __init__(self, args, vocab, emb_matrix=None, share_hid=False, foundation_cache=None, bert_model=None, bert_tokenizer=None, force_bert_saved=False, peft_name=None):
+class BaseParser(nn.Module, ABC):
+    def __init__(self, args, vocab):
         super().__init__()
 
         self.vocab = vocab
         self.args = args
-        self.share_hid = share_hid
         self.unsaved_modules = []
+
+    def add_unsaved_module(self, name, module):
+        self.unsaved_modules += [name]
+        setattr(self, name, module)
+
+    def get_params(self, skip_modules):
+        model_state = self.state_dict()
+        # skip saving modules like pretrained embeddings, because they are large and will be saved in a separate file
+        if skip_modules:
+            skipped = [k for k in model_state.keys() if k.split('.')[0] in self.unsaved_modules]
+            for k in skipped:
+                del model_state[k]
+        return model_state
+
+    def load_params(self, checkpoint):
+        return self.load_state_dict(checkpoint, strict=False)
+
+    def log_norms(self):
+        utils.log_norms(self)
+
+    @abstractmethod
+    def forward(self, word, word_mask, wordchars, wordchars_mask, upos, xpos, ufeats, pretrained, lemma, head, deprel, word_orig_idx, sentlens, wordlens, text):
+        """ Return loss & predictions for this batch of sentences """
+
+    @abstractmethod
+    def loss(self, *args, **kwargs):
+        """ Return just the loss for this batch.  Should be a torch tensor """
+
+    @abstractmethod
+    def predict(self, *args, **kwargs):
+        """ Return a list of predictions for each sentence, where each prediction is a list of (head, deprel) """
+
+    def get_device(self):
+        return next(self.parameters()).device
+
+class EmbeddingParser(BaseParser):
+    def __init__(self, args, vocab, emb_matrix=None, foundation_cache=None, bert_model=None, bert_tokenizer=None, force_bert_saved=False, peft_name=None):
+        super().__init__(args, vocab)
 
         # input layers
         input_size = 0
@@ -60,16 +99,16 @@ class Parser(nn.Module):
 
         if self.args['char'] and self.args['char_emb_dim'] > 0:
             if self.args.get('charlm', None):
-                if args['charlm_forward_file'] is None or not os.path.exists(args['charlm_forward_file']):
-                    raise FileNotFoundError('Could not find forward character model: {}  Please specify with --charlm_forward_file'.format(args['charlm_forward_file']))
-                if args['charlm_backward_file'] is None or not os.path.exists(args['charlm_backward_file']):
-                    raise FileNotFoundError('Could not find backward character model: {}  Please specify with --charlm_backward_file'.format(args['charlm_backward_file']))
-                logger.debug("Depparse model loading charmodels: %s and %s", args['charlm_forward_file'], args['charlm_backward_file'])
-                self.add_unsaved_module('charmodel_forward', load_charlm(args['charlm_forward_file'], foundation_cache=foundation_cache))
-                self.add_unsaved_module('charmodel_backward', load_charlm(args['charlm_backward_file'], foundation_cache=foundation_cache))
+                if self.args['charlm_forward_file'] is None or not os.path.exists(self.args['charlm_forward_file']):
+                    raise FileNotFoundError('Could not find forward character model: {}  Please specify with --charlm_forward_file'.format(self.args['charlm_forward_file']))
+                if self.args['charlm_backward_file'] is None or not os.path.exists(self.args['charlm_backward_file']):
+                    raise FileNotFoundError('Could not find backward character model: {}  Please specify with --charlm_backward_file'.format(self.args['charlm_backward_file']))
+                logger.debug("Depparse model loading charmodels: %s and %s", self.args['charlm_forward_file'], self.args['charlm_backward_file'])
+                self.add_unsaved_module('charmodel_forward', load_charlm(self.args['charlm_forward_file'], foundation_cache=foundation_cache))
+                self.add_unsaved_module('charmodel_backward', load_charlm(self.args['charlm_backward_file'], foundation_cache=foundation_cache))
                 input_size += self.charmodel_forward.hidden_dim() + self.charmodel_backward.hidden_dim()
             else:
-                self.charmodel = CharacterModel(args, vocab)
+                self.charmodel = CharacterModel(self.args, vocab)
                 self.trans_char = nn.Linear(self.args['char_hidden_dim'], self.args['transformed_dim'], bias=False)
                 input_size += self.args['transformed_dim']
 
@@ -77,10 +116,10 @@ class Parser(nn.Module):
         attach_bert_model(self, bert_model, bert_tokenizer, self.args.get('use_peft', False), force_bert_saved)
         if self.args.get('bert_model', None):
             # TODO: refactor bert_hidden_layers between the different models
-            if args.get('bert_hidden_layers', False):
+            if self.args.get('bert_hidden_layers', False):
                 # The average will be offset by 1/N so that the default zeros
                 # represents an average of the N layers
-                self.bert_layer_mix = nn.Linear(args['bert_hidden_layers'], 1, bias=False)
+                self.bert_layer_mix = nn.Linear(self.args['bert_hidden_layers'], 1, bias=False)
                 nn.init.zeros_(self.bert_layer_mix.weight)
             else:
                 # an average of layers 2, 3, 4 will be used
@@ -94,34 +133,18 @@ class Parser(nn.Module):
             self.trans_pretrained = nn.Linear(emb_matrix.shape[1], self.args['transformed_dim'], bias=False)
             input_size += self.args['transformed_dim']
 
+        self.input_size = input_size
+
         # recurrent layers
-        self.parserlstm = HighwayLSTM(input_size, self.args['hidden_dim'], self.args['num_layers'], batch_first=True, bidirectional=True, dropout=self.args['dropout'], rec_dropout=self.args['rec_dropout'], highway_func=torch.tanh)
-        self.drop_replacement = nn.Parameter(torch.randn(input_size) / np.sqrt(input_size))
+        self.parserlstm = HighwayLSTM(self.input_size, self.args['hidden_dim'], self.args['num_layers'], batch_first=True, bidirectional=True, dropout=self.args['dropout'], rec_dropout=self.args['rec_dropout'], highway_func=torch.tanh)
+        self.drop_replacement = nn.Parameter(torch.randn(self.input_size) / np.sqrt(self.input_size))
         self.parserlstm_h_init = nn.Parameter(torch.zeros(2 * self.args['num_layers'], 1, self.args['hidden_dim']))
         self.parserlstm_c_init = nn.Parameter(torch.zeros(2 * self.args['num_layers'], 1, self.args['hidden_dim']))
 
-        # classifiers
-        self.unlabeled = DeepBiaffineScorer(2 * self.args['hidden_dim'], 2 * self.args['hidden_dim'], self.args['deep_biaff_hidden_dim'], 1, pairwise=True, dropout=args['dropout'])
-        self.deprel = DeepBiaffineScorer(2 * self.args['hidden_dim'], 2 * self.args['hidden_dim'], self.args['deep_biaff_hidden_dim'], len(vocab['deprel']), pairwise=True, dropout=args['dropout'])
-        if args['linearization']:
-            self.linearization = DeepBiaffineScorer(2 * self.args['hidden_dim'], 2 * self.args['hidden_dim'], self.args['deep_biaff_hidden_dim'], 1, pairwise=True, dropout=args['dropout'])
-        if args['distance']:
-            self.distance = DeepBiaffineScorer(2 * self.args['hidden_dim'], 2 * self.args['hidden_dim'], self.args['deep_biaff_hidden_dim'], 1, pairwise=True, dropout=args['dropout'])
+        self.drop = nn.Dropout(self.args['dropout'])
+        self.worddrop = WordDropout(self.args['word_dropout'])
 
-        # criterion
-        self.crit = nn.CrossEntropyLoss(ignore_index=-1, reduction='sum') # ignore padding
-
-        self.drop = nn.Dropout(args['dropout'])
-        self.worddrop = WordDropout(args['word_dropout'])
-
-    def add_unsaved_module(self, name, module):
-        self.unsaved_modules += [name]
-        setattr(self, name, module)
-
-    def log_norms(self):
-        utils.log_norms(self)
-
-    def forward(self, word, word_mask, wordchars, wordchars_mask, upos, xpos, ufeats, pretrained, lemma, head, deprel, word_orig_idx, sentlens, wordlens, text):
+    def embed(self, word, word_mask, wordchars, wordchars_mask, upos, xpos, ufeats, pretrained, lemma, head, deprel, word_orig_idx, sentlens, wordlens, text):
         def pack(x):
             return pack_padded_sequence(x, sentlens, batch_first=True)
 
@@ -206,19 +229,67 @@ class Parser(nn.Module):
         lstm_outputs, _ = self.parserlstm(lstm_inputs, sentlens, hx=(self.parserlstm_h_init.expand(2 * self.args['num_layers'], word.size(0), self.args['hidden_dim']).contiguous(), self.parserlstm_c_init.expand(2 * self.args['num_layers'], word.size(0), self.args['hidden_dim']).contiguous()))
         lstm_outputs, _ = pad_packed_sequence(lstm_outputs, batch_first=True)
 
-        unlabeled_scores = self.unlabeled(self.drop(lstm_outputs), self.drop(lstm_outputs)).squeeze(3)
-        deprel_scores = self.deprel(self.drop(lstm_outputs), self.drop(lstm_outputs))
+        return lstm_outputs
+
+class GraphParser(EmbeddingParser):
+    def __init__(self, args, vocab, emb_matrix=None, foundation_cache=None, bert_model=None, bert_tokenizer=None, force_bert_saved=False, peft_name=None):
+        super().__init__(args, vocab, emb_matrix=emb_matrix, foundation_cache=foundation_cache, bert_model=bert_model, bert_tokenizer=bert_tokenizer, force_bert_saved=force_bert_saved, peft_name=peft_name)
+
+        # classifiers
+        # args.get to preserve old models, including models other people might have created
+        if self.args.get('use_arc_embedding'):
+            logger.debug("Using arc embedding enhancement")
+            self.arc_embedding = DeepBiaffineScorer(2 * self.args['hidden_dim'], 2 * self.args['hidden_dim'], self.args['deep_biaff_hidden_dim'], self.args['deep_biaff_output_dim'], pairwise=True, dropout=self.args['dropout'])
+            self.unlabeled_linear = nn.Sequential(self.drop,
+                                                  nn.Linear(self.args['deep_biaff_output_dim'], 1))
+            self.deprel_linear = nn.Sequential(self.drop,
+                                               nn.Linear(self.args['deep_biaff_output_dim'], 2 * self.args['deep_biaff_output_dim']),
+                                               nn.ReLU(),
+                                               self.drop,
+                                               nn.Linear(self.args['deep_biaff_output_dim'] * 2, len(vocab['deprel'])))
+        else:
+            logger.debug("Not using arc embedding enhancement")
+            self.unlabeled = DeepBiaffineScorer(2 * self.args['hidden_dim'], 2 * self.args['hidden_dim'], self.args['deep_biaff_hidden_dim'], 1, pairwise=True, dropout=self.args['dropout'])
+            self.deprel = DeepBiaffineScorer(2 * self.args['hidden_dim'], 2 * self.args['hidden_dim'], self.args['deep_biaff_hidden_dim'], len(vocab['deprel']), pairwise=True, dropout=self.args['dropout'])
+        if self.args['linearization']:
+            self.linearization = DeepBiaffineScorer(2 * self.args['hidden_dim'], 2 * self.args['hidden_dim'], self.args['deep_biaff_hidden_dim'], 1, pairwise=True, dropout=self.args['dropout'])
+        if self.args['distance']:
+            self.distance = DeepBiaffineScorer(2 * self.args['hidden_dim'], 2 * self.args['hidden_dim'], self.args['deep_biaff_hidden_dim'], 1, pairwise=True, dropout=self.args['dropout'])
+
+        # criterion
+        self.crit = nn.CrossEntropyLoss(ignore_index=-1, reduction='sum') # ignore padding
+
+    @staticmethod
+    def decode_graph_predictions(vocab, batch_size, preds, sentlens):
+        head_seqs = [chuliu_edmonds_one_root(adj[:l, :l])[1:] for adj, l in zip(preds[0], sentlens)] # remove attachment for the root
+        deprel_seqs = [vocab.unmap([preds[1][i][j+1][h] for j, h in enumerate(hs)]) for i, hs in enumerate(head_seqs)]
+        pred_tokens = [[[head_seqs[i][j], deprel_seqs[i][j]] for j in range(sentlens[i]-1)] for i in range(batch_size)]
+        return pred_tokens
+
+    def forward_scores(self, word, word_mask, wordchars, wordchars_mask, upos, xpos, ufeats, pretrained, lemma, head, deprel, word_orig_idx, sentlens, wordlens, text):
+        lstm_outputs = self.embed(word, word_mask, wordchars, wordchars_mask, upos, xpos, ufeats, pretrained, lemma, head, deprel, word_orig_idx, sentlens, wordlens, text)
+
+        if self.args.get('use_arc_embedding'):
+            arc_scores = self.arc_embedding(self.drop(lstm_outputs), self.drop(lstm_outputs))
+            unlabeled_scores = self.unlabeled_linear(arc_scores).squeeze(3)
+            deprel_scores = self.deprel_linear(arc_scores).squeeze(3)
+        else:
+            unlabeled_scores = self.unlabeled(self.drop(lstm_outputs), self.drop(lstm_outputs)).squeeze(3)
+            deprel_scores = self.deprel(self.drop(lstm_outputs), self.drop(lstm_outputs))
 
         #goldmask = head.new_zeros(*head.size(), head.size(-1)+1, dtype=torch.uint8)
         #goldmask.scatter_(2, head.unsqueeze(2), 1)
 
+        head_offset = None
         if self.args['linearization'] or self.args['distance']:
             head_offset = torch.arange(word.size(1), device=head.device).view(1, 1, -1).expand(word.size(0), -1, -1) - torch.arange(word.size(1), device=head.device).view(1, -1, 1).expand(word.size(0), -1, -1)
 
+        lin_scores = None
         if self.args['linearization']:
             lin_scores = self.linearization(self.drop(lstm_outputs), self.drop(lstm_outputs)).squeeze(3)
             unlabeled_scores += F.logsigmoid(lin_scores * torch.sign(head_offset).float()).detach()
 
+        dist_kld = None
         if self.args['distance']:
             dist_scores = self.distance(self.drop(lstm_outputs), self.drop(lstm_outputs)).squeeze(3)
             dist_pred = 1 + F.softplus(dist_scores)
@@ -229,8 +300,12 @@ class Parser(nn.Module):
         diag = torch.eye(head.size(-1)+1, dtype=torch.bool, device=head.device).unsqueeze(0)
         unlabeled_scores.masked_fill_(diag, -float('inf'))
 
-        preds = []
+        return unlabeled_scores, deprel_scores, head_offset, lin_scores, dist_kld
 
+    def forward(self, word, word_mask, wordchars, wordchars_mask, upos, xpos, ufeats, pretrained, lemma, head, deprel, word_orig_idx, sentlens, wordlens, text):
+        unlabeled_scores, deprel_scores, head_offset, lin_scores, dist_kld = self.forward_scores(word, word_mask, wordchars, wordchars_mask, upos, xpos, ufeats, pretrained, lemma, head, deprel, word_orig_idx, sentlens, wordlens, text)
+
+        preds = []
         if self.training:
             unlabeled_scores = unlabeled_scores[:, 1:, :] # exclude attachment for the root symbol
             unlabeled_scores = unlabeled_scores.masked_fill(word_mask.unsqueeze(1), -float('inf'))
@@ -253,6 +328,7 @@ class Parser(nn.Module):
 
             if self.args['distance']:
                 #dist_kld = dist_kld[:, 1:].masked_select(goldmask)
+                # dist_kld[:, 1:] so that the root isn't included in the distance calculation
                 dist_kld = torch.gather(dist_kld[:, 1:], 2, head.unsqueeze(2))
                 loss -= dist_kld.sum()
 
@@ -263,3 +339,71 @@ class Parser(nn.Module):
             preds.append(deprel_scores.max(3)[1].detach().cpu().numpy())
 
         return loss, preds
+
+    def loss(self, *args, **kwargs):
+        loss, _ = self.forward(*args, **kwargs)
+        return loss
+
+    def predict(self, word, word_mask, wordchars, wordchars_mask, upos, xpos, ufeats, pretrained, lemma, head, deprel, word_orig_idx, sentlens, wordlens, text):
+        batch_size = word.size(0)
+        _, preds = self(word, word_mask, wordchars, wordchars_mask, upos, xpos, ufeats, pretrained, lemma, head, deprel, word_orig_idx, sentlens, wordlens, text)
+        pred_tokens = self.decode_graph_predictions(self.vocab['deprel'], batch_size, preds, sentlens)
+        return pred_tokens
+
+class EnsembleGraphParser(BaseParser):
+    def __init__(self, args, vocab, models):
+        super().__init__(args, vocab)
+        self.models = nn.ModuleList(models)
+
+    def get_params(self, skip_modules):
+        params = []
+        args = []
+        for model in self.models:
+            params.append(model.get_params(skip_modules))
+            config = dict(model.args)
+            # sanitize enums for torch.load(weights_only=True)
+            if 'transition_subtree_combination' in config:
+                config['transition_subtree_combination'] = config['transition_subtree_combination'].name
+            args.append(config)
+        checkpoint = {
+            "num_models": len(self.models),
+            "params": params,
+            "args": args,
+        }
+        return checkpoint
+
+    def load_params(self, checkpoint):
+        for model, params in zip(self.models, checkpoint["params"]):
+            model.load_params(params)
+
+    def loss(self, *args, **kwargs):
+        raise NotImplementedError("Cannot train ensemble parser")
+
+    def forward(self, word, word_mask, wordchars, wordchars_mask, upos, xpos, ufeats, pretrained, lemma, head, deprel, word_orig_idx, sentlens, wordlens, text):
+        unlabeled_scores = 0
+        deprel_scores = 0
+        for model in self.models:
+            model_unlabeled_scores, model_deprel_scores, _, _, _ = model.forward_scores(word, word_mask, wordchars, wordchars_mask, upos, xpos, ufeats, pretrained, lemma, head, deprel, word_orig_idx, sentlens, wordlens, text)
+            unlabeled_scores += model_unlabeled_scores
+            deprel_scores += model_deprel_scores
+
+        if self.training:
+            raise NotImplementedError("Cannot train ensemble parser")
+        else:
+            loss = 0
+            preds = []
+            preds.append(F.log_softmax(unlabeled_scores, 2).detach().cpu().numpy())
+            preds.append(deprel_scores.max(3)[1].detach().cpu().numpy())
+
+        return loss, preds
+
+    # TODO: refactor this?
+    def predict(self, word, word_mask, wordchars, wordchars_mask, upos, xpos, ufeats, pretrained, lemma, head, deprel, word_orig_idx, sentlens, wordlens, text):
+        batch_size = word.size(0)
+        _, preds = self(word, word_mask, wordchars, wordchars_mask, upos, xpos, ufeats, pretrained, lemma, head, deprel, word_orig_idx, sentlens, wordlens, text)
+        pred_tokens = GraphParser.decode_graph_predictions(self.vocab['deprel'], batch_size, preds, sentlens)
+        return pred_tokens
+
+    def get_device(self):
+        return self.models[0].get_device()
+

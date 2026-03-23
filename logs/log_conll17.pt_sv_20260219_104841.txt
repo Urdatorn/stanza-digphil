@@ -1,0 +1,44 @@
+=== LOGFILE: logs/log_conll17.pt_sv_20260219_104841.txt ===
+Language codes: sv
+Using pretrained model: conll17.pt
+
+Sourcing scripts/config.sh
+Running stanza dataset preparation…
+2026-02-19 10:48:43 INFO: Datasets program called with:
+/home/urdatorn/git/stanza-digphil/stanza/utils/datasets/prepare_depparse_treebank.py UD_Swedish-diachronic --wordvec_pretrain_file /home/urdatorn/stanza_resources/sv/pretrain/conll17.pt --gold
+Augmented 60 quotes: Counter({'《》': 9, '»«': 8, '″″': 8, '““': 7, '„”': 6, '""': 6, '„“': 6, '«»': 4, '””': 4, '「」': 2})
+Traceback (most recent call last):
+  File "<frozen runpy>", line 198, in _run_module_as_main
+  File "<frozen runpy>", line 88, in _run_code
+  File "/home/urdatorn/git/stanza-digphil/stanza/utils/datasets/prepare_depparse_treebank.py", line 151, in <module>
+    main()
+    ~~~~^^
+  File "/home/urdatorn/git/stanza-digphil/stanza/utils/datasets/prepare_depparse_treebank.py", line 147, in main
+    common.main(process_treebank, common.ModelType.DEPPARSE, add_specific_args)
+    ~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/urdatorn/git/stanza-digphil/stanza/utils/datasets/common.py", line 335, in main
+    process_treebank(treebank, model_type, paths, args)
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/urdatorn/git/stanza-digphil/stanza/utils/datasets/prepare_depparse_treebank.py", line 96, in process_treebank
+    prepare_tokenizer_treebank.copy_conllu_treebank(treebank, model_type, paths, paths["DEPPARSE_DATA_DIR"])
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/urdatorn/git/stanza-digphil/stanza/utils/datasets/prepare_tokenizer_treebank.py", line 75, in copy_conllu_treebank
+    process_treebank(treebank, model_type, paths, args)
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/urdatorn/git/stanza-digphil/stanza/utils/datasets/prepare_tokenizer_treebank.py", line 1499, in process_treebank
+    process_ud_treebank(treebank, udbase_dir, tokenizer_dir, short_name, short_language, args.augment)
+    ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/urdatorn/git/stanza-digphil/stanza/utils/datasets/prepare_tokenizer_treebank.py", line 1357, in process_ud_treebank
+    prepare_ud_dataset(treebank, udbase_dir, tokenizer_dir, short_name, short_language, "test", augment)
+    ~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/urdatorn/git/stanza-digphil/stanza/utils/datasets/prepare_tokenizer_treebank.py", line 1332, in prepare_ud_dataset
+    input_conllu = common.find_treebank_dataset_file(treebank, udbase_dir, dataset, "conllu", fail=True)
+  File "/home/urdatorn/git/stanza-digphil/stanza/utils/datasets/common.py", line 196, in find_treebank_dataset_file
+    raise FileNotFoundError("Could not find any treebank files which matched {}\nIf you have the data elsewhere, you can change the base directory for the search by changing the {} environment variable".format(filename, env_var))
+FileNotFoundError: Could not find any treebank files which matched /home/urdatorn/git/stanza-digphil/ud/UD_Swedish-diachronic/*-ud-test.conllu
+If you have the data elsewhere, you can change the base directory for the search by changing the UDBASE environment variable
+Preparing data for UD_Swedish-diachronic: sv_diachronic, sv
+Reading from /home/urdatorn/git/stanza-digphil/ud/UD_Swedish-diachronic/sv_diachronic-ud-train.conllu and writing to /tmp/tmp468rp5x_/sv_diachronic.train.gold.conllu
+Swapped 'w1, w2' for 'w1 ,w2' 93 times
+Added 86 new sentences with asdf, zzzz -> asdf,zzzz
+Reading from /home/urdatorn/git/stanza-digphil/ud/UD_Swedish-diachronic/sv_diachronic-ud-dev.conllu and writing to /tmp/tmp468rp5x_/sv_diachronic.dev.gold.conllu

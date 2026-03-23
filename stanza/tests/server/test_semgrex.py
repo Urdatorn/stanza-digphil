@@ -153,6 +153,10 @@ TWO_SENTENCE_DOC = Document(TEST_TWO_SENTENCES, "Unban Mox Opal! Unban Mox Opal!
 
 def check_response(response, response_len=1, semgrex_len=1, source_index=1, target_index=3, reln='obj'):
     assert len(response.result) == response_len
+    for sentence_idx, sentence_result in enumerate(response.result):
+        for semgrex_result in sentence_result.result:
+            for match in semgrex_result.match:
+                assert sentence_idx == match.sentenceIndex
     assert len(response.result[0].result) == semgrex_len
     for semgrex_result in response.result[0].result:
         assert len(semgrex_result.match) == 1
@@ -280,3 +284,66 @@ def test_blank_dependency():
     assert response.result[0].result[0].match[0].edge[0].source == 1
     assert response.result[0].result[0].match[0].edge[0].target == 2
     assert response.result[0].result[0].match[0].edge[0].reln == "_"
+
+EXPECTED_ONE_SENTENCE_MATCH = """
+# text = Unban Mox Opal!
+# sent_id = 0
+# semgrex pattern |{cpos:PROPN}=source <=zzz {ner:GEM}=target| matched at 2:Mox  source=2:Mox target=3:Opal
+# highlight tokens = 2
+# highlight deprels = 2
+1	Unban	unban	VERB	VB	Mood=Imp|VerbForm=Fin	0	root	_	start_char=0|end_char=5
+2	Mox	Mox	PROPN	NNP	Number=Sing	3	compound	_	start_char=6|end_char=9
+3	Opal	Opal	PROPN	NNP	Number=Sing	1	obj	_	SpaceAfter=No|start_char=10|end_char=14|ner=GEM
+4	!	!	PUNCT	.	_	1	punct	_	SpaceAfter=No|start_char=14|end_char=15
+""".strip()
+
+def test_ner_annotated():
+    semgrex_pattern = "{cpos:PROPN}=source <=zzz {ner:GEM}=target"
+    # not using the existing ONE_SENTENCE_DOC as the Document may be mutated
+    doc = Document(TEST_ONE_SENTENCE, "Unban Mox Opal!")
+    response = semgrex.process_doc(doc, semgrex_pattern)
+    doc = semgrex.annotate_doc(doc, response, semgrex_pattern, True, False)
+    formatted = "{:C}".format(doc).strip()
+    assert formatted == EXPECTED_ONE_SENTENCE_MATCH
+
+EXPECTED_ONE_SENTENCE_NO_MATCH = """
+# text = Unban Mox Opal!
+# sent_id = 0
+# semgrex pattern |{cpos:ZZZZ}| did not match!
+1	Unban	unban	VERB	VB	Mood=Imp|VerbForm=Fin	0	root	_	start_char=0|end_char=5
+2	Mox	Mox	PROPN	NNP	Number=Sing	3	compound	_	start_char=6|end_char=9
+3	Opal	Opal	PROPN	NNP	Number=Sing	1	obj	_	SpaceAfter=No|start_char=10|end_char=14|ner=GEM
+4	!	!	PUNCT	.	_	1	punct	_	SpaceAfter=No|start_char=14|end_char=15
+""".strip()
+
+def test_not_annotated():
+    semgrex_pattern = "{cpos:ZZZZ}"
+    # not using the existing ONE_SENTENCE_DOC as the Document may be mutated
+    doc = Document(TEST_ONE_SENTENCE, "Unban Mox Opal!")
+    response = semgrex.process_doc(doc, semgrex_pattern)
+    doc = semgrex.annotate_doc(doc, response, semgrex_pattern, False, False)
+    formatted = "{:C}".format(doc).strip()
+    assert formatted == EXPECTED_ONE_SENTENCE_NO_MATCH
+
+
+def test_empty_not_annotated():
+    """
+    If there are no responses and match_only is set, the returned doc should be empty
+    """
+    semgrex_pattern = "{cpos:ZZZZ}"
+    # not using the existing ONE_SENTENCE_DOC as the Document may be mutated
+    doc = Document(TEST_ONE_SENTENCE, "Unban Mox Opal!")
+    response = semgrex.process_doc(doc, semgrex_pattern)
+    doc = semgrex.annotate_doc(doc, response, semgrex_pattern, True, False)
+    formatted = "{:C}".format(doc).strip()
+    assert formatted == ""
+
+def test_only_not_annotated():
+    semgrex_pattern = "{cpos:ZZZZ}"
+    # not using the existing ONE_SENTENCE_DOC as the Document may be mutated
+    doc = Document(TEST_ONE_SENTENCE, "Unban Mox Opal!")
+    response = semgrex.process_doc(doc, semgrex_pattern)
+    doc = semgrex.annotate_doc(doc, response, semgrex_pattern, False, True)
+    formatted = "{:C}".format(doc).strip()
+    assert formatted == EXPECTED_ONE_SENTENCE_NO_MATCH
+
