@@ -1,6 +1,6 @@
 # Retraining Stanza to optimize dependency parsing on a diachronic Swedish corpus
 
-Experiments (most of which "learning experiences", to put it euphemistically) in training a new Swedish Stanza model that performs better on historical texts. The repository contains forked code from a development branch of the Stanza github, with scripts that help prepare for and train models on different combinations of treebanks relevant to historical Swedish. The main project repo is found [here](https://github.com/alanev52/Diachronic_Treebanks_DigPhil) and the actual trained models are found on (Hugging Face)[https://huggingface.co/al1808th/stanza-digphil].
+Experiments (most of which "learning experiences", to put it euphemistically) in training a new Swedish Stanza model that performs better on historical texts. The repository contains forked code from a development branch of the Stanza github, with scripts that help prepare for and train models on different combinations of treebanks relevant to historical Swedish. The main project repo is found [here](https://github.com/alanev52/Diachronic_Treebanks_DigPhil) and the actual trained models are found on [Hugging Face](https://huggingface.co/al1808th/stanza-digphil).
 
 ## Guide
 

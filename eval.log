@@ -1,0 +1,2449 @@
+Models:   0%|          | 0/14 [00:00<?, ?it/s]2026-03-24 14:49:32 INFO: Checking for updates to resources.json in case models have been updated.  Note: this behavior can be turned off with download_method=None or download_method=DownloadMethod.REUSE_RESOURCES
+Running model: vanilla
+
+Downloading https://raw.githubusercontent.com/stanfordnlp/stanza-resources/main/resources_1.11.0.json:   0%|          | 0.00/54.1k [00:00<?, ?B/s][ADownloading https://raw.githubusercontent.com/stanfordnlp/stanza-resources/main/resources_1.11.0.json: 439kB [00:00, 7.62MB/s]                    
+2026-03-24 14:49:33 INFO: Downloaded file to /home/urdatorn/stanza_resources/resources.json
+2026-03-24 14:49:33 INFO: Loading these models for language: sv (Swedish):
+==================================
+| Processor | Package            |
+----------------------------------
+| tokenize  | talbanken          |
+| pos       | talbanken_charlm   |
+| lemma     | talbanken_nocharlm |
+| depparse  | talbanken_charlm   |
+==================================
+
+2026-03-24 14:49:33 INFO: Using device: xpu
+2026-03-24 14:49:33 INFO: Loading: tokenize
+2026-03-24 14:49:33 INFO: Loading: pos
+2026-03-24 14:49:35 INFO: Loading: lemma
+2026-03-24 14:49:35 INFO: Loading: depparse
+2026-03-24 14:49:35 INFO: Done loading processors!
+
+Files (vanilla):   0%|          | 0/21 [00:00<?, ?it/s][A
+Files (vanilla):   5%|▍         | 1/21 [00:01<00:37,  1.88s/it][A
+Files (vanilla):  10%|▉         | 2/21 [00:02<00:20,  1.09s/it][A
+Files (vanilla):  14%|█▍        | 3/21 [00:02<00:14,  1.21it/s][A
+Files (vanilla):  19%|█▉        | 4/21 [00:03<00:12,  1.37it/s][A
+Files (vanilla):  24%|██▍       | 5/21 [00:03<00:10,  1.59it/s][A
+Files (vanilla):  29%|██▊       | 6/21 [00:04<00:07,  1.95it/s][A
+Files (vanilla):  33%|███▎      | 7/21 [00:04<00:06,  2.28it/s][A
+Files (vanilla):  38%|███▊      | 8/21 [00:05<00:07,  1.85it/s][A
+Files (vanilla):  43%|████▎     | 9/21 [00:06<00:10,  1.19it/s][A
+Files (vanilla):  48%|████▊     | 10/21 [00:07<00:08,  1.27it/s][A
+Files (vanilla):  52%|█████▏    | 11/21 [00:07<00:06,  1.46it/s][A
+Files (vanilla):  57%|█████▋    | 12/21 [00:08<00:07,  1.28it/s][A
+Files (vanilla):  62%|██████▏   | 13/21 [00:09<00:06,  1.33it/s][A
+Files (vanilla):  67%|██████▋   | 14/21 [00:10<00:04,  1.42it/s][A
+Files (vanilla):  71%|███████▏  | 15/21 [00:10<00:03,  1.63it/s][A
+Files (vanilla):  76%|███████▌  | 16/21 [00:11<00:02,  1.76it/s][A
+Files (vanilla):  81%|████████  | 17/21 [00:12<00:02,  1.35it/s][A
+Files (vanilla):  86%|████████▌ | 18/21 [00:12<00:02,  1.48it/s][A
+Files (vanilla):  90%|█████████ | 19/21 [00:13<00:01,  1.72it/s][A
+Files (vanilla):  95%|█████████▌| 20/21 [00:13<00:00,  1.71it/s][A
+Files (vanilla): 100%|██████████| 21/21 [00:14<00:00,  1.50it/s][A
+                                                                [AModels:   7%|▋         | 1/14 [00:17<03:52, 17.86s/it]2026-03-24 14:49:50 INFO: Loading these models for language: sv (Swedish):
+=======================================
+| Processor | Package                 |
+---------------------------------------
+| tokenize  | talbanken               |
+| pos       | talbanken_charlm        |
+| lemma     | talbanken_nocharlm      |
+| depparse  | saved_mode..._parser.pt |
+=======================================
+
+2026-03-24 14:49:50 INFO: Using device: xpu
+2026-03-24 14:49:50 INFO: Loading: tokenize
+2026-03-24 14:49:50 INFO: Loading: pos
+2026-03-24 14:49:51 INFO: Loading: lemma
+2026-03-24 14:49:51 INFO: Loading: depparse
+2026-03-24 14:49:51 INFO: Done loading processors!
+Max memory allocated so far: 0.44 GB
+Max memory allocated so far: 0.44 GB
+Max memory allocated so far: 0.44 GB
+Max memory allocated so far: 0.44 GB
+Max memory allocated so far: 0.44 GB
+Max memory allocated so far: 0.44 GB
+Max memory allocated so far: 0.44 GB
+Max memory allocated so far: 0.44 GB
+Max memory allocated so far: 0.48 GB
+Max memory allocated so far: 0.48 GB
+Max memory allocated so far: 0.48 GB
+Max memory allocated so far: 0.48 GB
+Max memory allocated so far: 0.48 GB
+Max memory allocated so far: 0.48 GB
+Max memory allocated so far: 0.48 GB
+Max memory allocated so far: 0.48 GB
+Max memory allocated so far: 0.48 GB
+Max memory allocated so far: 0.48 GB
+Max memory allocated so far: 0.48 GB
+Max memory allocated so far: 0.48 GB
+Max memory allocated so far: 0.48 GB
+Completed model vanilla. Parsed sentences this run: 109
+Loaded 24 sentence IDs to exclude from evaluation (used in validation).
+
+======================================================================
+Evaluating: /home/urdatorn/git/gh/Diachronic_Treebanks_DigPhil/parsed_data/new_eval_of_old_models/vanilla
+Output: eval/scores/language_mix/scores_vanilla.txt
+======================================================================
+
+DEBUG sample_name: svediakorp-sec987-spf144
+DEBUG period value: 2
+  Excluded 2 validation sentences from svediakorp-sec987-spf144.conllu
+DEBUG period value: 2
+DEBUG time_periods: ['1700-1750', '1750-1800', '1800-1850', '1850-1900', '1900-1950']
+DEBUG sample_name: svediakorp-sec613-EngstromA_StrindbergOchJag
+DEBUG period value: 4
+  Excluded 2 validation sentences from svediakorp-sec613-EngstromA_StrindbergOchJag.conllu
+DEBUG period value: 4
+DEBUG time_periods: ['1700-1750', '1750-1800', '1800-1850', '1850-1900', '1900-1950']
+DEBUG sample_name: svediakorp-sec268-DulciU_VitterhetsNojen3
+DEBUG period value: 1
+  Excluded 6 validation sentences from svediakorp-sec268-DulciU_VitterhetsNojen3.conllu
+DEBUG period value: 1
+DEBUG time_periods: ['1700-1750', '1750-1800', '1800-1850', '1850-1900', '1900-1950']
+DEBUG sample_name: svediakorp-sec25-Runius
+DEBUG period value: 0
+  Excluded 1 validation sentences from svediakorp-sec25-Runius.conllu
+DEBUG period value: 0
+DEBUG time_periods: ['1700-1750', '1750-1800', '1800-1850', '1850-1900', '1900-1950']
+DEBUG sample_name: svediakorp-sec208-Anonym_DetGrasligaMordet
+DEBUG period value: 3
+  Excluded 1 validation sentences from svediakorp-sec208-Anonym_DetGrasligaMordet.conllu
+DEBUG period value: 3
+DEBUG time_periods: ['1700-1750', '1750-1800', '1800-1850', '1850-1900', '1900-1950']
+DEBUG sample_name: svediakorp-sec324-GranbergPA_Enslighetsalskaren
+DEBUG period value: 2
+  Excluded 1 validation sentences from svediakorp-sec324-GranbergPA_Enslighetsalskaren.conllu
+DEBUG period value: 2
+DEBUG time_periods: ['1700-1750', '1750-1800', '1800-1850', '1850-1900', '1900-1950']
+DEBUG sample_name: svediakorp-sec254-CederborghF_BerattelseOmJohnHall
+DEBUG period value: 2
+  Excluded 1 validation sentences from svediakorp-sec254-CederborghF_BerattelseOmJohnHall.conllu
+DEBUG period value: 2
+DEBUG time_periods: ['1700-1750', '1750-1800', '1800-1850', '1850-1900', '1900-1950']
+DEBUG sample_name: svediakorp-sec397-AngeredStrandbergH_UnderSodernsSol
+DEBUG period value: 4
+  Excluded 3 validation sentences from svediakorp-sec397-AngeredStrandbergH_UnderSodernsSol.conllu
+DEBUG period value: 4
+DEBUG time_periods: ['1700-1750', '1750-1800', '1800-1850', '1850-1900', '1900-1950']
+DEBUG sample_name: svediakorp-sec452-NyblomH_FantasierFyra
+DEBUG period value: 3
+  Excluded 3 validation sentences from svediakorp-sec452-NyblomH_FantasierFyra.conllu
+DEBUG period value: 3
+DEBUG time_periods: ['1700-1750', '1750-1800', '1800-1850', '1850-1900', '1900-1950']
+DEBUG sample_name: svediakorp-sec252-BremerF_Teckningar1
+DEBUG period value: 2
+  Excluded 1 validation sentences from svediakorp-sec252-BremerF_Teckningar1.conllu
+DEBUG period value: 2
+DEBUG time_periods: ['1700-1750', '1750-1800', '1800-1850', '1850-1900', '1900-1950']
+DEBUG sample_name: svediakorp-sec486-SchwartzMS_BellmansSkor
+DEBUG period value: 3
+  Excluded 2 validation sentences from svediakorp-sec486-SchwartzMS_BellmansSkor.conllu
+DEBUG period value: 3
+DEBUG time_periods: ['1700-1750', '1750-1800', '1800-1850', '1850-1900', '1900-1950']
+DEBUG sample_name: svediakorp-sec330-GyllenborgC_SwenskaSpratthoken
+DEBUG period value: 0
+  Excluded 3 validation sentences from svediakorp-sec330-GyllenborgC_SwenskaSpratthoken.conllu
+DEBUG period value: 0
+DEBUG time_periods: ['1700-1750', '1750-1800', '1800-1850', '1850-1900', '1900-1950']
+DEBUG sample_name: svediakorp-sec631-HasselskogN_HallaHallaGronkoping
+DEBUG period value: 4
+  Excluded 3 validation sentences from svediakorp-sec631-HasselskogN_HallaHallaGronkoping.conllu
+DEBUG period value: 4
+DEBUG time_periods: ['1700-1750', '1750-1800', '1800-1850', '1850-1900', '1900-1950']
+DEBUG sample_name: svediakorp-sec277-EnbomPU_MedborgeligtSkalde
+DEBUG period value: 1
+  Excluded 6 validation sentences from svediakorp-sec277-EnbomPU_MedborgeligtSkalde.conllu
+DEBUG period value: 1
+DEBUG time_periods: ['1700-1750', '1750-1800', '1800-1850', '1850-1900', '1900-1950']
+DEBUG sample_name: svediakorp-sec1102-spf259
+DEBUG period value: 3
+  Excluded 4 validation sentences from svediakorp-sec1102-spf259.conllu
+DEBUG period value: 3
+DEBUG time_periods: ['1700-1750', '1750-1800', '1800-1850', '1850-1900', '1900-1950']
+DEBUG sample_name: svediakorp-sec991-spf148
+DEBUG period value: 2
+  Excluded 3 validation sentences from svediakorp-sec991-spf148.conllu
+DEBUG period value: 2
+DEBUG time_periods: ['1700-1750', '1750-1800', '1800-1850', '1850-1900', '1900-1950']
+DEBUG sample_name: svediakorp-sec639-HeidenstamV_Proletarfilosofiens
+DEBUG period value: 4
+  Excluded 2 validation sentences from svediakorp-sec639-HeidenstamV_Proletarfilosofiens.conllu
+DEBUG period value: 4
+DEBUG time_periods: ['1700-1750', '1750-1800', '1800-1850', '1850-1900', '1900-1950']
+DEBUG sample_name: svediakorp-sec988-spf145
+DEBUG period value: 2
+  Excluded 1 validation sentences from svediakorp-sec988-spf145.conllu
+DEBUG period value: 2
+DEBUG time_periods: ['1700-1750', '1750-1800', '1800-1850', '1850-1900', '1900-1950']
+DEBUG sample_name: svediakorp-sec1063-spf220
+DEBUG period value: 3
+DEBUG period value: 3
+DEBUG time_periods: ['1700-1750', '1750-1800', '1800-1850', '1850-1900', '1900-1950']
+DEBUG sample_name: svediakorp-sec1033-spf190
+DEBUG period value: 4
+  Excluded 2 validation sentences from svediakorp-sec1033-spf190.conllu
+DEBUG period value: 4
+DEBUG time_periods: ['1700-1750', '1750-1800', '1800-1850', '1850-1900', '1900-1950']
+DEBUG sample_name: svediakorp-letter141673-Stalhammar
+DEBUG period value: 0
+  Excluded 3 validation sentences from svediakorp-letter141673-Stalhammar.conllu
+DEBUG period value: 0
+DEBUG time_periods: ['1700-1750', '1750-1800', '1800-1850', '1850-1900', '1900-1950']
+Results saved to eval/scores/language_mix/scores_vanilla.txt
+Running model: saved_models/depparse/old/conll17_baseline_sv_only/sv_diachronic_charlm_parser.pt
+
+Files (conll17_baseline_sv_only):   0%|          | 0/21 [00:00<?, ?it/s][A
+Files (conll17_baseline_sv_only):   5%|▍         | 1/21 [00:00<00:19,  1.05it/s][A
+Files (conll17_baseline_sv_only):  10%|▉         | 2/21 [00:01<00:14,  1.31it/s][A
+Files (conll17_baseline_sv_only):  14%|█▍        | 3/21 [00:02<00:12,  1.42it/s][A
+Files (conll17_baseline_sv_only):  19%|█▉        | 4/21 [00:03<00:12,  1.33it/s][A
+Files (conll17_baseline_sv_only):  24%|██▍       | 5/21 [00:03<00:10,  1.48it/s][A
+Files (conll17_baseline_sv_only):  29%|██▊       | 6/21 [00:03<00:08,  1.82it/s][A
+Files (conll17_baseline_sv_only):  33%|███▎      | 7/21 [00:04<00:06,  2.11it/s][A
+Files (conll17_baseline_sv_only):  38%|███▊      | 8/21 [00:05<00:08,  1.52it/s][A
+Files (conll17_baseline_sv_only):  43%|████▎     | 9/21 [00:07<00:13,  1.15s/it][A
+Files (conll17_baseline_sv_only):  48%|████▊     | 10/21 [00:08<00:12,  1.11s/it][A
+Files (conll17_baseline_sv_only):  52%|█████▏    | 11/21 [00:09<00:09,  1.03it/s][A
+Files (conll17_baseline_sv_only):  57%|█████▋    | 12/21 [00:10<00:09,  1.08s/it][A
+Files (conll17_baseline_sv_only):  62%|██████▏   | 13/21 [00:11<00:08,  1.05s/it][A
+Files (conll17_baseline_sv_only):  67%|██████▋   | 14/21 [00:12<00:06,  1.04it/s][A
+Files (conll17_baseline_sv_only):  71%|███████▏  | 15/21 [00:12<00:05,  1.18it/s][A
+Files (conll17_baseline_sv_only):  76%|███████▌  | 16/21 [00:13<00:03,  1.27it/s][A
+Files (conll17_baseline_sv_only):  81%|████████  | 17/21 [00:14<00:04,  1.00s/it][A
+Files (conll17_baseline_sv_only):  86%|████████▌ | 18/21 [00:15<00:02,  1.09it/s][A
+Files (conll17_baseline_sv_only):  90%|█████████ | 19/21 [00:16<00:01,  1.29it/s][A
+Files (conll17_baseline_sv_only):  95%|█████████▌| 20/21 [00:16<00:00,  1.27it/s][A
+Files (conll17_baseline_sv_only): 100%|██████████| 21/21 [00:18<00:00,  1.10it/s][A
+                                                                                 [AModels:  14%|█▍        | 2/14 [00:37<03:47, 18.97s/it]2026-03-24 14:50:10 INFO: Loading these models for language: sv (Swedish):
+=======================================
+| Processor | Package                 |
+---------------------------------------
+| tokenize  | talbanken               |
+| pos       | talbanken_charlm        |
+| lemma     | talbanken_nocharlm      |
+| depparse  | saved_mode..._parser.pt |
+=======================================
+
+2026-03-24 14:50:10 INFO: Using device: xpu
+2026-03-24 14:50:10 INFO: Loading: tokenize
+2026-03-24 14:50:10 INFO: Loading: pos
+2026-03-24 14:50:11 INFO: Loading: lemma
+2026-03-24 14:50:11 INFO: Loading: depparse
+2026-03-24 14:50:11 INFO: Done loading processors!
+Max memory allocated so far: 0.48 GB
+Max memory allocated so far: 0.48 GB
+Max memory allocated so far: 0.48 GB
+Max memory allocated so far: 0.48 GB
+Max memory allocated so far: 0.48 GB
+Max memory allocated so far: 0.48 GB
+Max memory allocated so far: 0.48 GB
+Max memory allocated so far: 0.48 GB
+Max memory allocated so far: 0.48 GB
+Max memory allocated so far: 0.48 GB
+Max memory allocated so far: 0.48 GB
+Max memory allocated so far: 0.48 GB
+Max memory allocated so far: 0.48 GB
+Max memory allocated so far: 0.48 GB
+Max memory allocated so far: 0.48 GB
+Max memory allocated so far: 0.48 GB
+Max memory allocated so far: 0.48 GB
+Max memory allocated so far: 0.48 GB
+Max memory allocated so far: 0.48 GB
+Max memory allocated so far: 0.48 GB
+Max memory allocated so far: 0.48 GB
+Completed model conll17_baseline_sv_only. Parsed sentences this run: 109
+Loaded 24 sentence IDs to exclude from evaluation (used in validation).
+
+======================================================================
+Evaluating: /home/urdatorn/git/gh/Diachronic_Treebanks_DigPhil/parsed_data/new_eval_of_old_models/conll17_baseline_sv_only
+Output: eval/scores/language_mix/scores_conll17_baseline_sv_only.txt
+======================================================================
+
+DEBUG sample_name: svediakorp-sec987-spf144
+DEBUG period value: 2
+  Excluded 2 validation sentences from svediakorp-sec987-spf144.conllu
+DEBUG period value: 2
+DEBUG time_periods: ['1700-1750', '1750-1800', '1800-1850', '1850-1900', '1900-1950']
+DEBUG sample_name: svediakorp-sec613-EngstromA_StrindbergOchJag
+DEBUG period value: 4
+  Excluded 2 validation sentences from svediakorp-sec613-EngstromA_StrindbergOchJag.conllu
+DEBUG period value: 4
+DEBUG time_periods: ['1700-1750', '1750-1800', '1800-1850', '1850-1900', '1900-1950']
+DEBUG sample_name: svediakorp-sec268-DulciU_VitterhetsNojen3
+DEBUG period value: 1
+  Excluded 6 validation sentences from svediakorp-sec268-DulciU_VitterhetsNojen3.conllu
+DEBUG period value: 1
+DEBUG time_periods: ['1700-1750', '1750-1800', '1800-1850', '1850-1900', '1900-1950']
+DEBUG sample_name: svediakorp-sec25-Runius
+DEBUG period value: 0
+  Excluded 1 validation sentences from svediakorp-sec25-Runius.conllu
+DEBUG period value: 0
+DEBUG time_periods: ['1700-1750', '1750-1800', '1800-1850', '1850-1900', '1900-1950']
+DEBUG sample_name: svediakorp-sec208-Anonym_DetGrasligaMordet
+DEBUG period value: 3
+  Excluded 1 validation sentences from svediakorp-sec208-Anonym_DetGrasligaMordet.conllu
+DEBUG period value: 3
+DEBUG time_periods: ['1700-1750', '1750-1800', '1800-1850', '1850-1900', '1900-1950']
+DEBUG sample_name: svediakorp-sec324-GranbergPA_Enslighetsalskaren
+DEBUG period value: 2
+  Excluded 1 validation sentences from svediakorp-sec324-GranbergPA_Enslighetsalskaren.conllu
+DEBUG period value: 2
+DEBUG time_periods: ['1700-1750', '1750-1800', '1800-1850', '1850-1900', '1900-1950']
+DEBUG sample_name: svediakorp-sec254-CederborghF_BerattelseOmJohnHall
+DEBUG period value: 2
+  Excluded 1 validation sentences from svediakorp-sec254-CederborghF_BerattelseOmJohnHall.conllu
+DEBUG period value: 2
+DEBUG time_periods: ['1700-1750', '1750-1800', '1800-1850', '1850-1900', '1900-1950']
+DEBUG sample_name: svediakorp-sec397-AngeredStrandbergH_UnderSodernsSol
+DEBUG period value: 4
+  Excluded 3 validation sentences from svediakorp-sec397-AngeredStrandbergH_UnderSodernsSol.conllu
+DEBUG period value: 4
+DEBUG time_periods: ['1700-1750', '1750-1800', '1800-1850', '1850-1900', '1900-1950']
+DEBUG sample_name: svediakorp-sec452-NyblomH_FantasierFyra
+DEBUG period value: 3
+  Excluded 3 validation sentences from svediakorp-sec452-NyblomH_FantasierFyra.conllu
+DEBUG period value: 3
+DEBUG time_periods: ['1700-1750', '1750-1800', '1800-1850', '1850-1900', '1900-1950']
+DEBUG sample_name: svediakorp-sec252-BremerF_Teckningar1
+DEBUG period value: 2
+  Excluded 1 validation sentences from svediakorp-sec252-BremerF_Teckningar1.conllu
+DEBUG period value: 2
+DEBUG time_periods: ['1700-1750', '1750-1800', '1800-1850', '1850-1900', '1900-1950']
+DEBUG sample_name: svediakorp-sec486-SchwartzMS_BellmansSkor
+DEBUG period value: 3
+  Excluded 2 validation sentences from svediakorp-sec486-SchwartzMS_BellmansSkor.conllu
+DEBUG period value: 3
+DEBUG time_periods: ['1700-1750', '1750-1800', '1800-1850', '1850-1900', '1900-1950']
+DEBUG sample_name: svediakorp-sec330-GyllenborgC_SwenskaSpratthoken
+DEBUG period value: 0
+  Excluded 3 validation sentences from svediakorp-sec330-GyllenborgC_SwenskaSpratthoken.conllu
+DEBUG period value: 0
+DEBUG time_periods: ['1700-1750', '1750-1800', '1800-1850', '1850-1900', '1900-1950']
+DEBUG sample_name: svediakorp-sec631-HasselskogN_HallaHallaGronkoping
+DEBUG period value: 4
+  Excluded 3 validation sentences from svediakorp-sec631-HasselskogN_HallaHallaGronkoping.conllu
+DEBUG period value: 4
+DEBUG time_periods: ['1700-1750', '1750-1800', '1800-1850', '1850-1900', '1900-1950']
+DEBUG sample_name: svediakorp-sec277-EnbomPU_MedborgeligtSkalde
+DEBUG period value: 1
+  Excluded 6 validation sentences from svediakorp-sec277-EnbomPU_MedborgeligtSkalde.conllu
+DEBUG period value: 1
+DEBUG time_periods: ['1700-1750', '1750-1800', '1800-1850', '1850-1900', '1900-1950']
+DEBUG sample_name: svediakorp-sec1102-spf259
+DEBUG period value: 3
+  Excluded 4 validation sentences from svediakorp-sec1102-spf259.conllu
+DEBUG period value: 3
+DEBUG time_periods: ['1700-1750', '1750-1800', '1800-1850', '1850-1900', '1900-1950']
+DEBUG sample_name: svediakorp-sec991-spf148
+DEBUG period value: 2
+  Excluded 3 validation sentences from svediakorp-sec991-spf148.conllu
+DEBUG period value: 2
+DEBUG time_periods: ['1700-1750', '1750-1800', '1800-1850', '1850-1900', '1900-1950']
+DEBUG sample_name: svediakorp-sec639-HeidenstamV_Proletarfilosofiens
+DEBUG period value: 4
+  Excluded 2 validation sentences from svediakorp-sec639-HeidenstamV_Proletarfilosofiens.conllu
+DEBUG period value: 4
+DEBUG time_periods: ['1700-1750', '1750-1800', '1800-1850', '1850-1900', '1900-1950']
+DEBUG sample_name: svediakorp-sec988-spf145
+DEBUG period value: 2
+  Excluded 1 validation sentences from svediakorp-sec988-spf145.conllu
+DEBUG period value: 2
+DEBUG time_periods: ['1700-1750', '1750-1800', '1800-1850', '1850-1900', '1900-1950']
+DEBUG sample_name: svediakorp-sec1063-spf220
+DEBUG period value: 3
+DEBUG period value: 3
+DEBUG time_periods: ['1700-1750', '1750-1800', '1800-1850', '1850-1900', '1900-1950']
+DEBUG sample_name: svediakorp-sec1033-spf190
+DEBUG period value: 4
+  Excluded 2 validation sentences from svediakorp-sec1033-spf190.conllu
+DEBUG period value: 4
+DEBUG time_periods: ['1700-1750', '1750-1800', '1800-1850', '1850-1900', '1900-1950']
+DEBUG sample_name: svediakorp-letter141673-Stalhammar
+DEBUG period value: 0
+  Excluded 3 validation sentences from svediakorp-letter141673-Stalhammar.conllu
+DEBUG period value: 0
+DEBUG time_periods: ['1700-1750', '1750-1800', '1800-1850', '1850-1900', '1900-1950']
+Results saved to eval/scores/language_mix/scores_conll17_baseline_sv_only.txt
+Running model: saved_models/depparse/old/conll17_bm/sv_diachronic_charlm_parser.pt
+
+Files (conll17_bm):   0%|          | 0/21 [00:00<?, ?it/s][A
+Files (conll17_bm):   5%|▍         | 1/21 [00:00<00:18,  1.09it/s][A
+Files (conll17_bm):  10%|▉         | 2/21 [00:01<00:13,  1.36it/s][A
+Files (conll17_bm):  14%|█▍        | 3/21 [00:02<00:12,  1.45it/s][A
+Files (conll17_bm):  19%|█▉        | 4/21 [00:02<00:12,  1.36it/s][A
+Files (conll17_bm):  24%|██▍       | 5/21 [00:03<00:10,  1.51it/s][A
+Files (conll17_bm):  29%|██▊       | 6/21 [00:03<00:08,  1.85it/s][A
+Files (conll17_bm):  33%|███▎      | 7/21 [00:04<00:06,  2.13it/s][A
+Files (conll17_bm):  38%|███▊      | 8/21 [00:05<00:08,  1.53it/s][A
+Files (conll17_bm):  43%|████▎     | 9/21 [00:07<00:13,  1.15s/it][A
+Files (conll17_bm):  48%|████▊     | 10/21 [00:08<00:12,  1.11s/it][A
+Files (conll17_bm):  52%|█████▏    | 11/21 [00:09<00:09,  1.03it/s][A
+Files (conll17_bm):  57%|█████▋    | 12/21 [00:10<00:09,  1.08s/it][A
+Files (conll17_bm):  62%|██████▏   | 13/21 [00:11<00:08,  1.03s/it][A
+Files (conll17_bm):  67%|██████▋   | 14/21 [00:12<00:06,  1.05it/s][A
+Files (conll17_bm):  71%|███████▏  | 15/21 [00:12<00:05,  1.19it/s][A
+Files (conll17_bm):  76%|███████▌  | 16/21 [00:13<00:03,  1.28it/s][A
+Files (conll17_bm):  81%|████████  | 17/21 [00:14<00:03,  1.00it/s][A
+Files (conll17_bm):  86%|████████▌ | 18/21 [00:15<00:02,  1.09it/s][A
+Files (conll17_bm):  90%|█████████ | 19/21 [00:16<00:01,  1.29it/s][A
+Files (conll17_bm):  95%|█████████▌| 20/21 [00:16<00:00,  1.27it/s][A
+Files (conll17_bm): 100%|██████████| 21/21 [00:18<00:00,  1.10it/s][A
+                                                                   [AModels:  21%|██▏       | 3/14 [00:57<03:32, 19.33s/it]2026-03-24 14:50:29 INFO: Loading these models for language: sv (Swedish):
+=======================================
+| Processor | Package                 |
+---------------------------------------
+| tokenize  | talbanken               |
+| pos       | talbanken_charlm        |
+| lemma     | talbanken_nocharlm      |
+| depparse  | saved_mode..._parser.pt |
+=======================================
+
+2026-03-24 14:50:29 INFO: Using device: xpu
+2026-03-24 14:50:29 INFO: Loading: tokenize
+2026-03-24 14:50:29 INFO: Loading: pos
+2026-03-24 14:50:30 INFO: Loading: lemma
+2026-03-24 14:50:31 INFO: Loading: depparse
+2026-03-24 14:50:31 INFO: Done loading processors!
+Max memory allocated so far: 0.48 GB
+Max memory allocated so far: 0.48 GB
+Max memory allocated so far: 0.48 GB
+Max memory allocated so far: 0.48 GB
+Max memory allocated so far: 0.48 GB
+Max memory allocated so far: 0.48 GB
+Max memory allocated so far: 0.48 GB
+Max memory allocated so far: 0.48 GB
+Max memory allocated so far: 0.48 GB
+Max memory allocated so far: 0.48 GB
+Max memory allocated so far: 0.48 GB
+Max memory allocated so far: 0.48 GB
+Max memory allocated so far: 0.48 GB
+Max memory allocated so far: 0.48 GB
+Max memory allocated so far: 0.48 GB
+Max memory allocated so far: 0.48 GB
+Max memory allocated so far: 0.48 GB
+Max memory allocated so far: 0.48 GB
+Max memory allocated so far: 0.48 GB
+Max memory allocated so far: 0.48 GB
+Max memory allocated so far: 0.48 GB
+Completed model conll17_bm. Parsed sentences this run: 109
+Loaded 24 sentence IDs to exclude from evaluation (used in validation).
+
+======================================================================
+Evaluating: /home/urdatorn/git/gh/Diachronic_Treebanks_DigPhil/parsed_data/new_eval_of_old_models/conll17_bm
+Output: eval/scores/language_mix/scores_conll17_bm.txt
+======================================================================
+
+DEBUG sample_name: svediakorp-sec987-spf144
+DEBUG period value: 2
+  Excluded 2 validation sentences from svediakorp-sec987-spf144.conllu
+DEBUG period value: 2
+DEBUG time_periods: ['1700-1750', '1750-1800', '1800-1850', '1850-1900', '1900-1950']
+DEBUG sample_name: svediakorp-sec613-EngstromA_StrindbergOchJag
+DEBUG period value: 4
+  Excluded 2 validation sentences from svediakorp-sec613-EngstromA_StrindbergOchJag.conllu
+DEBUG period value: 4
+DEBUG time_periods: ['1700-1750', '1750-1800', '1800-1850', '1850-1900', '1900-1950']
+DEBUG sample_name: svediakorp-sec268-DulciU_VitterhetsNojen3
+DEBUG period value: 1
+  Excluded 6 validation sentences from svediakorp-sec268-DulciU_VitterhetsNojen3.conllu
+DEBUG period value: 1
+DEBUG time_periods: ['1700-1750', '1750-1800', '1800-1850', '1850-1900', '1900-1950']
+DEBUG sample_name: svediakorp-sec25-Runius
+DEBUG period value: 0
+  Excluded 1 validation sentences from svediakorp-sec25-Runius.conllu
+DEBUG period value: 0
+DEBUG time_periods: ['1700-1750', '1750-1800', '1800-1850', '1850-1900', '1900-1950']
+DEBUG sample_name: svediakorp-sec208-Anonym_DetGrasligaMordet
+DEBUG period value: 3
+  Excluded 1 validation sentences from svediakorp-sec208-Anonym_DetGrasligaMordet.conllu
+DEBUG period value: 3
+DEBUG time_periods: ['1700-1750', '1750-1800', '1800-1850', '1850-1900', '1900-1950']
+DEBUG sample_name: svediakorp-sec324-GranbergPA_Enslighetsalskaren
+DEBUG period value: 2
+  Excluded 1 validation sentences from svediakorp-sec324-GranbergPA_Enslighetsalskaren.conllu
+DEBUG period value: 2
+DEBUG time_periods: ['1700-1750', '1750-1800', '1800-1850', '1850-1900', '1900-1950']
+DEBUG sample_name: svediakorp-sec254-CederborghF_BerattelseOmJohnHall
+DEBUG period value: 2
+  Excluded 1 validation sentences from svediakorp-sec254-CederborghF_BerattelseOmJohnHall.conllu
+DEBUG period value: 2
+DEBUG time_periods: ['1700-1750', '1750-1800', '1800-1850', '1850-1900', '1900-1950']
+DEBUG sample_name: svediakorp-sec397-AngeredStrandbergH_UnderSodernsSol
+DEBUG period value: 4
+  Excluded 3 validation sentences from svediakorp-sec397-AngeredStrandbergH_UnderSodernsSol.conllu
+DEBUG period value: 4
+DEBUG time_periods: ['1700-1750', '1750-1800', '1800-1850', '1850-1900', '1900-1950']
+DEBUG sample_name: svediakorp-sec452-NyblomH_FantasierFyra
+DEBUG period value: 3
+  Excluded 3 validation sentences from svediakorp-sec452-NyblomH_FantasierFyra.conllu
+DEBUG period value: 3
+DEBUG time_periods: ['1700-1750', '1750-1800', '1800-1850', '1850-1900', '1900-1950']
+DEBUG sample_name: svediakorp-sec252-BremerF_Teckningar1
+DEBUG period value: 2
+  Excluded 1 validation sentences from svediakorp-sec252-BremerF_Teckningar1.conllu
+DEBUG period value: 2
+DEBUG time_periods: ['1700-1750', '1750-1800', '1800-1850', '1850-1900', '1900-1950']
+DEBUG sample_name: svediakorp-sec486-SchwartzMS_BellmansSkor
+DEBUG period value: 3
+  Excluded 2 validation sentences from svediakorp-sec486-SchwartzMS_BellmansSkor.conllu
+DEBUG period value: 3
+DEBUG time_periods: ['1700-1750', '1750-1800', '1800-1850', '1850-1900', '1900-1950']
+DEBUG sample_name: svediakorp-sec330-GyllenborgC_SwenskaSpratthoken
+DEBUG period value: 0
+  Excluded 3 validation sentences from svediakorp-sec330-GyllenborgC_SwenskaSpratthoken.conllu
+DEBUG period value: 0
+DEBUG time_periods: ['1700-1750', '1750-1800', '1800-1850', '1850-1900', '1900-1950']
+DEBUG sample_name: svediakorp-sec631-HasselskogN_HallaHallaGronkoping
+DEBUG period value: 4
+  Excluded 3 validation sentences from svediakorp-sec631-HasselskogN_HallaHallaGronkoping.conllu
+DEBUG period value: 4
+DEBUG time_periods: ['1700-1750', '1750-1800', '1800-1850', '1850-1900', '1900-1950']
+DEBUG sample_name: svediakorp-sec277-EnbomPU_MedborgeligtSkalde
+DEBUG period value: 1
+  Excluded 6 validation sentences from svediakorp-sec277-EnbomPU_MedborgeligtSkalde.conllu
+DEBUG period value: 1
+DEBUG time_periods: ['1700-1750', '1750-1800', '1800-1850', '1850-1900', '1900-1950']
+DEBUG sample_name: svediakorp-sec1102-spf259
+DEBUG period value: 3
+  Excluded 4 validation sentences from svediakorp-sec1102-spf259.conllu
+DEBUG period value: 3
+DEBUG time_periods: ['1700-1750', '1750-1800', '1800-1850', '1850-1900', '1900-1950']
+DEBUG sample_name: svediakorp-sec991-spf148
+DEBUG period value: 2
+  Excluded 3 validation sentences from svediakorp-sec991-spf148.conllu
+DEBUG period value: 2
+DEBUG time_periods: ['1700-1750', '1750-1800', '1800-1850', '1850-1900', '1900-1950']
+DEBUG sample_name: svediakorp-sec639-HeidenstamV_Proletarfilosofiens
+DEBUG period value: 4
+  Excluded 2 validation sentences from svediakorp-sec639-HeidenstamV_Proletarfilosofiens.conllu
+DEBUG period value: 4
+DEBUG time_periods: ['1700-1750', '1750-1800', '1800-1850', '1850-1900', '1900-1950']
+DEBUG sample_name: svediakorp-sec988-spf145
+DEBUG period value: 2
+  Excluded 1 validation sentences from svediakorp-sec988-spf145.conllu
+DEBUG period value: 2
+DEBUG time_periods: ['1700-1750', '1750-1800', '1800-1850', '1850-1900', '1900-1950']
+DEBUG sample_name: svediakorp-sec1063-spf220
+DEBUG period value: 3
+DEBUG period value: 3
+DEBUG time_periods: ['1700-1750', '1750-1800', '1800-1850', '1850-1900', '1900-1950']
+DEBUG sample_name: svediakorp-sec1033-spf190
+DEBUG period value: 4
+  Excluded 2 validation sentences from svediakorp-sec1033-spf190.conllu
+DEBUG period value: 4
+DEBUG time_periods: ['1700-1750', '1750-1800', '1800-1850', '1850-1900', '1900-1950']
+DEBUG sample_name: svediakorp-letter141673-Stalhammar
+DEBUG period value: 0
+  Excluded 3 validation sentences from svediakorp-letter141673-Stalhammar.conllu
+DEBUG period value: 0
+DEBUG time_periods: ['1700-1750', '1750-1800', '1800-1850', '1850-1900', '1900-1950']
+Results saved to eval/scores/language_mix/scores_conll17_bm.txt
+Running model: saved_models/depparse/old/conll17_bm_dk/sv_diachronic_charlm_parser.pt
+
+Files (conll17_bm_dk):   0%|          | 0/21 [00:00<?, ?it/s][A
+Files (conll17_bm_dk):   5%|▍         | 1/21 [00:00<00:18,  1.09it/s][A
+Files (conll17_bm_dk):  10%|▉         | 2/21 [00:01<00:13,  1.36it/s][A
+Files (conll17_bm_dk):  14%|█▍        | 3/21 [00:02<00:12,  1.46it/s][A
+Files (conll17_bm_dk):  19%|█▉        | 4/21 [00:02<00:12,  1.37it/s][A
+Files (conll17_bm_dk):  24%|██▍       | 5/21 [00:03<00:10,  1.51it/s][A
+Files (conll17_bm_dk):  29%|██▊       | 6/21 [00:03<00:08,  1.86it/s][A
+Files (conll17_bm_dk):  33%|███▎      | 7/21 [00:04<00:06,  2.14it/s][A
+Files (conll17_bm_dk):  38%|███▊      | 8/21 [00:05<00:08,  1.53it/s][A
+Files (conll17_bm_dk):  43%|████▎     | 9/21 [00:07<00:13,  1.15s/it][A
+Files (conll17_bm_dk):  48%|████▊     | 10/21 [00:08<00:12,  1.11s/it][A
+Files (conll17_bm_dk):  52%|█████▏    | 11/21 [00:09<00:09,  1.03it/s][A
+Files (conll17_bm_dk):  57%|█████▋    | 12/21 [00:10<00:09,  1.08s/it][A
+Files (conll17_bm_dk):  62%|██████▏   | 13/21 [00:11<00:08,  1.02s/it][A
+Files (conll17_bm_dk):  67%|██████▋   | 14/21 [00:12<00:06,  1.06it/s][A
+Files (conll17_bm_dk):  71%|███████▏  | 15/21 [00:12<00:04,  1.20it/s][A
+Files (conll17_bm_dk):  76%|███████▌  | 16/21 [00:13<00:03,  1.29it/s][A
+Files (conll17_bm_dk):  81%|████████  | 17/21 [00:14<00:03,  1.01it/s][A
+Files (conll17_bm_dk):  86%|████████▌ | 18/21 [00:15<00:02,  1.10it/s][A
+Files (conll17_bm_dk):  90%|█████████ | 19/21 [00:15<00:01,  1.29it/s][A
+Files (conll17_bm_dk):  95%|█████████▌| 20/21 [00:16<00:00,  1.28it/s][A
+Files (conll17_bm_dk): 100%|██████████| 21/21 [00:17<00:00,  1.10it/s][A
+                                                                      [AModels:  29%|██▊       | 4/14 [01:17<03:15, 19.50s/it]2026-03-24 14:50:49 INFO: Loading these models for language: sv (Swedish):
+=======================================
+| Processor | Package                 |
+---------------------------------------
+| tokenize  | talbanken               |
+| pos       | talbanken_charlm        |
+| lemma     | talbanken_nocharlm      |
+| depparse  | saved_mode..._parser.pt |
+=======================================
+
+2026-03-24 14:50:49 INFO: Using device: xpu
+2026-03-24 14:50:49 INFO: Loading: tokenize
+2026-03-24 14:50:49 INFO: Loading: pos
+2026-03-24 14:50:50 INFO: Loading: lemma
+2026-03-24 14:50:50 INFO: Loading: depparse
+2026-03-24 14:50:51 INFO: Done loading processors!
+Max memory allocated so far: 0.48 GB
+Max memory allocated so far: 0.48 GB
+Max memory allocated so far: 0.48 GB
+Max memory allocated so far: 0.48 GB
+Max memory allocated so far: 0.48 GB
+Max memory allocated so far: 0.48 GB
+Max memory allocated so far: 0.48 GB
+Max memory allocated so far: 0.48 GB
+Max memory allocated so far: 0.48 GB
+Max memory allocated so far: 0.48 GB
+Max memory allocated so far: 0.48 GB
+Max memory allocated so far: 0.48 GB
+Max memory allocated so far: 0.48 GB
+Max memory allocated so far: 0.48 GB
+Max memory allocated so far: 0.48 GB
+Max memory allocated so far: 0.48 GB
+Max memory allocated so far: 0.48 GB
+Max memory allocated so far: 0.48 GB
+Max memory allocated so far: 0.48 GB
+Max memory allocated so far: 0.48 GB
+Max memory allocated so far: 0.48 GB
+Completed model conll17_bm_dk. Parsed sentences this run: 109
+Loaded 24 sentence IDs to exclude from evaluation (used in validation).
+
+======================================================================
+Evaluating: /home/urdatorn/git/gh/Diachronic_Treebanks_DigPhil/parsed_data/new_eval_of_old_models/conll17_bm_dk
+Output: eval/scores/language_mix/scores_conll17_bm_dk.txt
+======================================================================
+
+DEBUG sample_name: svediakorp-sec987-spf144
+DEBUG period value: 2
+  Excluded 2 validation sentences from svediakorp-sec987-spf144.conllu
+DEBUG period value: 2
+DEBUG time_periods: ['1700-1750', '1750-1800', '1800-1850', '1850-1900', '1900-1950']
+DEBUG sample_name: svediakorp-sec613-EngstromA_StrindbergOchJag
+DEBUG period value: 4
+  Excluded 2 validation sentences from svediakorp-sec613-EngstromA_StrindbergOchJag.conllu
+DEBUG period value: 4
+DEBUG time_periods: ['1700-1750', '1750-1800', '1800-1850', '1850-1900', '1900-1950']
+DEBUG sample_name: svediakorp-sec268-DulciU_VitterhetsNojen3
+DEBUG period value: 1
+  Excluded 6 validation sentences from svediakorp-sec268-DulciU_VitterhetsNojen3.conllu
+DEBUG period value: 1
+DEBUG time_periods: ['1700-1750', '1750-1800', '1800-1850', '1850-1900', '1900-1950']
+DEBUG sample_name: svediakorp-sec25-Runius
+DEBUG period value: 0
+  Excluded 1 validation sentences from svediakorp-sec25-Runius.conllu
+DEBUG period value: 0
+DEBUG time_periods: ['1700-1750', '1750-1800', '1800-1850', '1850-1900', '1900-1950']
+DEBUG sample_name: svediakorp-sec208-Anonym_DetGrasligaMordet
+DEBUG period value: 3
+  Excluded 1 validation sentences from svediakorp-sec208-Anonym_DetGrasligaMordet.conllu
+DEBUG period value: 3
+DEBUG time_periods: ['1700-1750', '1750-1800', '1800-1850', '1850-1900', '1900-1950']
+DEBUG sample_name: svediakorp-sec324-GranbergPA_Enslighetsalskaren
+DEBUG period value: 2
+  Excluded 1 validation sentences from svediakorp-sec324-GranbergPA_Enslighetsalskaren.conllu
+DEBUG period value: 2
+DEBUG time_periods: ['1700-1750', '1750-1800', '1800-1850', '1850-1900', '1900-1950']
+DEBUG sample_name: svediakorp-sec254-CederborghF_BerattelseOmJohnHall
+DEBUG period value: 2
+  Excluded 1 validation sentences from svediakorp-sec254-CederborghF_BerattelseOmJohnHall.conllu
+DEBUG period value: 2
+DEBUG time_periods: ['1700-1750', '1750-1800', '1800-1850', '1850-1900', '1900-1950']
+DEBUG sample_name: svediakorp-sec397-AngeredStrandbergH_UnderSodernsSol
+DEBUG period value: 4
+  Excluded 3 validation sentences from svediakorp-sec397-AngeredStrandbergH_UnderSodernsSol.conllu
+DEBUG period value: 4
+DEBUG time_periods: ['1700-1750', '1750-1800', '1800-1850', '1850-1900', '1900-1950']
+DEBUG sample_name: svediakorp-sec452-NyblomH_FantasierFyra
+DEBUG period value: 3
+  Excluded 3 validation sentences from svediakorp-sec452-NyblomH_FantasierFyra.conllu
+DEBUG period value: 3
+DEBUG time_periods: ['1700-1750', '1750-1800', '1800-1850', '1850-1900', '1900-1950']
+DEBUG sample_name: svediakorp-sec252-BremerF_Teckningar1
+DEBUG period value: 2
+  Excluded 1 validation sentences from svediakorp-sec252-BremerF_Teckningar1.conllu
+DEBUG period value: 2
+DEBUG time_periods: ['1700-1750', '1750-1800', '1800-1850', '1850-1900', '1900-1950']
+DEBUG sample_name: svediakorp-sec486-SchwartzMS_BellmansSkor
+DEBUG period value: 3
+  Excluded 2 validation sentences from svediakorp-sec486-SchwartzMS_BellmansSkor.conllu
+DEBUG period value: 3
+DEBUG time_periods: ['1700-1750', '1750-1800', '1800-1850', '1850-1900', '1900-1950']
+DEBUG sample_name: svediakorp-sec330-GyllenborgC_SwenskaSpratthoken
+DEBUG period value: 0
+  Excluded 3 validation sentences from svediakorp-sec330-GyllenborgC_SwenskaSpratthoken.conllu
+DEBUG period value: 0
+DEBUG time_periods: ['1700-1750', '1750-1800', '1800-1850', '1850-1900', '1900-1950']
+DEBUG sample_name: svediakorp-sec631-HasselskogN_HallaHallaGronkoping
+DEBUG period value: 4
+  Excluded 3 validation sentences from svediakorp-sec631-HasselskogN_HallaHallaGronkoping.conllu
+DEBUG period value: 4
+DEBUG time_periods: ['1700-1750', '1750-1800', '1800-1850', '1850-1900', '1900-1950']
+DEBUG sample_name: svediakorp-sec277-EnbomPU_MedborgeligtSkalde
+DEBUG period value: 1
+  Excluded 6 validation sentences from svediakorp-sec277-EnbomPU_MedborgeligtSkalde.conllu
+DEBUG period value: 1
+DEBUG time_periods: ['1700-1750', '1750-1800', '1800-1850', '1850-1900', '1900-1950']
+DEBUG sample_name: svediakorp-sec1102-spf259
+DEBUG period value: 3
+  Excluded 4 validation sentences from svediakorp-sec1102-spf259.conllu
+DEBUG period value: 3
+DEBUG time_periods: ['1700-1750', '1750-1800', '1800-1850', '1850-1900', '1900-1950']
+DEBUG sample_name: svediakorp-sec991-spf148
+DEBUG period value: 2
+  Excluded 3 validation sentences from svediakorp-sec991-spf148.conllu
+DEBUG period value: 2
+DEBUG time_periods: ['1700-1750', '1750-1800', '1800-1850', '1850-1900', '1900-1950']
+DEBUG sample_name: svediakorp-sec639-HeidenstamV_Proletarfilosofiens
+DEBUG period value: 4
+  Excluded 2 validation sentences from svediakorp-sec639-HeidenstamV_Proletarfilosofiens.conllu
+DEBUG period value: 4
+DEBUG time_periods: ['1700-1750', '1750-1800', '1800-1850', '1850-1900', '1900-1950']
+DEBUG sample_name: svediakorp-sec988-spf145
+DEBUG period value: 2
+  Excluded 1 validation sentences from svediakorp-sec988-spf145.conllu
+DEBUG period value: 2
+DEBUG time_periods: ['1700-1750', '1750-1800', '1800-1850', '1850-1900', '1900-1950']
+DEBUG sample_name: svediakorp-sec1063-spf220
+DEBUG period value: 3
+DEBUG period value: 3
+DEBUG time_periods: ['1700-1750', '1750-1800', '1800-1850', '1850-1900', '1900-1950']
+DEBUG sample_name: svediakorp-sec1033-spf190
+DEBUG period value: 4
+  Excluded 2 validation sentences from svediakorp-sec1033-spf190.conllu
+DEBUG period value: 4
+DEBUG time_periods: ['1700-1750', '1750-1800', '1800-1850', '1850-1900', '1900-1950']
+DEBUG sample_name: svediakorp-letter141673-Stalhammar
+DEBUG period value: 0
+  Excluded 3 validation sentences from svediakorp-letter141673-Stalhammar.conllu
+DEBUG period value: 0
+DEBUG time_periods: ['1700-1750', '1750-1800', '1800-1850', '1850-1900', '1900-1950']
+Results saved to eval/scores/language_mix/scores_conll17_bm_dk.txt
+Running model: saved_models/depparse/old/conll17_de_lit/sv_diachronic_charlm_parser.pt
+
+Files (conll17_de_lit):   0%|          | 0/21 [00:00<?, ?it/s][A
+Files (conll17_de_lit):   5%|▍         | 1/21 [00:00<00:18,  1.10it/s][A
+Files (conll17_de_lit):  10%|▉         | 2/21 [00:01<00:13,  1.38it/s][A
+Files (conll17_de_lit):  14%|█▍        | 3/21 [00:02<00:12,  1.47it/s][A
+Files (conll17_de_lit):  19%|█▉        | 4/21 [00:02<00:12,  1.38it/s][A
+Files (conll17_de_lit):  24%|██▍       | 5/21 [00:03<00:10,  1.52it/s][A
+Files (conll17_de_lit):  29%|██▊       | 6/21 [00:03<00:08,  1.85it/s][A
+Files (conll17_de_lit):  33%|███▎      | 7/21 [00:04<00:06,  2.14it/s][A
+Files (conll17_de_lit):  38%|███▊      | 8/21 [00:05<00:08,  1.54it/s][A
+Files (conll17_de_lit):  43%|████▎     | 9/21 [00:07<00:13,  1.13s/it][A
+Files (conll17_de_lit):  48%|████▊     | 10/21 [00:08<00:12,  1.10s/it][A
+Files (conll17_de_lit):  52%|█████▏    | 11/21 [00:08<00:09,  1.05it/s][A
+Files (conll17_de_lit):  57%|█████▋    | 12/21 [00:10<00:09,  1.07s/it][A
+Files (conll17_de_lit):  62%|██████▏   | 13/21 [00:11<00:08,  1.01s/it][A
+Files (conll17_de_lit):  67%|██████▋   | 14/21 [00:11<00:06,  1.07it/s][A
+Files (conll17_de_lit):  71%|███████▏  | 15/21 [00:12<00:04,  1.22it/s][A
+Files (conll17_de_lit):  76%|███████▌  | 16/21 [00:13<00:03,  1.30it/s][A
+Files (conll17_de_lit):  81%|████████  | 17/21 [00:14<00:03,  1.02it/s][A
+Files (conll17_de_lit):  86%|████████▌ | 18/21 [00:15<00:02,  1.11it/s][A
+Files (conll17_de_lit):  90%|█████████ | 19/21 [00:15<00:01,  1.31it/s][A
+Files (conll17_de_lit):  95%|█████████▌| 20/21 [00:16<00:00,  1.29it/s][A
+Files (conll17_de_lit): 100%|██████████| 21/21 [00:17<00:00,  1.11it/s][A
+                                                                       [AModels:  36%|███▌      | 5/14 [01:36<02:55, 19.52s/it]2026-03-24 14:51:09 INFO: Loading these models for language: sv (Swedish):
+=======================================
+| Processor | Package                 |
+---------------------------------------
+| tokenize  | talbanken               |
+| pos       | talbanken_charlm        |
+| lemma     | talbanken_nocharlm      |
+| depparse  | saved_mode..._parser.pt |
+=======================================
+
+2026-03-24 14:51:09 INFO: Using device: xpu
+2026-03-24 14:51:09 INFO: Loading: tokenize
+2026-03-24 14:51:09 INFO: Loading: pos
+2026-03-24 14:51:10 INFO: Loading: lemma
+2026-03-24 14:51:10 INFO: Loading: depparse
+2026-03-24 14:51:10 INFO: Done loading processors!
+Max memory allocated so far: 0.48 GB
+Max memory allocated so far: 0.48 GB
+Max memory allocated so far: 0.48 GB
+Max memory allocated so far: 0.48 GB
+Max memory allocated so far: 0.48 GB
+Max memory allocated so far: 0.48 GB
+Max memory allocated so far: 0.48 GB
+Max memory allocated so far: 0.48 GB
+Max memory allocated so far: 0.48 GB
+Max memory allocated so far: 0.48 GB
+Max memory allocated so far: 0.48 GB
+Max memory allocated so far: 0.48 GB
+Max memory allocated so far: 0.48 GB
+Max memory allocated so far: 0.48 GB
+Max memory allocated so far: 0.48 GB
+Max memory allocated so far: 0.48 GB
+Max memory allocated so far: 0.48 GB
+Max memory allocated so far: 0.48 GB
+Max memory allocated so far: 0.48 GB
+Max memory allocated so far: 0.48 GB
+Max memory allocated so far: 0.48 GB
+Completed model conll17_de_lit. Parsed sentences this run: 109
+Loaded 24 sentence IDs to exclude from evaluation (used in validation).
+
+======================================================================
+Evaluating: /home/urdatorn/git/gh/Diachronic_Treebanks_DigPhil/parsed_data/new_eval_of_old_models/conll17_de_lit
+Output: eval/scores/language_mix/scores_conll17_de_lit.txt
+======================================================================
+
+DEBUG sample_name: svediakorp-sec987-spf144
+DEBUG period value: 2
+  Excluded 2 validation sentences from svediakorp-sec987-spf144.conllu
+DEBUG period value: 2
+DEBUG time_periods: ['1700-1750', '1750-1800', '1800-1850', '1850-1900', '1900-1950']
+DEBUG sample_name: svediakorp-sec613-EngstromA_StrindbergOchJag
+DEBUG period value: 4
+  Excluded 2 validation sentences from svediakorp-sec613-EngstromA_StrindbergOchJag.conllu
+DEBUG period value: 4
+DEBUG time_periods: ['1700-1750', '1750-1800', '1800-1850', '1850-1900', '1900-1950']
+DEBUG sample_name: svediakorp-sec268-DulciU_VitterhetsNojen3
+DEBUG period value: 1
+  Excluded 6 validation sentences from svediakorp-sec268-DulciU_VitterhetsNojen3.conllu
+DEBUG period value: 1
+DEBUG time_periods: ['1700-1750', '1750-1800', '1800-1850', '1850-1900', '1900-1950']
+DEBUG sample_name: svediakorp-sec25-Runius
+DEBUG period value: 0
+  Excluded 1 validation sentences from svediakorp-sec25-Runius.conllu
+DEBUG period value: 0
+DEBUG time_periods: ['1700-1750', '1750-1800', '1800-1850', '1850-1900', '1900-1950']
+DEBUG sample_name: svediakorp-sec208-Anonym_DetGrasligaMordet
+DEBUG period value: 3
+  Excluded 1 validation sentences from svediakorp-sec208-Anonym_DetGrasligaMordet.conllu
+DEBUG period value: 3
+DEBUG time_periods: ['1700-1750', '1750-1800', '1800-1850', '1850-1900', '1900-1950']
+DEBUG sample_name: svediakorp-sec324-GranbergPA_Enslighetsalskaren
+DEBUG period value: 2
+  Excluded 1 validation sentences from svediakorp-sec324-GranbergPA_Enslighetsalskaren.conllu
+DEBUG period value: 2
+DEBUG time_periods: ['1700-1750', '1750-1800', '1800-1850', '1850-1900', '1900-1950']
+DEBUG sample_name: svediakorp-sec254-CederborghF_BerattelseOmJohnHall
+DEBUG period value: 2
+  Excluded 1 validation sentences from svediakorp-sec254-CederborghF_BerattelseOmJohnHall.conllu
+DEBUG period value: 2
+DEBUG time_periods: ['1700-1750', '1750-1800', '1800-1850', '1850-1900', '1900-1950']
+DEBUG sample_name: svediakorp-sec397-AngeredStrandbergH_UnderSodernsSol
+DEBUG period value: 4
+  Excluded 3 validation sentences from svediakorp-sec397-AngeredStrandbergH_UnderSodernsSol.conllu
+DEBUG period value: 4
+DEBUG time_periods: ['1700-1750', '1750-1800', '1800-1850', '1850-1900', '1900-1950']
+DEBUG sample_name: svediakorp-sec452-NyblomH_FantasierFyra
+DEBUG period value: 3
+  Excluded 3 validation sentences from svediakorp-sec452-NyblomH_FantasierFyra.conllu
+DEBUG period value: 3
+DEBUG time_periods: ['1700-1750', '1750-1800', '1800-1850', '1850-1900', '1900-1950']
+DEBUG sample_name: svediakorp-sec252-BremerF_Teckningar1
+DEBUG period value: 2
+  Excluded 1 validation sentences from svediakorp-sec252-BremerF_Teckningar1.conllu
+DEBUG period value: 2
+DEBUG time_periods: ['1700-1750', '1750-1800', '1800-1850', '1850-1900', '1900-1950']
+DEBUG sample_name: svediakorp-sec486-SchwartzMS_BellmansSkor
+DEBUG period value: 3
+  Excluded 2 validation sentences from svediakorp-sec486-SchwartzMS_BellmansSkor.conllu
+DEBUG period value: 3
+DEBUG time_periods: ['1700-1750', '1750-1800', '1800-1850', '1850-1900', '1900-1950']
+DEBUG sample_name: svediakorp-sec330-GyllenborgC_SwenskaSpratthoken
+DEBUG period value: 0
+  Excluded 3 validation sentences from svediakorp-sec330-GyllenborgC_SwenskaSpratthoken.conllu
+DEBUG period value: 0
+DEBUG time_periods: ['1700-1750', '1750-1800', '1800-1850', '1850-1900', '1900-1950']
+DEBUG sample_name: svediakorp-sec631-HasselskogN_HallaHallaGronkoping
+DEBUG period value: 4
+  Excluded 3 validation sentences from svediakorp-sec631-HasselskogN_HallaHallaGronkoping.conllu
+DEBUG period value: 4
+DEBUG time_periods: ['1700-1750', '1750-1800', '1800-1850', '1850-1900', '1900-1950']
+DEBUG sample_name: svediakorp-sec277-EnbomPU_MedborgeligtSkalde
+DEBUG period value: 1
+  Excluded 6 validation sentences from svediakorp-sec277-EnbomPU_MedborgeligtSkalde.conllu
+DEBUG period value: 1
+DEBUG time_periods: ['1700-1750', '1750-1800', '1800-1850', '1850-1900', '1900-1950']
+DEBUG sample_name: svediakorp-sec1102-spf259
+DEBUG period value: 3
+  Excluded 4 validation sentences from svediakorp-sec1102-spf259.conllu
+DEBUG period value: 3
+DEBUG time_periods: ['1700-1750', '1750-1800', '1800-1850', '1850-1900', '1900-1950']
+DEBUG sample_name: svediakorp-sec991-spf148
+DEBUG period value: 2
+  Excluded 3 validation sentences from svediakorp-sec991-spf148.conllu
+DEBUG period value: 2
+DEBUG time_periods: ['1700-1750', '1750-1800', '1800-1850', '1850-1900', '1900-1950']
+DEBUG sample_name: svediakorp-sec639-HeidenstamV_Proletarfilosofiens
+DEBUG period value: 4
+  Excluded 2 validation sentences from svediakorp-sec639-HeidenstamV_Proletarfilosofiens.conllu
+DEBUG period value: 4
+DEBUG time_periods: ['1700-1750', '1750-1800', '1800-1850', '1850-1900', '1900-1950']
+DEBUG sample_name: svediakorp-sec988-spf145
+DEBUG period value: 2
+  Excluded 1 validation sentences from svediakorp-sec988-spf145.conllu
+DEBUG period value: 2
+DEBUG time_periods: ['1700-1750', '1750-1800', '1800-1850', '1850-1900', '1900-1950']
+DEBUG sample_name: svediakorp-sec1063-spf220
+DEBUG period value: 3
+DEBUG period value: 3
+DEBUG time_periods: ['1700-1750', '1750-1800', '1800-1850', '1850-1900', '1900-1950']
+DEBUG sample_name: svediakorp-sec1033-spf190
+DEBUG period value: 4
+  Excluded 2 validation sentences from svediakorp-sec1033-spf190.conllu
+DEBUG period value: 4
+DEBUG time_periods: ['1700-1750', '1750-1800', '1800-1850', '1850-1900', '1900-1950']
+DEBUG sample_name: svediakorp-letter141673-Stalhammar
+DEBUG period value: 0
+  Excluded 3 validation sentences from svediakorp-letter141673-Stalhammar.conllu
+DEBUG period value: 0
+DEBUG time_periods: ['1700-1750', '1750-1800', '1800-1850', '1850-1900', '1900-1950']
+Results saved to eval/scores/language_mix/scores_conll17_de_lit.txt
+Running model: saved_models/depparse/old/conll17_icepahc/sv_diachronic_charlm_parser.pt
+
+Files (conll17_icepahc):   0%|          | 0/21 [00:00<?, ?it/s][A
+Files (conll17_icepahc):   5%|▍         | 1/21 [00:00<00:17,  1.11it/s][A
+Files (conll17_icepahc):  10%|▉         | 2/21 [00:01<00:13,  1.39it/s][A
+Files (conll17_icepahc):  14%|█▍        | 3/21 [00:02<00:12,  1.47it/s][A
+Files (conll17_icepahc):  19%|█▉        | 4/21 [00:02<00:12,  1.38it/s][A
+Files (conll17_icepahc):  24%|██▍       | 5/21 [00:03<00:10,  1.53it/s][A
+Files (conll17_icepahc):  29%|██▊       | 6/21 [00:03<00:08,  1.87it/s][A
+Files (conll17_icepahc):  33%|███▎      | 7/21 [00:04<00:06,  2.14it/s][A
+Files (conll17_icepahc):  38%|███▊      | 8/21 [00:05<00:08,  1.54it/s][A
+Files (conll17_icepahc):  43%|████▎     | 9/21 [00:07<00:13,  1.13s/it][A
+Files (conll17_icepahc):  48%|████▊     | 10/21 [00:08<00:12,  1.10s/it][A
+Files (conll17_icepahc):  52%|█████▏    | 11/21 [00:08<00:09,  1.05it/s][A
+Files (conll17_icepahc):  57%|█████▋    | 12/21 [00:10<00:09,  1.06s/it][A
+Files (conll17_icepahc):  62%|██████▏   | 13/21 [00:11<00:08,  1.00s/it][A
+Files (conll17_icepahc):  67%|██████▋   | 14/21 [00:11<00:06,  1.07it/s][A
+Files (conll17_icepahc):  71%|███████▏  | 15/21 [00:12<00:04,  1.22it/s][A
+Files (conll17_icepahc):  76%|███████▌  | 16/21 [00:13<00:03,  1.30it/s][A
+Files (conll17_icepahc):  81%|████████  | 17/21 [00:14<00:03,  1.02it/s][A
+Files (conll17_icepahc):  86%|████████▌ | 18/21 [00:15<00:02,  1.11it/s][A
+Files (conll17_icepahc):  90%|█████████ | 19/21 [00:15<00:01,  1.31it/s][A
+Files (conll17_icepahc):  95%|█████████▌| 20/21 [00:16<00:00,  1.29it/s][A
+Files (conll17_icepahc): 100%|██████████| 21/21 [00:17<00:00,  1.12it/s][A
+                                                                        [AModels:  43%|████▎     | 6/14 [01:56<02:36, 19.55s/it]2026-03-24 14:51:28 INFO: Loading these models for language: sv (Swedish):
+=======================================
+| Processor | Package                 |
+---------------------------------------
+| tokenize  | talbanken               |
+| pos       | talbanken_charlm        |
+| lemma     | talbanken_nocharlm      |
+| depparse  | saved_mode..._parser.pt |
+=======================================
+
+2026-03-24 14:51:28 INFO: Using device: xpu
+2026-03-24 14:51:28 INFO: Loading: tokenize
+2026-03-24 14:51:28 INFO: Loading: pos
+2026-03-24 14:51:29 INFO: Loading: lemma
+2026-03-24 14:51:29 INFO: Loading: depparse
+2026-03-24 14:51:30 INFO: Done loading processors!
+Max memory allocated so far: 0.48 GB
+Max memory allocated so far: 0.48 GB
+Max memory allocated so far: 0.48 GB
+Max memory allocated so far: 0.48 GB
+Max memory allocated so far: 0.48 GB
+Max memory allocated so far: 0.48 GB
+Max memory allocated so far: 0.48 GB
+Max memory allocated so far: 0.48 GB
+Max memory allocated so far: 0.48 GB
+Max memory allocated so far: 0.48 GB
+Max memory allocated so far: 0.48 GB
+Max memory allocated so far: 0.48 GB
+Max memory allocated so far: 0.48 GB
+Max memory allocated so far: 0.48 GB
+Max memory allocated so far: 0.48 GB
+Max memory allocated so far: 0.48 GB
+Max memory allocated so far: 0.48 GB
+Max memory allocated so far: 0.48 GB
+Max memory allocated so far: 0.48 GB
+Max memory allocated so far: 0.48 GB
+Max memory allocated so far: 0.48 GB
+Completed model conll17_icepahc. Parsed sentences this run: 109
+Loaded 24 sentence IDs to exclude from evaluation (used in validation).
+
+======================================================================
+Evaluating: /home/urdatorn/git/gh/Diachronic_Treebanks_DigPhil/parsed_data/new_eval_of_old_models/conll17_icepahc
+Output: eval/scores/language_mix/scores_conll17_icepahc.txt
+======================================================================
+
+DEBUG sample_name: svediakorp-sec987-spf144
+DEBUG period value: 2
+  Excluded 2 validation sentences from svediakorp-sec987-spf144.conllu
+DEBUG period value: 2
+DEBUG time_periods: ['1700-1750', '1750-1800', '1800-1850', '1850-1900', '1900-1950']
+DEBUG sample_name: svediakorp-sec613-EngstromA_StrindbergOchJag
+DEBUG period value: 4
+  Excluded 2 validation sentences from svediakorp-sec613-EngstromA_StrindbergOchJag.conllu
+DEBUG period value: 4
+DEBUG time_periods: ['1700-1750', '1750-1800', '1800-1850', '1850-1900', '1900-1950']
+DEBUG sample_name: svediakorp-sec268-DulciU_VitterhetsNojen3
+DEBUG period value: 1
+  Excluded 6 validation sentences from svediakorp-sec268-DulciU_VitterhetsNojen3.conllu
+DEBUG period value: 1
+DEBUG time_periods: ['1700-1750', '1750-1800', '1800-1850', '1850-1900', '1900-1950']
+DEBUG sample_name: svediakorp-sec25-Runius
+DEBUG period value: 0
+  Excluded 1 validation sentences from svediakorp-sec25-Runius.conllu
+DEBUG period value: 0
+DEBUG time_periods: ['1700-1750', '1750-1800', '1800-1850', '1850-1900', '1900-1950']
+DEBUG sample_name: svediakorp-sec208-Anonym_DetGrasligaMordet
+DEBUG period value: 3
+  Excluded 1 validation sentences from svediakorp-sec208-Anonym_DetGrasligaMordet.conllu
+DEBUG period value: 3
+DEBUG time_periods: ['1700-1750', '1750-1800', '1800-1850', '1850-1900', '1900-1950']
+DEBUG sample_name: svediakorp-sec324-GranbergPA_Enslighetsalskaren
+DEBUG period value: 2
+  Excluded 1 validation sentences from svediakorp-sec324-GranbergPA_Enslighetsalskaren.conllu
+DEBUG period value: 2
+DEBUG time_periods: ['1700-1750', '1750-1800', '1800-1850', '1850-1900', '1900-1950']
+DEBUG sample_name: svediakorp-sec254-CederborghF_BerattelseOmJohnHall
+DEBUG period value: 2
+  Excluded 1 validation sentences from svediakorp-sec254-CederborghF_BerattelseOmJohnHall.conllu
+DEBUG period value: 2
+DEBUG time_periods: ['1700-1750', '1750-1800', '1800-1850', '1850-1900', '1900-1950']
+DEBUG sample_name: svediakorp-sec397-AngeredStrandbergH_UnderSodernsSol
+DEBUG period value: 4
+  Excluded 3 validation sentences from svediakorp-sec397-AngeredStrandbergH_UnderSodernsSol.conllu
+DEBUG period value: 4
+DEBUG time_periods: ['1700-1750', '1750-1800', '1800-1850', '1850-1900', '1900-1950']
+DEBUG sample_name: svediakorp-sec452-NyblomH_FantasierFyra
+DEBUG period value: 3
+  Excluded 3 validation sentences from svediakorp-sec452-NyblomH_FantasierFyra.conllu
+DEBUG period value: 3
+DEBUG time_periods: ['1700-1750', '1750-1800', '1800-1850', '1850-1900', '1900-1950']
+DEBUG sample_name: svediakorp-sec252-BremerF_Teckningar1
+DEBUG period value: 2
+  Excluded 1 validation sentences from svediakorp-sec252-BremerF_Teckningar1.conllu
+DEBUG period value: 2
+DEBUG time_periods: ['1700-1750', '1750-1800', '1800-1850', '1850-1900', '1900-1950']
+DEBUG sample_name: svediakorp-sec486-SchwartzMS_BellmansSkor
+DEBUG period value: 3
+  Excluded 2 validation sentences from svediakorp-sec486-SchwartzMS_BellmansSkor.conllu
+DEBUG period value: 3
+DEBUG time_periods: ['1700-1750', '1750-1800', '1800-1850', '1850-1900', '1900-1950']
+DEBUG sample_name: svediakorp-sec330-GyllenborgC_SwenskaSpratthoken
+DEBUG period value: 0
+  Excluded 3 validation sentences from svediakorp-sec330-GyllenborgC_SwenskaSpratthoken.conllu
+DEBUG period value: 0
+DEBUG time_periods: ['1700-1750', '1750-1800', '1800-1850', '1850-1900', '1900-1950']
+DEBUG sample_name: svediakorp-sec631-HasselskogN_HallaHallaGronkoping
+DEBUG period value: 4
+  Excluded 3 validation sentences from svediakorp-sec631-HasselskogN_HallaHallaGronkoping.conllu
+DEBUG period value: 4
+DEBUG time_periods: ['1700-1750', '1750-1800', '1800-1850', '1850-1900', '1900-1950']
+DEBUG sample_name: svediakorp-sec277-EnbomPU_MedborgeligtSkalde
+DEBUG period value: 1
+  Excluded 6 validation sentences from svediakorp-sec277-EnbomPU_MedborgeligtSkalde.conllu
+DEBUG period value: 1
+DEBUG time_periods: ['1700-1750', '1750-1800', '1800-1850', '1850-1900', '1900-1950']
+DEBUG sample_name: svediakorp-sec1102-spf259
+DEBUG period value: 3
+  Excluded 4 validation sentences from svediakorp-sec1102-spf259.conllu
+DEBUG period value: 3
+DEBUG time_periods: ['1700-1750', '1750-1800', '1800-1850', '1850-1900', '1900-1950']
+DEBUG sample_name: svediakorp-sec991-spf148
+DEBUG period value: 2
+  Excluded 3 validation sentences from svediakorp-sec991-spf148.conllu
+DEBUG period value: 2
+DEBUG time_periods: ['1700-1750', '1750-1800', '1800-1850', '1850-1900', '1900-1950']
+DEBUG sample_name: svediakorp-sec639-HeidenstamV_Proletarfilosofiens
+DEBUG period value: 4
+  Excluded 2 validation sentences from svediakorp-sec639-HeidenstamV_Proletarfilosofiens.conllu
+DEBUG period value: 4
+DEBUG time_periods: ['1700-1750', '1750-1800', '1800-1850', '1850-1900', '1900-1950']
+DEBUG sample_name: svediakorp-sec988-spf145
+DEBUG period value: 2
+  Excluded 1 validation sentences from svediakorp-sec988-spf145.conllu
+DEBUG period value: 2
+DEBUG time_periods: ['1700-1750', '1750-1800', '1800-1850', '1850-1900', '1900-1950']
+DEBUG sample_name: svediakorp-sec1063-spf220
+DEBUG period value: 3
+DEBUG period value: 3
+DEBUG time_periods: ['1700-1750', '1750-1800', '1800-1850', '1850-1900', '1900-1950']
+DEBUG sample_name: svediakorp-sec1033-spf190
+DEBUG period value: 4
+  Excluded 2 validation sentences from svediakorp-sec1033-spf190.conllu
+DEBUG period value: 4
+DEBUG time_periods: ['1700-1750', '1750-1800', '1800-1850', '1850-1900', '1900-1950']
+DEBUG sample_name: svediakorp-letter141673-Stalhammar
+DEBUG period value: 0
+  Excluded 3 validation sentences from svediakorp-letter141673-Stalhammar.conllu
+DEBUG period value: 0
+DEBUG time_periods: ['1700-1750', '1750-1800', '1800-1850', '1850-1900', '1900-1950']
+Results saved to eval/scores/language_mix/scores_conll17_icepahc.txt
+Running model: saved_models/depparse/old/conll17_is-modern/sv_diachronic_charlm_parser.pt
+
+Files (conll17_is-modern):   0%|          | 0/21 [00:00<?, ?it/s][A
+Files (conll17_is-modern):   5%|▍         | 1/21 [00:00<00:17,  1.12it/s][A
+Files (conll17_is-modern):  10%|▉         | 2/21 [00:01<00:13,  1.39it/s][A
+Files (conll17_is-modern):  14%|█▍        | 3/21 [00:02<00:12,  1.47it/s][A
+Files (conll17_is-modern):  19%|█▉        | 4/21 [00:02<00:12,  1.38it/s][A
+Files (conll17_is-modern):  24%|██▍       | 5/21 [00:03<00:10,  1.53it/s][A
+Files (conll17_is-modern):  29%|██▊       | 6/21 [00:03<00:08,  1.87it/s][A
+Files (conll17_is-modern):  33%|███▎      | 7/21 [00:04<00:06,  2.15it/s][A
+Files (conll17_is-modern):  38%|███▊      | 8/21 [00:05<00:08,  1.54it/s][A
+Files (conll17_is-modern):  43%|████▎     | 9/21 [00:07<00:13,  1.14s/it][A
+Files (conll17_is-modern):  48%|████▊     | 10/21 [00:08<00:12,  1.10s/it][A
+Files (conll17_is-modern):  52%|█████▏    | 11/21 [00:08<00:09,  1.05it/s][A
+Files (conll17_is-modern):  57%|█████▋    | 12/21 [00:10<00:09,  1.07s/it][A
+Files (conll17_is-modern):  62%|██████▏   | 13/21 [00:11<00:08,  1.01s/it][A
+Files (conll17_is-modern):  67%|██████▋   | 14/21 [00:11<00:06,  1.07it/s][A
+Files (conll17_is-modern):  71%|███████▏  | 15/21 [00:12<00:04,  1.21it/s][A
+Files (conll17_is-modern):  76%|███████▌  | 16/21 [00:13<00:03,  1.30it/s][A
+Files (conll17_is-modern):  81%|████████  | 17/21 [00:14<00:03,  1.02it/s][A
+Files (conll17_is-modern):  86%|████████▌ | 18/21 [00:15<00:02,  1.11it/s][A
+Files (conll17_is-modern):  90%|█████████ | 19/21 [00:15<00:01,  1.30it/s][A
+Files (conll17_is-modern):  95%|█████████▌| 20/21 [00:16<00:00,  1.29it/s][A
+Files (conll17_is-modern): 100%|██████████| 21/21 [00:17<00:00,  1.11it/s][A
+                                                                          [AModels:  50%|█████     | 7/14 [02:15<02:16, 19.52s/it]2026-03-24 14:51:48 INFO: Loading these models for language: sv (Swedish):
+=======================================
+| Processor | Package                 |
+---------------------------------------
+| tokenize  | talbanken               |
+| pos       | talbanken_charlm        |
+| lemma     | talbanken_nocharlm      |
+| depparse  | saved_mode..._parser.pt |
+=======================================
+
+2026-03-24 14:51:48 INFO: Using device: xpu
+2026-03-24 14:51:48 INFO: Loading: tokenize
+2026-03-24 14:51:48 INFO: Loading: pos
+2026-03-24 14:51:49 INFO: Loading: lemma
+2026-03-24 14:51:49 INFO: Loading: depparse
+2026-03-24 14:51:49 INFO: Done loading processors!
+Max memory allocated so far: 0.48 GB
+Max memory allocated so far: 0.48 GB
+Max memory allocated so far: 0.48 GB
+Max memory allocated so far: 0.48 GB
+Max memory allocated so far: 0.48 GB
+Max memory allocated so far: 0.48 GB
+Max memory allocated so far: 0.48 GB
+Max memory allocated so far: 0.48 GB
+Max memory allocated so far: 0.48 GB
+Max memory allocated so far: 0.48 GB
+Max memory allocated so far: 0.48 GB
+Max memory allocated so far: 0.48 GB
+Max memory allocated so far: 0.48 GB
+Max memory allocated so far: 0.48 GB
+Max memory allocated so far: 0.48 GB
+Max memory allocated so far: 0.48 GB
+Max memory allocated so far: 0.48 GB
+Max memory allocated so far: 0.48 GB
+Max memory allocated so far: 0.48 GB
+Max memory allocated so far: 0.48 GB
+Max memory allocated so far: 0.48 GB
+Completed model conll17_is-modern. Parsed sentences this run: 109
+Loaded 24 sentence IDs to exclude from evaluation (used in validation).
+
+======================================================================
+Evaluating: /home/urdatorn/git/gh/Diachronic_Treebanks_DigPhil/parsed_data/new_eval_of_old_models/conll17_is-modern
+Output: eval/scores/language_mix/scores_conll17_is-modern.txt
+======================================================================
+
+DEBUG sample_name: svediakorp-sec987-spf144
+DEBUG period value: 2
+  Excluded 2 validation sentences from svediakorp-sec987-spf144.conllu
+DEBUG period value: 2
+DEBUG time_periods: ['1700-1750', '1750-1800', '1800-1850', '1850-1900', '1900-1950']
+DEBUG sample_name: svediakorp-sec613-EngstromA_StrindbergOchJag
+DEBUG period value: 4
+  Excluded 2 validation sentences from svediakorp-sec613-EngstromA_StrindbergOchJag.conllu
+DEBUG period value: 4
+DEBUG time_periods: ['1700-1750', '1750-1800', '1800-1850', '1850-1900', '1900-1950']
+DEBUG sample_name: svediakorp-sec268-DulciU_VitterhetsNojen3
+DEBUG period value: 1
+  Excluded 6 validation sentences from svediakorp-sec268-DulciU_VitterhetsNojen3.conllu
+DEBUG period value: 1
+DEBUG time_periods: ['1700-1750', '1750-1800', '1800-1850', '1850-1900', '1900-1950']
+DEBUG sample_name: svediakorp-sec25-Runius
+DEBUG period value: 0
+  Excluded 1 validation sentences from svediakorp-sec25-Runius.conllu
+DEBUG period value: 0
+DEBUG time_periods: ['1700-1750', '1750-1800', '1800-1850', '1850-1900', '1900-1950']
+DEBUG sample_name: svediakorp-sec208-Anonym_DetGrasligaMordet
+DEBUG period value: 3
+  Excluded 1 validation sentences from svediakorp-sec208-Anonym_DetGrasligaMordet.conllu
+DEBUG period value: 3
+DEBUG time_periods: ['1700-1750', '1750-1800', '1800-1850', '1850-1900', '1900-1950']
+DEBUG sample_name: svediakorp-sec324-GranbergPA_Enslighetsalskaren
+DEBUG period value: 2
+  Excluded 1 validation sentences from svediakorp-sec324-GranbergPA_Enslighetsalskaren.conllu
+DEBUG period value: 2
+DEBUG time_periods: ['1700-1750', '1750-1800', '1800-1850', '1850-1900', '1900-1950']
+DEBUG sample_name: svediakorp-sec254-CederborghF_BerattelseOmJohnHall
+DEBUG period value: 2
+  Excluded 1 validation sentences from svediakorp-sec254-CederborghF_BerattelseOmJohnHall.conllu
+DEBUG period value: 2
+DEBUG time_periods: ['1700-1750', '1750-1800', '1800-1850', '1850-1900', '1900-1950']
+DEBUG sample_name: svediakorp-sec397-AngeredStrandbergH_UnderSodernsSol
+DEBUG period value: 4
+  Excluded 3 validation sentences from svediakorp-sec397-AngeredStrandbergH_UnderSodernsSol.conllu
+DEBUG period value: 4
+DEBUG time_periods: ['1700-1750', '1750-1800', '1800-1850', '1850-1900', '1900-1950']
+DEBUG sample_name: svediakorp-sec452-NyblomH_FantasierFyra
+DEBUG period value: 3
+  Excluded 3 validation sentences from svediakorp-sec452-NyblomH_FantasierFyra.conllu
+DEBUG period value: 3
+DEBUG time_periods: ['1700-1750', '1750-1800', '1800-1850', '1850-1900', '1900-1950']
+DEBUG sample_name: svediakorp-sec252-BremerF_Teckningar1
+DEBUG period value: 2
+  Excluded 1 validation sentences from svediakorp-sec252-BremerF_Teckningar1.conllu
+DEBUG period value: 2
+DEBUG time_periods: ['1700-1750', '1750-1800', '1800-1850', '1850-1900', '1900-1950']
+DEBUG sample_name: svediakorp-sec486-SchwartzMS_BellmansSkor
+DEBUG period value: 3
+  Excluded 2 validation sentences from svediakorp-sec486-SchwartzMS_BellmansSkor.conllu
+DEBUG period value: 3
+DEBUG time_periods: ['1700-1750', '1750-1800', '1800-1850', '1850-1900', '1900-1950']
+DEBUG sample_name: svediakorp-sec330-GyllenborgC_SwenskaSpratthoken
+DEBUG period value: 0
+  Excluded 3 validation sentences from svediakorp-sec330-GyllenborgC_SwenskaSpratthoken.conllu
+DEBUG period value: 0
+DEBUG time_periods: ['1700-1750', '1750-1800', '1800-1850', '1850-1900', '1900-1950']
+DEBUG sample_name: svediakorp-sec631-HasselskogN_HallaHallaGronkoping
+DEBUG period value: 4
+  Excluded 3 validation sentences from svediakorp-sec631-HasselskogN_HallaHallaGronkoping.conllu
+DEBUG period value: 4
+DEBUG time_periods: ['1700-1750', '1750-1800', '1800-1850', '1850-1900', '1900-1950']
+DEBUG sample_name: svediakorp-sec277-EnbomPU_MedborgeligtSkalde
+DEBUG period value: 1
+  Excluded 6 validation sentences from svediakorp-sec277-EnbomPU_MedborgeligtSkalde.conllu
+DEBUG period value: 1
+DEBUG time_periods: ['1700-1750', '1750-1800', '1800-1850', '1850-1900', '1900-1950']
+DEBUG sample_name: svediakorp-sec1102-spf259
+DEBUG period value: 3
+  Excluded 4 validation sentences from svediakorp-sec1102-spf259.conllu
+DEBUG period value: 3
+DEBUG time_periods: ['1700-1750', '1750-1800', '1800-1850', '1850-1900', '1900-1950']
+DEBUG sample_name: svediakorp-sec991-spf148
+DEBUG period value: 2
+  Excluded 3 validation sentences from svediakorp-sec991-spf148.conllu
+DEBUG period value: 2
+DEBUG time_periods: ['1700-1750', '1750-1800', '1800-1850', '1850-1900', '1900-1950']
+DEBUG sample_name: svediakorp-sec639-HeidenstamV_Proletarfilosofiens
+DEBUG period value: 4
+  Excluded 2 validation sentences from svediakorp-sec639-HeidenstamV_Proletarfilosofiens.conllu
+DEBUG period value: 4
+DEBUG time_periods: ['1700-1750', '1750-1800', '1800-1850', '1850-1900', '1900-1950']
+DEBUG sample_name: svediakorp-sec988-spf145
+DEBUG period value: 2
+  Excluded 1 validation sentences from svediakorp-sec988-spf145.conllu
+DEBUG period value: 2
+DEBUG time_periods: ['1700-1750', '1750-1800', '1800-1850', '1850-1900', '1900-1950']
+DEBUG sample_name: svediakorp-sec1063-spf220
+DEBUG period value: 3
+DEBUG period value: 3
+DEBUG time_periods: ['1700-1750', '1750-1800', '1800-1850', '1850-1900', '1900-1950']
+DEBUG sample_name: svediakorp-sec1033-spf190
+DEBUG period value: 4
+  Excluded 2 validation sentences from svediakorp-sec1033-spf190.conllu
+DEBUG period value: 4
+DEBUG time_periods: ['1700-1750', '1750-1800', '1800-1850', '1850-1900', '1900-1950']
+DEBUG sample_name: svediakorp-letter141673-Stalhammar
+DEBUG period value: 0
+  Excluded 3 validation sentences from svediakorp-letter141673-Stalhammar.conllu
+DEBUG period value: 0
+DEBUG time_periods: ['1700-1750', '1750-1800', '1800-1850', '1850-1900', '1900-1950']
+Results saved to eval/scores/language_mix/scores_conll17_is-modern.txt
+Running model: saved_models/depparse/old/conll17_isPUD/sv_diachronic_charlm_parser.pt
+
+Files (conll17_isPUD):   0%|          | 0/21 [00:00<?, ?it/s][A
+Files (conll17_isPUD):   5%|▍         | 1/21 [00:00<00:18,  1.09it/s][A
+Files (conll17_isPUD):  10%|▉         | 2/21 [00:01<00:13,  1.37it/s][A
+Files (conll17_isPUD):  14%|█▍        | 3/21 [00:02<00:12,  1.46it/s][A
+Files (conll17_isPUD):  19%|█▉        | 4/21 [00:02<00:12,  1.38it/s][A
+Files (conll17_isPUD):  24%|██▍       | 5/21 [00:03<00:10,  1.52it/s][A
+Files (conll17_isPUD):  29%|██▊       | 6/21 [00:03<00:08,  1.86it/s][A
+Files (conll17_isPUD):  33%|███▎      | 7/21 [00:04<00:06,  2.15it/s][A
+Files (conll17_isPUD):  38%|███▊      | 8/21 [00:05<00:08,  1.54it/s][A
+Files (conll17_isPUD):  43%|████▎     | 9/21 [00:07<00:13,  1.14s/it][A
+Files (conll17_isPUD):  48%|████▊     | 10/21 [00:08<00:12,  1.10s/it][A
+Files (conll17_isPUD):  52%|█████▏    | 11/21 [00:08<00:09,  1.05it/s][A
+Files (conll17_isPUD):  57%|█████▋    | 12/21 [00:10<00:09,  1.07s/it][A
+Files (conll17_isPUD):  62%|██████▏   | 13/21 [00:11<00:08,  1.01s/it][A
+Files (conll17_isPUD):  67%|██████▋   | 14/21 [00:11<00:06,  1.07it/s][A
+Files (conll17_isPUD):  71%|███████▏  | 15/21 [00:12<00:04,  1.21it/s][A
+Files (conll17_isPUD):  76%|███████▌  | 16/21 [00:13<00:03,  1.30it/s][A
+Files (conll17_isPUD):  81%|████████  | 17/21 [00:14<00:03,  1.02it/s][A
+Files (conll17_isPUD):  86%|████████▌ | 18/21 [00:15<00:02,  1.11it/s][A
+Files (conll17_isPUD):  90%|█████████ | 19/21 [00:15<00:01,  1.30it/s][A
+Files (conll17_isPUD):  95%|█████████▌| 20/21 [00:16<00:00,  1.29it/s][A
+Files (conll17_isPUD): 100%|██████████| 21/21 [00:17<00:00,  1.11it/s][A
+                                                                      [AModels:  57%|█████▋    | 8/14 [02:35<01:56, 19.50s/it]2026-03-24 14:52:07 INFO: Loading these models for language: sv (Swedish):
+=======================================
+| Processor | Package                 |
+---------------------------------------
+| tokenize  | talbanken               |
+| pos       | talbanken_charlm        |
+| lemma     | talbanken_nocharlm      |
+| depparse  | saved_mode..._parser.pt |
+=======================================
+
+2026-03-24 14:52:07 INFO: Using device: xpu
+2026-03-24 14:52:07 INFO: Loading: tokenize
+2026-03-24 14:52:07 INFO: Loading: pos
+2026-03-24 14:52:08 INFO: Loading: lemma
+2026-03-24 14:52:08 INFO: Loading: depparse
+2026-03-24 14:52:09 INFO: Done loading processors!
+Max memory allocated so far: 0.48 GB
+Max memory allocated so far: 0.48 GB
+Max memory allocated so far: 0.48 GB
+Max memory allocated so far: 0.48 GB
+Max memory allocated so far: 0.48 GB
+Max memory allocated so far: 0.48 GB
+Max memory allocated so far: 0.48 GB
+Max memory allocated so far: 0.48 GB
+Max memory allocated so far: 0.48 GB
+Max memory allocated so far: 0.48 GB
+Max memory allocated so far: 0.48 GB
+Max memory allocated so far: 0.48 GB
+Max memory allocated so far: 0.48 GB
+Max memory allocated so far: 0.48 GB
+Max memory allocated so far: 0.48 GB
+Max memory allocated so far: 0.48 GB
+Max memory allocated so far: 0.48 GB
+Max memory allocated so far: 0.48 GB
+Max memory allocated so far: 0.48 GB
+Max memory allocated so far: 0.48 GB
+Max memory allocated so far: 0.48 GB
+Completed model conll17_isPUD. Parsed sentences this run: 109
+Loaded 24 sentence IDs to exclude from evaluation (used in validation).
+
+======================================================================
+Evaluating: /home/urdatorn/git/gh/Diachronic_Treebanks_DigPhil/parsed_data/new_eval_of_old_models/conll17_isPUD
+Output: eval/scores/language_mix/scores_conll17_isPUD.txt
+======================================================================
+
+DEBUG sample_name: svediakorp-sec987-spf144
+DEBUG period value: 2
+  Excluded 2 validation sentences from svediakorp-sec987-spf144.conllu
+DEBUG period value: 2
+DEBUG time_periods: ['1700-1750', '1750-1800', '1800-1850', '1850-1900', '1900-1950']
+DEBUG sample_name: svediakorp-sec613-EngstromA_StrindbergOchJag
+DEBUG period value: 4
+  Excluded 2 validation sentences from svediakorp-sec613-EngstromA_StrindbergOchJag.conllu
+DEBUG period value: 4
+DEBUG time_periods: ['1700-1750', '1750-1800', '1800-1850', '1850-1900', '1900-1950']
+DEBUG sample_name: svediakorp-sec268-DulciU_VitterhetsNojen3
+DEBUG period value: 1
+  Excluded 6 validation sentences from svediakorp-sec268-DulciU_VitterhetsNojen3.conllu
+DEBUG period value: 1
+DEBUG time_periods: ['1700-1750', '1750-1800', '1800-1850', '1850-1900', '1900-1950']
+DEBUG sample_name: svediakorp-sec25-Runius
+DEBUG period value: 0
+  Excluded 1 validation sentences from svediakorp-sec25-Runius.conllu
+DEBUG period value: 0
+DEBUG time_periods: ['1700-1750', '1750-1800', '1800-1850', '1850-1900', '1900-1950']
+DEBUG sample_name: svediakorp-sec208-Anonym_DetGrasligaMordet
+DEBUG period value: 3
+  Excluded 1 validation sentences from svediakorp-sec208-Anonym_DetGrasligaMordet.conllu
+DEBUG period value: 3
+DEBUG time_periods: ['1700-1750', '1750-1800', '1800-1850', '1850-1900', '1900-1950']
+DEBUG sample_name: svediakorp-sec324-GranbergPA_Enslighetsalskaren
+DEBUG period value: 2
+  Excluded 1 validation sentences from svediakorp-sec324-GranbergPA_Enslighetsalskaren.conllu
+DEBUG period value: 2
+DEBUG time_periods: ['1700-1750', '1750-1800', '1800-1850', '1850-1900', '1900-1950']
+DEBUG sample_name: svediakorp-sec254-CederborghF_BerattelseOmJohnHall
+DEBUG period value: 2
+  Excluded 1 validation sentences from svediakorp-sec254-CederborghF_BerattelseOmJohnHall.conllu
+DEBUG period value: 2
+DEBUG time_periods: ['1700-1750', '1750-1800', '1800-1850', '1850-1900', '1900-1950']
+DEBUG sample_name: svediakorp-sec397-AngeredStrandbergH_UnderSodernsSol
+DEBUG period value: 4
+  Excluded 3 validation sentences from svediakorp-sec397-AngeredStrandbergH_UnderSodernsSol.conllu
+DEBUG period value: 4
+DEBUG time_periods: ['1700-1750', '1750-1800', '1800-1850', '1850-1900', '1900-1950']
+DEBUG sample_name: svediakorp-sec452-NyblomH_FantasierFyra
+DEBUG period value: 3
+  Excluded 3 validation sentences from svediakorp-sec452-NyblomH_FantasierFyra.conllu
+DEBUG period value: 3
+DEBUG time_periods: ['1700-1750', '1750-1800', '1800-1850', '1850-1900', '1900-1950']
+DEBUG sample_name: svediakorp-sec252-BremerF_Teckningar1
+DEBUG period value: 2
+  Excluded 1 validation sentences from svediakorp-sec252-BremerF_Teckningar1.conllu
+DEBUG period value: 2
+DEBUG time_periods: ['1700-1750', '1750-1800', '1800-1850', '1850-1900', '1900-1950']
+DEBUG sample_name: svediakorp-sec486-SchwartzMS_BellmansSkor
+DEBUG period value: 3
+  Excluded 2 validation sentences from svediakorp-sec486-SchwartzMS_BellmansSkor.conllu
+DEBUG period value: 3
+DEBUG time_periods: ['1700-1750', '1750-1800', '1800-1850', '1850-1900', '1900-1950']
+DEBUG sample_name: svediakorp-sec330-GyllenborgC_SwenskaSpratthoken
+DEBUG period value: 0
+  Excluded 3 validation sentences from svediakorp-sec330-GyllenborgC_SwenskaSpratthoken.conllu
+DEBUG period value: 0
+DEBUG time_periods: ['1700-1750', '1750-1800', '1800-1850', '1850-1900', '1900-1950']
+DEBUG sample_name: svediakorp-sec631-HasselskogN_HallaHallaGronkoping
+DEBUG period value: 4
+  Excluded 3 validation sentences from svediakorp-sec631-HasselskogN_HallaHallaGronkoping.conllu
+DEBUG period value: 4
+DEBUG time_periods: ['1700-1750', '1750-1800', '1800-1850', '1850-1900', '1900-1950']
+DEBUG sample_name: svediakorp-sec277-EnbomPU_MedborgeligtSkalde
+DEBUG period value: 1
+  Excluded 6 validation sentences from svediakorp-sec277-EnbomPU_MedborgeligtSkalde.conllu
+DEBUG period value: 1
+DEBUG time_periods: ['1700-1750', '1750-1800', '1800-1850', '1850-1900', '1900-1950']
+DEBUG sample_name: svediakorp-sec1102-spf259
+DEBUG period value: 3
+  Excluded 4 validation sentences from svediakorp-sec1102-spf259.conllu
+DEBUG period value: 3
+DEBUG time_periods: ['1700-1750', '1750-1800', '1800-1850', '1850-1900', '1900-1950']
+DEBUG sample_name: svediakorp-sec991-spf148
+DEBUG period value: 2
+  Excluded 3 validation sentences from svediakorp-sec991-spf148.conllu
+DEBUG period value: 2
+DEBUG time_periods: ['1700-1750', '1750-1800', '1800-1850', '1850-1900', '1900-1950']
+DEBUG sample_name: svediakorp-sec639-HeidenstamV_Proletarfilosofiens
+DEBUG period value: 4
+  Excluded 2 validation sentences from svediakorp-sec639-HeidenstamV_Proletarfilosofiens.conllu
+DEBUG period value: 4
+DEBUG time_periods: ['1700-1750', '1750-1800', '1800-1850', '1850-1900', '1900-1950']
+DEBUG sample_name: svediakorp-sec988-spf145
+DEBUG period value: 2
+  Excluded 1 validation sentences from svediakorp-sec988-spf145.conllu
+DEBUG period value: 2
+DEBUG time_periods: ['1700-1750', '1750-1800', '1800-1850', '1850-1900', '1900-1950']
+DEBUG sample_name: svediakorp-sec1063-spf220
+DEBUG period value: 3
+DEBUG period value: 3
+DEBUG time_periods: ['1700-1750', '1750-1800', '1800-1850', '1850-1900', '1900-1950']
+DEBUG sample_name: svediakorp-sec1033-spf190
+DEBUG period value: 4
+  Excluded 2 validation sentences from svediakorp-sec1033-spf190.conllu
+DEBUG period value: 4
+DEBUG time_periods: ['1700-1750', '1750-1800', '1800-1850', '1850-1900', '1900-1950']
+DEBUG sample_name: svediakorp-letter141673-Stalhammar
+DEBUG period value: 0
+  Excluded 3 validation sentences from svediakorp-letter141673-Stalhammar.conllu
+DEBUG period value: 0
+DEBUG time_periods: ['1700-1750', '1750-1800', '1800-1850', '1850-1900', '1900-1950']
+Results saved to eval/scores/language_mix/scores_conll17_isPUD.txt
+Running model: saved_models/depparse/old/conll17_isPUD-pahc-gc/sv_diachronic_charlm_parser.pt
+
+Files (conll17_isPUD-pahc-gc):   0%|          | 0/21 [00:00<?, ?it/s][A
+Files (conll17_isPUD-pahc-gc):   5%|▍         | 1/21 [00:00<00:18,  1.10it/s][A
+Files (conll17_isPUD-pahc-gc):  10%|▉         | 2/21 [00:01<00:13,  1.38it/s][A
+Files (conll17_isPUD-pahc-gc):  14%|█▍        | 3/21 [00:02<00:12,  1.47it/s][A
+Files (conll17_isPUD-pahc-gc):  19%|█▉        | 4/21 [00:02<00:12,  1.38it/s][A
+Files (conll17_isPUD-pahc-gc):  24%|██▍       | 5/21 [00:03<00:10,  1.53it/s][A
+Files (conll17_isPUD-pahc-gc):  29%|██▊       | 6/21 [00:03<00:08,  1.87it/s][A
+Files (conll17_isPUD-pahc-gc):  33%|███▎      | 7/21 [00:04<00:06,  2.15it/s][A
+Files (conll17_isPUD-pahc-gc):  38%|███▊      | 8/21 [00:05<00:08,  1.54it/s][A
+Files (conll17_isPUD-pahc-gc):  43%|████▎     | 9/21 [00:07<00:13,  1.13s/it][A
+Files (conll17_isPUD-pahc-gc):  48%|████▊     | 10/21 [00:08<00:12,  1.09s/it][A
+Files (conll17_isPUD-pahc-gc):  52%|█████▏    | 11/21 [00:08<00:09,  1.05it/s][A
+Files (conll17_isPUD-pahc-gc):  57%|█████▋    | 12/21 [00:10<00:09,  1.07s/it][A
+Files (conll17_isPUD-pahc-gc):  62%|██████▏   | 13/21 [00:11<00:08,  1.01s/it][A
+Files (conll17_isPUD-pahc-gc):  67%|██████▋   | 14/21 [00:11<00:06,  1.07it/s][A
+Files (conll17_isPUD-pahc-gc):  71%|███████▏  | 15/21 [00:12<00:04,  1.22it/s][A
+Files (conll17_isPUD-pahc-gc):  76%|███████▌  | 16/21 [00:13<00:03,  1.30it/s][A
+Files (conll17_isPUD-pahc-gc):  81%|████████  | 17/21 [00:14<00:03,  1.02it/s][A
+Files (conll17_isPUD-pahc-gc):  86%|████████▌ | 18/21 [00:15<00:02,  1.11it/s][A
+Files (conll17_isPUD-pahc-gc):  90%|█████████ | 19/21 [00:15<00:01,  1.31it/s][A
+Files (conll17_isPUD-pahc-gc):  95%|█████████▌| 20/21 [00:16<00:00,  1.29it/s][A
+Files (conll17_isPUD-pahc-gc): 100%|██████████| 21/21 [00:17<00:00,  1.12it/s][A
+                                                                              [AModels:  64%|██████▍   | 9/14 [02:54<01:37, 19.50s/it]2026-03-24 14:52:27 INFO: Loading these models for language: sv (Swedish):
+=======================================
+| Processor | Package                 |
+---------------------------------------
+| tokenize  | talbanken               |
+| pos       | talbanken_charlm        |
+| lemma     | talbanken_nocharlm      |
+| depparse  | saved_mode..._parser.pt |
+=======================================
+
+2026-03-24 14:52:27 INFO: Using device: xpu
+2026-03-24 14:52:27 INFO: Loading: tokenize
+2026-03-24 14:52:27 INFO: Loading: pos
+2026-03-24 14:52:28 INFO: Loading: lemma
+2026-03-24 14:52:28 INFO: Loading: depparse
+2026-03-24 14:52:28 INFO: Done loading processors!
+Max memory allocated so far: 0.48 GB
+Max memory allocated so far: 0.48 GB
+Max memory allocated so far: 0.48 GB
+Max memory allocated so far: 0.48 GB
+Max memory allocated so far: 0.48 GB
+Max memory allocated so far: 0.48 GB
+Max memory allocated so far: 0.48 GB
+Max memory allocated so far: 0.48 GB
+Max memory allocated so far: 0.48 GB
+Max memory allocated so far: 0.48 GB
+Max memory allocated so far: 0.48 GB
+Max memory allocated so far: 0.48 GB
+Max memory allocated so far: 0.48 GB
+Max memory allocated so far: 0.48 GB
+Max memory allocated so far: 0.48 GB
+Max memory allocated so far: 0.48 GB
+Max memory allocated so far: 0.48 GB
+Max memory allocated so far: 0.48 GB
+Max memory allocated so far: 0.48 GB
+Max memory allocated so far: 0.48 GB
+Max memory allocated so far: 0.48 GB
+Completed model conll17_isPUD-pahc-gc. Parsed sentences this run: 109
+Loaded 24 sentence IDs to exclude from evaluation (used in validation).
+
+======================================================================
+Evaluating: /home/urdatorn/git/gh/Diachronic_Treebanks_DigPhil/parsed_data/new_eval_of_old_models/conll17_isPUD-pahc-gc
+Output: eval/scores/language_mix/scores_conll17_isPUD-pahc-gc.txt
+======================================================================
+
+DEBUG sample_name: svediakorp-sec987-spf144
+DEBUG period value: 2
+  Excluded 2 validation sentences from svediakorp-sec987-spf144.conllu
+DEBUG period value: 2
+DEBUG time_periods: ['1700-1750', '1750-1800', '1800-1850', '1850-1900', '1900-1950']
+DEBUG sample_name: svediakorp-sec613-EngstromA_StrindbergOchJag
+DEBUG period value: 4
+  Excluded 2 validation sentences from svediakorp-sec613-EngstromA_StrindbergOchJag.conllu
+DEBUG period value: 4
+DEBUG time_periods: ['1700-1750', '1750-1800', '1800-1850', '1850-1900', '1900-1950']
+DEBUG sample_name: svediakorp-sec268-DulciU_VitterhetsNojen3
+DEBUG period value: 1
+  Excluded 6 validation sentences from svediakorp-sec268-DulciU_VitterhetsNojen3.conllu
+DEBUG period value: 1
+DEBUG time_periods: ['1700-1750', '1750-1800', '1800-1850', '1850-1900', '1900-1950']
+DEBUG sample_name: svediakorp-sec25-Runius
+DEBUG period value: 0
+  Excluded 1 validation sentences from svediakorp-sec25-Runius.conllu
+DEBUG period value: 0
+DEBUG time_periods: ['1700-1750', '1750-1800', '1800-1850', '1850-1900', '1900-1950']
+DEBUG sample_name: svediakorp-sec208-Anonym_DetGrasligaMordet
+DEBUG period value: 3
+  Excluded 1 validation sentences from svediakorp-sec208-Anonym_DetGrasligaMordet.conllu
+DEBUG period value: 3
+DEBUG time_periods: ['1700-1750', '1750-1800', '1800-1850', '1850-1900', '1900-1950']
+DEBUG sample_name: svediakorp-sec324-GranbergPA_Enslighetsalskaren
+DEBUG period value: 2
+  Excluded 1 validation sentences from svediakorp-sec324-GranbergPA_Enslighetsalskaren.conllu
+DEBUG period value: 2
+DEBUG time_periods: ['1700-1750', '1750-1800', '1800-1850', '1850-1900', '1900-1950']
+DEBUG sample_name: svediakorp-sec254-CederborghF_BerattelseOmJohnHall
+DEBUG period value: 2
+  Excluded 1 validation sentences from svediakorp-sec254-CederborghF_BerattelseOmJohnHall.conllu
+DEBUG period value: 2
+DEBUG time_periods: ['1700-1750', '1750-1800', '1800-1850', '1850-1900', '1900-1950']
+DEBUG sample_name: svediakorp-sec397-AngeredStrandbergH_UnderSodernsSol
+DEBUG period value: 4
+  Excluded 3 validation sentences from svediakorp-sec397-AngeredStrandbergH_UnderSodernsSol.conllu
+DEBUG period value: 4
+DEBUG time_periods: ['1700-1750', '1750-1800', '1800-1850', '1850-1900', '1900-1950']
+DEBUG sample_name: svediakorp-sec452-NyblomH_FantasierFyra
+DEBUG period value: 3
+  Excluded 3 validation sentences from svediakorp-sec452-NyblomH_FantasierFyra.conllu
+DEBUG period value: 3
+DEBUG time_periods: ['1700-1750', '1750-1800', '1800-1850', '1850-1900', '1900-1950']
+DEBUG sample_name: svediakorp-sec252-BremerF_Teckningar1
+DEBUG period value: 2
+  Excluded 1 validation sentences from svediakorp-sec252-BremerF_Teckningar1.conllu
+DEBUG period value: 2
+DEBUG time_periods: ['1700-1750', '1750-1800', '1800-1850', '1850-1900', '1900-1950']
+DEBUG sample_name: svediakorp-sec486-SchwartzMS_BellmansSkor
+DEBUG period value: 3
+  Excluded 2 validation sentences from svediakorp-sec486-SchwartzMS_BellmansSkor.conllu
+DEBUG period value: 3
+DEBUG time_periods: ['1700-1750', '1750-1800', '1800-1850', '1850-1900', '1900-1950']
+DEBUG sample_name: svediakorp-sec330-GyllenborgC_SwenskaSpratthoken
+DEBUG period value: 0
+  Excluded 3 validation sentences from svediakorp-sec330-GyllenborgC_SwenskaSpratthoken.conllu
+DEBUG period value: 0
+DEBUG time_periods: ['1700-1750', '1750-1800', '1800-1850', '1850-1900', '1900-1950']
+DEBUG sample_name: svediakorp-sec631-HasselskogN_HallaHallaGronkoping
+DEBUG period value: 4
+  Excluded 3 validation sentences from svediakorp-sec631-HasselskogN_HallaHallaGronkoping.conllu
+DEBUG period value: 4
+DEBUG time_periods: ['1700-1750', '1750-1800', '1800-1850', '1850-1900', '1900-1950']
+DEBUG sample_name: svediakorp-sec277-EnbomPU_MedborgeligtSkalde
+DEBUG period value: 1
+  Excluded 6 validation sentences from svediakorp-sec277-EnbomPU_MedborgeligtSkalde.conllu
+DEBUG period value: 1
+DEBUG time_periods: ['1700-1750', '1750-1800', '1800-1850', '1850-1900', '1900-1950']
+DEBUG sample_name: svediakorp-sec1102-spf259
+DEBUG period value: 3
+  Excluded 4 validation sentences from svediakorp-sec1102-spf259.conllu
+DEBUG period value: 3
+DEBUG time_periods: ['1700-1750', '1750-1800', '1800-1850', '1850-1900', '1900-1950']
+DEBUG sample_name: svediakorp-sec991-spf148
+DEBUG period value: 2
+  Excluded 3 validation sentences from svediakorp-sec991-spf148.conllu
+DEBUG period value: 2
+DEBUG time_periods: ['1700-1750', '1750-1800', '1800-1850', '1850-1900', '1900-1950']
+DEBUG sample_name: svediakorp-sec639-HeidenstamV_Proletarfilosofiens
+DEBUG period value: 4
+  Excluded 2 validation sentences from svediakorp-sec639-HeidenstamV_Proletarfilosofiens.conllu
+DEBUG period value: 4
+DEBUG time_periods: ['1700-1750', '1750-1800', '1800-1850', '1850-1900', '1900-1950']
+DEBUG sample_name: svediakorp-sec988-spf145
+DEBUG period value: 2
+  Excluded 1 validation sentences from svediakorp-sec988-spf145.conllu
+DEBUG period value: 2
+DEBUG time_periods: ['1700-1750', '1750-1800', '1800-1850', '1850-1900', '1900-1950']
+DEBUG sample_name: svediakorp-sec1063-spf220
+DEBUG period value: 3
+DEBUG period value: 3
+DEBUG time_periods: ['1700-1750', '1750-1800', '1800-1850', '1850-1900', '1900-1950']
+DEBUG sample_name: svediakorp-sec1033-spf190
+DEBUG period value: 4
+  Excluded 2 validation sentences from svediakorp-sec1033-spf190.conllu
+DEBUG period value: 4
+DEBUG time_periods: ['1700-1750', '1750-1800', '1800-1850', '1850-1900', '1900-1950']
+DEBUG sample_name: svediakorp-letter141673-Stalhammar
+DEBUG period value: 0
+  Excluded 3 validation sentences from svediakorp-letter141673-Stalhammar.conllu
+DEBUG period value: 0
+DEBUG time_periods: ['1700-1750', '1750-1800', '1800-1850', '1850-1900', '1900-1950']
+Results saved to eval/scores/language_mix/scores_conll17_isPUD-pahc-gc.txt
+Running model: saved_models/depparse/old/conll17_nn/sv_diachronic_charlm_parser.pt
+
+Files (conll17_nn):   0%|          | 0/21 [00:00<?, ?it/s][A
+Files (conll17_nn):   5%|▍         | 1/21 [00:00<00:18,  1.10it/s][A
+Files (conll17_nn):  10%|▉         | 2/21 [00:01<00:13,  1.38it/s][A
+Files (conll17_nn):  14%|█▍        | 3/21 [00:02<00:12,  1.46it/s][A
+Files (conll17_nn):  19%|█▉        | 4/21 [00:02<00:12,  1.37it/s][A
+Files (conll17_nn):  24%|██▍       | 5/21 [00:03<00:10,  1.52it/s][A
+Files (conll17_nn):  29%|██▊       | 6/21 [00:03<00:08,  1.86it/s][A
+Files (conll17_nn):  33%|███▎      | 7/21 [00:04<00:06,  2.14it/s][A
+Files (conll17_nn):  38%|███▊      | 8/21 [00:05<00:08,  1.53it/s][A
+Files (conll17_nn):  43%|████▎     | 9/21 [00:07<00:13,  1.14s/it][A
+Files (conll17_nn):  48%|████▊     | 10/21 [00:08<00:12,  1.10s/it][A
+Files (conll17_nn):  52%|█████▏    | 11/21 [00:08<00:09,  1.05it/s][A
+Files (conll17_nn):  57%|█████▋    | 12/21 [00:10<00:09,  1.07s/it][A
+Files (conll17_nn):  62%|██████▏   | 13/21 [00:11<00:08,  1.01s/it][A
+Files (conll17_nn):  67%|██████▋   | 14/21 [00:11<00:06,  1.07it/s][A
+Files (conll17_nn):  71%|███████▏  | 15/21 [00:12<00:04,  1.22it/s][A
+Files (conll17_nn):  76%|███████▌  | 16/21 [00:13<00:03,  1.30it/s][A
+Files (conll17_nn):  81%|████████  | 17/21 [00:14<00:03,  1.02it/s][A
+Files (conll17_nn):  86%|████████▌ | 18/21 [00:15<00:02,  1.11it/s][A
+Files (conll17_nn):  90%|█████████ | 19/21 [00:15<00:01,  1.30it/s][A
+Files (conll17_nn):  95%|█████████▌| 20/21 [00:16<00:00,  1.29it/s][A
+Files (conll17_nn): 100%|██████████| 21/21 [00:17<00:00,  1.11it/s][A
+                                                                   [AModels:  71%|███████▏  | 10/14 [03:14<01:18, 19.51s/it]2026-03-24 14:52:46 INFO: Loading these models for language: sv (Swedish):
+=======================================
+| Processor | Package                 |
+---------------------------------------
+| tokenize  | talbanken               |
+| pos       | talbanken_charlm        |
+| lemma     | talbanken_nocharlm      |
+| depparse  | saved_mode..._parser.pt |
+=======================================
+
+2026-03-24 14:52:46 INFO: Using device: xpu
+2026-03-24 14:52:46 INFO: Loading: tokenize
+2026-03-24 14:52:46 INFO: Loading: pos
+2026-03-24 14:52:47 INFO: Loading: lemma
+2026-03-24 14:52:47 INFO: Loading: depparse
+2026-03-24 14:52:48 INFO: Done loading processors!
+Max memory allocated so far: 0.48 GB
+Max memory allocated so far: 0.48 GB
+Max memory allocated so far: 0.48 GB
+Max memory allocated so far: 0.48 GB
+Max memory allocated so far: 0.48 GB
+Max memory allocated so far: 0.48 GB
+Max memory allocated so far: 0.48 GB
+Max memory allocated so far: 0.48 GB
+Max memory allocated so far: 0.48 GB
+Max memory allocated so far: 0.48 GB
+Max memory allocated so far: 0.48 GB
+Max memory allocated so far: 0.48 GB
+Max memory allocated so far: 0.48 GB
+Max memory allocated so far: 0.48 GB
+Max memory allocated so far: 0.48 GB
+Max memory allocated so far: 0.48 GB
+Max memory allocated so far: 0.48 GB
+Max memory allocated so far: 0.48 GB
+Max memory allocated so far: 0.48 GB
+Max memory allocated so far: 0.48 GB
+Max memory allocated so far: 0.48 GB
+Completed model conll17_nn. Parsed sentences this run: 109
+Loaded 24 sentence IDs to exclude from evaluation (used in validation).
+
+======================================================================
+Evaluating: /home/urdatorn/git/gh/Diachronic_Treebanks_DigPhil/parsed_data/new_eval_of_old_models/conll17_nn
+Output: eval/scores/language_mix/scores_conll17_nn.txt
+======================================================================
+
+DEBUG sample_name: svediakorp-sec987-spf144
+DEBUG period value: 2
+  Excluded 2 validation sentences from svediakorp-sec987-spf144.conllu
+DEBUG period value: 2
+DEBUG time_periods: ['1700-1750', '1750-1800', '1800-1850', '1850-1900', '1900-1950']
+DEBUG sample_name: svediakorp-sec613-EngstromA_StrindbergOchJag
+DEBUG period value: 4
+  Excluded 2 validation sentences from svediakorp-sec613-EngstromA_StrindbergOchJag.conllu
+DEBUG period value: 4
+DEBUG time_periods: ['1700-1750', '1750-1800', '1800-1850', '1850-1900', '1900-1950']
+DEBUG sample_name: svediakorp-sec268-DulciU_VitterhetsNojen3
+DEBUG period value: 1
+  Excluded 6 validation sentences from svediakorp-sec268-DulciU_VitterhetsNojen3.conllu
+DEBUG period value: 1
+DEBUG time_periods: ['1700-1750', '1750-1800', '1800-1850', '1850-1900', '1900-1950']
+DEBUG sample_name: svediakorp-sec25-Runius
+DEBUG period value: 0
+  Excluded 1 validation sentences from svediakorp-sec25-Runius.conllu
+DEBUG period value: 0
+DEBUG time_periods: ['1700-1750', '1750-1800', '1800-1850', '1850-1900', '1900-1950']
+DEBUG sample_name: svediakorp-sec208-Anonym_DetGrasligaMordet
+DEBUG period value: 3
+  Excluded 1 validation sentences from svediakorp-sec208-Anonym_DetGrasligaMordet.conllu
+DEBUG period value: 3
+DEBUG time_periods: ['1700-1750', '1750-1800', '1800-1850', '1850-1900', '1900-1950']
+DEBUG sample_name: svediakorp-sec324-GranbergPA_Enslighetsalskaren
+DEBUG period value: 2
+  Excluded 1 validation sentences from svediakorp-sec324-GranbergPA_Enslighetsalskaren.conllu
+DEBUG period value: 2
+DEBUG time_periods: ['1700-1750', '1750-1800', '1800-1850', '1850-1900', '1900-1950']
+DEBUG sample_name: svediakorp-sec254-CederborghF_BerattelseOmJohnHall
+DEBUG period value: 2
+  Excluded 1 validation sentences from svediakorp-sec254-CederborghF_BerattelseOmJohnHall.conllu
+DEBUG period value: 2
+DEBUG time_periods: ['1700-1750', '1750-1800', '1800-1850', '1850-1900', '1900-1950']
+DEBUG sample_name: svediakorp-sec397-AngeredStrandbergH_UnderSodernsSol
+DEBUG period value: 4
+  Excluded 3 validation sentences from svediakorp-sec397-AngeredStrandbergH_UnderSodernsSol.conllu
+DEBUG period value: 4
+DEBUG time_periods: ['1700-1750', '1750-1800', '1800-1850', '1850-1900', '1900-1950']
+DEBUG sample_name: svediakorp-sec452-NyblomH_FantasierFyra
+DEBUG period value: 3
+  Excluded 3 validation sentences from svediakorp-sec452-NyblomH_FantasierFyra.conllu
+DEBUG period value: 3
+DEBUG time_periods: ['1700-1750', '1750-1800', '1800-1850', '1850-1900', '1900-1950']
+DEBUG sample_name: svediakorp-sec252-BremerF_Teckningar1
+DEBUG period value: 2
+  Excluded 1 validation sentences from svediakorp-sec252-BremerF_Teckningar1.conllu
+DEBUG period value: 2
+DEBUG time_periods: ['1700-1750', '1750-1800', '1800-1850', '1850-1900', '1900-1950']
+DEBUG sample_name: svediakorp-sec486-SchwartzMS_BellmansSkor
+DEBUG period value: 3
+  Excluded 2 validation sentences from svediakorp-sec486-SchwartzMS_BellmansSkor.conllu
+DEBUG period value: 3
+DEBUG time_periods: ['1700-1750', '1750-1800', '1800-1850', '1850-1900', '1900-1950']
+DEBUG sample_name: svediakorp-sec330-GyllenborgC_SwenskaSpratthoken
+DEBUG period value: 0
+  Excluded 3 validation sentences from svediakorp-sec330-GyllenborgC_SwenskaSpratthoken.conllu
+DEBUG period value: 0
+DEBUG time_periods: ['1700-1750', '1750-1800', '1800-1850', '1850-1900', '1900-1950']
+DEBUG sample_name: svediakorp-sec631-HasselskogN_HallaHallaGronkoping
+DEBUG period value: 4
+  Excluded 3 validation sentences from svediakorp-sec631-HasselskogN_HallaHallaGronkoping.conllu
+DEBUG period value: 4
+DEBUG time_periods: ['1700-1750', '1750-1800', '1800-1850', '1850-1900', '1900-1950']
+DEBUG sample_name: svediakorp-sec277-EnbomPU_MedborgeligtSkalde
+DEBUG period value: 1
+  Excluded 6 validation sentences from svediakorp-sec277-EnbomPU_MedborgeligtSkalde.conllu
+DEBUG period value: 1
+DEBUG time_periods: ['1700-1750', '1750-1800', '1800-1850', '1850-1900', '1900-1950']
+DEBUG sample_name: svediakorp-sec1102-spf259
+DEBUG period value: 3
+  Excluded 4 validation sentences from svediakorp-sec1102-spf259.conllu
+DEBUG period value: 3
+DEBUG time_periods: ['1700-1750', '1750-1800', '1800-1850', '1850-1900', '1900-1950']
+DEBUG sample_name: svediakorp-sec991-spf148
+DEBUG period value: 2
+  Excluded 3 validation sentences from svediakorp-sec991-spf148.conllu
+DEBUG period value: 2
+DEBUG time_periods: ['1700-1750', '1750-1800', '1800-1850', '1850-1900', '1900-1950']
+DEBUG sample_name: svediakorp-sec639-HeidenstamV_Proletarfilosofiens
+DEBUG period value: 4
+  Excluded 2 validation sentences from svediakorp-sec639-HeidenstamV_Proletarfilosofiens.conllu
+DEBUG period value: 4
+DEBUG time_periods: ['1700-1750', '1750-1800', '1800-1850', '1850-1900', '1900-1950']
+DEBUG sample_name: svediakorp-sec988-spf145
+DEBUG period value: 2
+  Excluded 1 validation sentences from svediakorp-sec988-spf145.conllu
+DEBUG period value: 2
+DEBUG time_periods: ['1700-1750', '1750-1800', '1800-1850', '1850-1900', '1900-1950']
+DEBUG sample_name: svediakorp-sec1063-spf220
+DEBUG period value: 3
+DEBUG period value: 3
+DEBUG time_periods: ['1700-1750', '1750-1800', '1800-1850', '1850-1900', '1900-1950']
+DEBUG sample_name: svediakorp-sec1033-spf190
+DEBUG period value: 4
+  Excluded 2 validation sentences from svediakorp-sec1033-spf190.conllu
+DEBUG period value: 4
+DEBUG time_periods: ['1700-1750', '1750-1800', '1800-1850', '1850-1900', '1900-1950']
+DEBUG sample_name: svediakorp-letter141673-Stalhammar
+DEBUG period value: 0
+  Excluded 3 validation sentences from svediakorp-letter141673-Stalhammar.conllu
+DEBUG period value: 0
+DEBUG time_periods: ['1700-1750', '1750-1800', '1800-1850', '1850-1900', '1900-1950']
+Results saved to eval/scores/language_mix/scores_conll17_nn.txt
+Running model: saved_models/depparse/old/conll17_sv_diachron/sv_diachronic_charlm_parser.pt
+
+Files (conll17_sv_diachron):   0%|          | 0/21 [00:00<?, ?it/s][A
+Files (conll17_sv_diachron):   5%|▍         | 1/21 [00:00<00:18,  1.10it/s][A
+Files (conll17_sv_diachron):  10%|▉         | 2/21 [00:01<00:13,  1.38it/s][A
+Files (conll17_sv_diachron):  14%|█▍        | 3/21 [00:02<00:12,  1.47it/s][A
+Files (conll17_sv_diachron):  19%|█▉        | 4/21 [00:02<00:12,  1.38it/s][A
+Files (conll17_sv_diachron):  24%|██▍       | 5/21 [00:03<00:10,  1.52it/s][A
+Files (conll17_sv_diachron):  29%|██▊       | 6/21 [00:03<00:08,  1.86it/s][A
+Files (conll17_sv_diachron):  33%|███▎      | 7/21 [00:04<00:06,  2.15it/s][A
+Files (conll17_sv_diachron):  38%|███▊      | 8/21 [00:05<00:08,  1.54it/s][A
+Files (conll17_sv_diachron):  43%|████▎     | 9/21 [00:07<00:13,  1.13s/it][A
+Files (conll17_sv_diachron):  48%|████▊     | 10/21 [00:08<00:12,  1.10s/it][A
+Files (conll17_sv_diachron):  52%|█████▏    | 11/21 [00:08<00:09,  1.05it/s][A
+Files (conll17_sv_diachron):  57%|█████▋    | 12/21 [00:10<00:09,  1.07s/it][A
+Files (conll17_sv_diachron):  62%|██████▏   | 13/21 [00:11<00:08,  1.01s/it][A
+Files (conll17_sv_diachron):  67%|██████▋   | 14/21 [00:11<00:06,  1.07it/s][A
+Files (conll17_sv_diachron):  71%|███████▏  | 15/21 [00:12<00:04,  1.22it/s][A
+Files (conll17_sv_diachron):  76%|███████▌  | 16/21 [00:13<00:03,  1.30it/s][A
+Files (conll17_sv_diachron):  81%|████████  | 17/21 [00:14<00:03,  1.02it/s][A
+Files (conll17_sv_diachron):  86%|████████▌ | 18/21 [00:15<00:02,  1.11it/s][A
+Files (conll17_sv_diachron):  90%|█████████ | 19/21 [00:15<00:01,  1.31it/s][A
+Files (conll17_sv_diachron):  95%|█████████▌| 20/21 [00:16<00:00,  1.29it/s][A
+Files (conll17_sv_diachron): 100%|██████████| 21/21 [00:17<00:00,  1.12it/s][A
+                                                                            [AModels:  79%|███████▊  | 11/14 [03:33<00:58, 19.53s/it]2026-03-24 14:53:06 INFO: Loading these models for language: sv (Swedish):
+=======================================
+| Processor | Package                 |
+---------------------------------------
+| tokenize  | talbanken               |
+| pos       | talbanken_charlm        |
+| lemma     | talbanken_nocharlm      |
+| depparse  | saved_mode...epparse.pt |
+=======================================
+
+2026-03-24 14:53:06 INFO: Using device: xpu
+2026-03-24 14:53:06 INFO: Loading: tokenize
+2026-03-24 14:53:06 INFO: Loading: pos
+2026-03-24 14:53:07 INFO: Loading: lemma
+2026-03-24 14:53:07 INFO: Loading: depparse
+/home/urdatorn/.pyenv/versions/xpu/lib/python3.13/site-packages/huggingface_hub/file_download.py:949: FutureWarning: `resume_download` is deprecated and will be removed in version 1.0.0. Downloads always resume when possible. If you want to force a new download, use `force_download=True`.
+  warnings.warn(
+2026-03-24 14:53:08 INFO: Done loading processors!
+Max memory allocated so far: 0.48 GB
+Max memory allocated so far: 0.48 GB
+Max memory allocated so far: 0.48 GB
+Max memory allocated so far: 0.48 GB
+Max memory allocated so far: 0.48 GB
+Max memory allocated so far: 0.48 GB
+Max memory allocated so far: 0.48 GB
+Max memory allocated so far: 0.48 GB
+Max memory allocated so far: 0.48 GB
+Max memory allocated so far: 0.48 GB
+Max memory allocated so far: 0.48 GB
+Max memory allocated so far: 0.48 GB
+Max memory allocated so far: 0.48 GB
+Max memory allocated so far: 0.48 GB
+Max memory allocated so far: 0.48 GB
+Max memory allocated so far: 0.48 GB
+Max memory allocated so far: 0.48 GB
+Max memory allocated so far: 0.48 GB
+Max memory allocated so far: 0.48 GB
+Max memory allocated so far: 0.48 GB
+Max memory allocated so far: 0.48 GB
+Completed model conll17_sv_diachron. Parsed sentences this run: 109
+Loaded 24 sentence IDs to exclude from evaluation (used in validation).
+
+======================================================================
+Evaluating: /home/urdatorn/git/gh/Diachronic_Treebanks_DigPhil/parsed_data/new_eval_of_old_models/conll17_sv_diachron
+Output: eval/scores/language_mix/scores_conll17_sv_diachron.txt
+======================================================================
+
+DEBUG sample_name: svediakorp-sec987-spf144
+DEBUG period value: 2
+  Excluded 2 validation sentences from svediakorp-sec987-spf144.conllu
+DEBUG period value: 2
+DEBUG time_periods: ['1700-1750', '1750-1800', '1800-1850', '1850-1900', '1900-1950']
+DEBUG sample_name: svediakorp-sec613-EngstromA_StrindbergOchJag
+DEBUG period value: 4
+  Excluded 2 validation sentences from svediakorp-sec613-EngstromA_StrindbergOchJag.conllu
+DEBUG period value: 4
+DEBUG time_periods: ['1700-1750', '1750-1800', '1800-1850', '1850-1900', '1900-1950']
+DEBUG sample_name: svediakorp-sec268-DulciU_VitterhetsNojen3
+DEBUG period value: 1
+  Excluded 6 validation sentences from svediakorp-sec268-DulciU_VitterhetsNojen3.conllu
+DEBUG period value: 1
+DEBUG time_periods: ['1700-1750', '1750-1800', '1800-1850', '1850-1900', '1900-1950']
+DEBUG sample_name: svediakorp-sec25-Runius
+DEBUG period value: 0
+  Excluded 1 validation sentences from svediakorp-sec25-Runius.conllu
+DEBUG period value: 0
+DEBUG time_periods: ['1700-1750', '1750-1800', '1800-1850', '1850-1900', '1900-1950']
+DEBUG sample_name: svediakorp-sec208-Anonym_DetGrasligaMordet
+DEBUG period value: 3
+  Excluded 1 validation sentences from svediakorp-sec208-Anonym_DetGrasligaMordet.conllu
+DEBUG period value: 3
+DEBUG time_periods: ['1700-1750', '1750-1800', '1800-1850', '1850-1900', '1900-1950']
+DEBUG sample_name: svediakorp-sec324-GranbergPA_Enslighetsalskaren
+DEBUG period value: 2
+  Excluded 1 validation sentences from svediakorp-sec324-GranbergPA_Enslighetsalskaren.conllu
+DEBUG period value: 2
+DEBUG time_periods: ['1700-1750', '1750-1800', '1800-1850', '1850-1900', '1900-1950']
+DEBUG sample_name: svediakorp-sec254-CederborghF_BerattelseOmJohnHall
+DEBUG period value: 2
+  Excluded 1 validation sentences from svediakorp-sec254-CederborghF_BerattelseOmJohnHall.conllu
+DEBUG period value: 2
+DEBUG time_periods: ['1700-1750', '1750-1800', '1800-1850', '1850-1900', '1900-1950']
+DEBUG sample_name: svediakorp-sec397-AngeredStrandbergH_UnderSodernsSol
+DEBUG period value: 4
+  Excluded 3 validation sentences from svediakorp-sec397-AngeredStrandbergH_UnderSodernsSol.conllu
+DEBUG period value: 4
+DEBUG time_periods: ['1700-1750', '1750-1800', '1800-1850', '1850-1900', '1900-1950']
+DEBUG sample_name: svediakorp-sec452-NyblomH_FantasierFyra
+DEBUG period value: 3
+  Excluded 3 validation sentences from svediakorp-sec452-NyblomH_FantasierFyra.conllu
+DEBUG period value: 3
+DEBUG time_periods: ['1700-1750', '1750-1800', '1800-1850', '1850-1900', '1900-1950']
+DEBUG sample_name: svediakorp-sec252-BremerF_Teckningar1
+DEBUG period value: 2
+  Excluded 1 validation sentences from svediakorp-sec252-BremerF_Teckningar1.conllu
+DEBUG period value: 2
+DEBUG time_periods: ['1700-1750', '1750-1800', '1800-1850', '1850-1900', '1900-1950']
+DEBUG sample_name: svediakorp-sec486-SchwartzMS_BellmansSkor
+DEBUG period value: 3
+  Excluded 2 validation sentences from svediakorp-sec486-SchwartzMS_BellmansSkor.conllu
+DEBUG period value: 3
+DEBUG time_periods: ['1700-1750', '1750-1800', '1800-1850', '1850-1900', '1900-1950']
+DEBUG sample_name: svediakorp-sec330-GyllenborgC_SwenskaSpratthoken
+DEBUG period value: 0
+  Excluded 3 validation sentences from svediakorp-sec330-GyllenborgC_SwenskaSpratthoken.conllu
+DEBUG period value: 0
+DEBUG time_periods: ['1700-1750', '1750-1800', '1800-1850', '1850-1900', '1900-1950']
+DEBUG sample_name: svediakorp-sec631-HasselskogN_HallaHallaGronkoping
+DEBUG period value: 4
+  Excluded 3 validation sentences from svediakorp-sec631-HasselskogN_HallaHallaGronkoping.conllu
+DEBUG period value: 4
+DEBUG time_periods: ['1700-1750', '1750-1800', '1800-1850', '1850-1900', '1900-1950']
+DEBUG sample_name: svediakorp-sec277-EnbomPU_MedborgeligtSkalde
+DEBUG period value: 1
+  Excluded 6 validation sentences from svediakorp-sec277-EnbomPU_MedborgeligtSkalde.conllu
+DEBUG period value: 1
+DEBUG time_periods: ['1700-1750', '1750-1800', '1800-1850', '1850-1900', '1900-1950']
+DEBUG sample_name: svediakorp-sec1102-spf259
+DEBUG period value: 3
+  Excluded 4 validation sentences from svediakorp-sec1102-spf259.conllu
+DEBUG period value: 3
+DEBUG time_periods: ['1700-1750', '1750-1800', '1800-1850', '1850-1900', '1900-1950']
+DEBUG sample_name: svediakorp-sec991-spf148
+DEBUG period value: 2
+  Excluded 3 validation sentences from svediakorp-sec991-spf148.conllu
+DEBUG period value: 2
+DEBUG time_periods: ['1700-1750', '1750-1800', '1800-1850', '1850-1900', '1900-1950']
+DEBUG sample_name: svediakorp-sec639-HeidenstamV_Proletarfilosofiens
+DEBUG period value: 4
+  Excluded 2 validation sentences from svediakorp-sec639-HeidenstamV_Proletarfilosofiens.conllu
+DEBUG period value: 4
+DEBUG time_periods: ['1700-1750', '1750-1800', '1800-1850', '1850-1900', '1900-1950']
+DEBUG sample_name: svediakorp-sec988-spf145
+DEBUG period value: 2
+  Excluded 1 validation sentences from svediakorp-sec988-spf145.conllu
+DEBUG period value: 2
+DEBUG time_periods: ['1700-1750', '1750-1800', '1800-1850', '1850-1900', '1900-1950']
+DEBUG sample_name: svediakorp-sec1063-spf220
+DEBUG period value: 3
+DEBUG period value: 3
+DEBUG time_periods: ['1700-1750', '1750-1800', '1800-1850', '1850-1900', '1900-1950']
+DEBUG sample_name: svediakorp-sec1033-spf190
+DEBUG period value: 4
+  Excluded 2 validation sentences from svediakorp-sec1033-spf190.conllu
+DEBUG period value: 4
+DEBUG time_periods: ['1700-1750', '1750-1800', '1800-1850', '1850-1900', '1900-1950']
+DEBUG sample_name: svediakorp-letter141673-Stalhammar
+DEBUG period value: 0
+  Excluded 3 validation sentences from svediakorp-letter141673-Stalhammar.conllu
+DEBUG period value: 0
+DEBUG time_periods: ['1700-1750', '1750-1800', '1800-1850', '1850-1900', '1900-1950']
+Results saved to eval/scores/language_mix/scores_conll17_sv_diachron.txt
+Running model: saved_models/depparse/old/digphil_sv_diachronic_transformer_depparse.pt
+
+Files (digphil_sv_diachronic_transformer_depparse):   0%|          | 0/21 [00:00<?, ?it/s][A
+Files (digphil_sv_diachronic_transformer_depparse):   5%|▍         | 1/21 [00:01<00:20,  1.04s/it][A
+Files (digphil_sv_diachronic_transformer_depparse):  10%|▉         | 2/21 [00:01<00:15,  1.22it/s][A
+Files (digphil_sv_diachronic_transformer_depparse):  14%|█▍        | 3/21 [00:02<00:13,  1.31it/s][A
+Files (digphil_sv_diachronic_transformer_depparse):  19%|█▉        | 4/21 [00:03<00:13,  1.24it/s][A
+Files (digphil_sv_diachronic_transformer_depparse):  24%|██▍       | 5/21 [00:03<00:11,  1.38it/s][A
+Files (digphil_sv_diachronic_transformer_depparse):  29%|██▊       | 6/21 [00:04<00:08,  1.68it/s][A
+Files (digphil_sv_diachronic_transformer_depparse):  33%|███▎      | 7/21 [00:04<00:07,  1.94it/s][A
+Files (digphil_sv_diachronic_transformer_depparse):  38%|███▊      | 8/21 [00:05<00:09,  1.40it/s][A
+Files (digphil_sv_diachronic_transformer_depparse):  43%|████▎     | 9/21 [00:08<00:14,  1.23s/it][A
+Files (digphil_sv_diachronic_transformer_depparse):  48%|████▊     | 10/21 [00:09<00:13,  1.20s/it][A
+Files (digphil_sv_diachronic_transformer_depparse):  52%|█████▏    | 11/21 [00:09<00:10,  1.05s/it][A
+Files (digphil_sv_diachronic_transformer_depparse):  57%|█████▋    | 12/21 [00:11<00:10,  1.16s/it][A
+Files (digphil_sv_diachronic_transformer_depparse):  62%|██████▏   | 13/21 [00:12<00:08,  1.09s/it][A
+Files (digphil_sv_diachronic_transformer_depparse):  67%|██████▋   | 14/21 [00:13<00:07,  1.02s/it][A
+Files (digphil_sv_diachronic_transformer_depparse):  71%|███████▏  | 15/21 [00:13<00:05,  1.11it/s][A
+Files (digphil_sv_diachronic_transformer_depparse):  76%|███████▌  | 16/21 [00:14<00:04,  1.18it/s][A
+Files (digphil_sv_diachronic_transformer_depparse):  81%|████████  | 17/21 [00:16<00:04,  1.06s/it][A
+Files (digphil_sv_diachronic_transformer_depparse):  86%|████████▌ | 18/21 [00:16<00:02,  1.02it/s][A
+Files (digphil_sv_diachronic_transformer_depparse):  90%|█████████ | 19/21 [00:17<00:01,  1.20it/s][A
+Files (digphil_sv_diachronic_transformer_depparse):  95%|█████████▌| 20/21 [00:18<00:00,  1.18it/s][A
+Files (digphil_sv_diachronic_transformer_depparse): 100%|██████████| 21/21 [00:19<00:00,  1.02it/s][A
+                                                                                                   [AModels:  86%|████████▌ | 12/14 [03:55<00:40, 20.13s/it]2026-03-24 14:53:27 INFO: Loading these models for language: sv (Swedish):
+=======================================
+| Processor | Package                 |
+---------------------------------------
+| tokenize  | talbanken               |
+| pos       | talbanken_charlm        |
+| lemma     | talbanken_nocharlm      |
+| depparse  | saved_mode..._parser.pt |
+=======================================
+
+2026-03-24 14:53:27 INFO: Using device: xpu
+2026-03-24 14:53:27 INFO: Loading: tokenize
+2026-03-24 14:53:27 INFO: Loading: pos
+2026-03-24 14:53:28 INFO: Loading: lemma
+2026-03-24 14:53:29 INFO: Loading: depparse
+2026-03-24 14:53:29 INFO: Done loading processors!
+Max memory allocated so far: 0.91 GB
+Max memory allocated so far: 0.91 GB
+Max memory allocated so far: 0.91 GB
+Max memory allocated so far: 0.91 GB
+Max memory allocated so far: 0.91 GB
+Max memory allocated so far: 0.91 GB
+Max memory allocated so far: 0.91 GB
+Max memory allocated so far: 0.91 GB
+Max memory allocated so far: 0.93 GB
+Max memory allocated so far: 0.93 GB
+Max memory allocated so far: 0.93 GB
+Max memory allocated so far: 0.93 GB
+Max memory allocated so far: 0.93 GB
+Max memory allocated so far: 0.93 GB
+Max memory allocated so far: 0.93 GB
+Max memory allocated so far: 0.93 GB
+Max memory allocated so far: 0.93 GB
+Max memory allocated so far: 0.93 GB
+Max memory allocated so far: 0.93 GB
+Max memory allocated so far: 0.93 GB
+Max memory allocated so far: 0.93 GB
+Completed model digphil_sv_diachronic_transformer_depparse. Parsed sentences this run: 109
+Loaded 24 sentence IDs to exclude from evaluation (used in validation).
+
+======================================================================
+Evaluating: /home/urdatorn/git/gh/Diachronic_Treebanks_DigPhil/parsed_data/new_eval_of_old_models/digphil_sv_diachronic_transformer_depparse
+Output: eval/scores/language_mix/scores_digphil_sv_diachronic_transformer_depparse.txt
+======================================================================
+
+DEBUG sample_name: svediakorp-sec987-spf144
+DEBUG period value: 2
+  Excluded 2 validation sentences from svediakorp-sec987-spf144.conllu
+DEBUG period value: 2
+DEBUG time_periods: ['1700-1750', '1750-1800', '1800-1850', '1850-1900', '1900-1950']
+DEBUG sample_name: svediakorp-sec613-EngstromA_StrindbergOchJag
+DEBUG period value: 4
+  Excluded 2 validation sentences from svediakorp-sec613-EngstromA_StrindbergOchJag.conllu
+DEBUG period value: 4
+DEBUG time_periods: ['1700-1750', '1750-1800', '1800-1850', '1850-1900', '1900-1950']
+DEBUG sample_name: svediakorp-sec268-DulciU_VitterhetsNojen3
+DEBUG period value: 1
+  Excluded 6 validation sentences from svediakorp-sec268-DulciU_VitterhetsNojen3.conllu
+DEBUG period value: 1
+DEBUG time_periods: ['1700-1750', '1750-1800', '1800-1850', '1850-1900', '1900-1950']
+DEBUG sample_name: svediakorp-sec25-Runius
+DEBUG period value: 0
+  Excluded 1 validation sentences from svediakorp-sec25-Runius.conllu
+DEBUG period value: 0
+DEBUG time_periods: ['1700-1750', '1750-1800', '1800-1850', '1850-1900', '1900-1950']
+DEBUG sample_name: svediakorp-sec208-Anonym_DetGrasligaMordet
+DEBUG period value: 3
+  Excluded 1 validation sentences from svediakorp-sec208-Anonym_DetGrasligaMordet.conllu
+DEBUG period value: 3
+DEBUG time_periods: ['1700-1750', '1750-1800', '1800-1850', '1850-1900', '1900-1950']
+DEBUG sample_name: svediakorp-sec324-GranbergPA_Enslighetsalskaren
+DEBUG period value: 2
+  Excluded 1 validation sentences from svediakorp-sec324-GranbergPA_Enslighetsalskaren.conllu
+DEBUG period value: 2
+DEBUG time_periods: ['1700-1750', '1750-1800', '1800-1850', '1850-1900', '1900-1950']
+DEBUG sample_name: svediakorp-sec254-CederborghF_BerattelseOmJohnHall
+DEBUG period value: 2
+  Excluded 1 validation sentences from svediakorp-sec254-CederborghF_BerattelseOmJohnHall.conllu
+DEBUG period value: 2
+DEBUG time_periods: ['1700-1750', '1750-1800', '1800-1850', '1850-1900', '1900-1950']
+DEBUG sample_name: svediakorp-sec397-AngeredStrandbergH_UnderSodernsSol
+DEBUG period value: 4
+  Excluded 3 validation sentences from svediakorp-sec397-AngeredStrandbergH_UnderSodernsSol.conllu
+DEBUG period value: 4
+DEBUG time_periods: ['1700-1750', '1750-1800', '1800-1850', '1850-1900', '1900-1950']
+DEBUG sample_name: svediakorp-sec452-NyblomH_FantasierFyra
+DEBUG period value: 3
+  Excluded 3 validation sentences from svediakorp-sec452-NyblomH_FantasierFyra.conllu
+DEBUG period value: 3
+DEBUG time_periods: ['1700-1750', '1750-1800', '1800-1850', '1850-1900', '1900-1950']
+DEBUG sample_name: svediakorp-sec252-BremerF_Teckningar1
+DEBUG period value: 2
+  Excluded 1 validation sentences from svediakorp-sec252-BremerF_Teckningar1.conllu
+DEBUG period value: 2
+DEBUG time_periods: ['1700-1750', '1750-1800', '1800-1850', '1850-1900', '1900-1950']
+DEBUG sample_name: svediakorp-sec486-SchwartzMS_BellmansSkor
+DEBUG period value: 3
+  Excluded 2 validation sentences from svediakorp-sec486-SchwartzMS_BellmansSkor.conllu
+DEBUG period value: 3
+DEBUG time_periods: ['1700-1750', '1750-1800', '1800-1850', '1850-1900', '1900-1950']
+DEBUG sample_name: svediakorp-sec330-GyllenborgC_SwenskaSpratthoken
+DEBUG period value: 0
+  Excluded 3 validation sentences from svediakorp-sec330-GyllenborgC_SwenskaSpratthoken.conllu
+DEBUG period value: 0
+DEBUG time_periods: ['1700-1750', '1750-1800', '1800-1850', '1850-1900', '1900-1950']
+DEBUG sample_name: svediakorp-sec631-HasselskogN_HallaHallaGronkoping
+DEBUG period value: 4
+  Excluded 3 validation sentences from svediakorp-sec631-HasselskogN_HallaHallaGronkoping.conllu
+DEBUG period value: 4
+DEBUG time_periods: ['1700-1750', '1750-1800', '1800-1850', '1850-1900', '1900-1950']
+DEBUG sample_name: svediakorp-sec277-EnbomPU_MedborgeligtSkalde
+DEBUG period value: 1
+  Excluded 6 validation sentences from svediakorp-sec277-EnbomPU_MedborgeligtSkalde.conllu
+DEBUG period value: 1
+DEBUG time_periods: ['1700-1750', '1750-1800', '1800-1850', '1850-1900', '1900-1950']
+DEBUG sample_name: svediakorp-sec1102-spf259
+DEBUG period value: 3
+  Excluded 4 validation sentences from svediakorp-sec1102-spf259.conllu
+DEBUG period value: 3
+DEBUG time_periods: ['1700-1750', '1750-1800', '1800-1850', '1850-1900', '1900-1950']
+DEBUG sample_name: svediakorp-sec991-spf148
+DEBUG period value: 2
+  Excluded 3 validation sentences from svediakorp-sec991-spf148.conllu
+DEBUG period value: 2
+DEBUG time_periods: ['1700-1750', '1750-1800', '1800-1850', '1850-1900', '1900-1950']
+DEBUG sample_name: svediakorp-sec639-HeidenstamV_Proletarfilosofiens
+DEBUG period value: 4
+  Excluded 2 validation sentences from svediakorp-sec639-HeidenstamV_Proletarfilosofiens.conllu
+DEBUG period value: 4
+DEBUG time_periods: ['1700-1750', '1750-1800', '1800-1850', '1850-1900', '1900-1950']
+DEBUG sample_name: svediakorp-sec988-spf145
+DEBUG period value: 2
+  Excluded 1 validation sentences from svediakorp-sec988-spf145.conllu
+DEBUG period value: 2
+DEBUG time_periods: ['1700-1750', '1750-1800', '1800-1850', '1850-1900', '1900-1950']
+DEBUG sample_name: svediakorp-sec1063-spf220
+DEBUG period value: 3
+DEBUG period value: 3
+DEBUG time_periods: ['1700-1750', '1750-1800', '1800-1850', '1850-1900', '1900-1950']
+DEBUG sample_name: svediakorp-sec1033-spf190
+DEBUG period value: 4
+  Excluded 2 validation sentences from svediakorp-sec1033-spf190.conllu
+DEBUG period value: 4
+DEBUG time_periods: ['1700-1750', '1750-1800', '1800-1850', '1850-1900', '1900-1950']
+DEBUG sample_name: svediakorp-letter141673-Stalhammar
+DEBUG period value: 0
+  Excluded 3 validation sentences from svediakorp-letter141673-Stalhammar.conllu
+DEBUG period value: 0
+DEBUG time_periods: ['1700-1750', '1750-1800', '1800-1850', '1850-1900', '1900-1950']
+Results saved to eval/scores/language_mix/scores_digphil_sv_diachronic_transformer_depparse.txt
+Running model: saved_models/depparse/old/final-conll17-sv_diachron_test/sv_diachronic_charlm_parser.pt
+
+Files (final-conll17-sv_diachron_test):   0%|          | 0/21 [00:00<?, ?it/s][A
+Files (final-conll17-sv_diachron_test):   5%|▍         | 1/21 [00:00<00:18,  1.09it/s][A
+Files (final-conll17-sv_diachron_test):  10%|▉         | 2/21 [00:01<00:13,  1.36it/s][A
+Files (final-conll17-sv_diachron_test):  14%|█▍        | 3/21 [00:02<00:12,  1.45it/s][A
+Files (final-conll17-sv_diachron_test):  19%|█▉        | 4/21 [00:02<00:12,  1.36it/s][A
+Files (final-conll17-sv_diachron_test):  24%|██▍       | 5/21 [00:03<00:10,  1.50it/s][A
+Files (final-conll17-sv_diachron_test):  29%|██▊       | 6/21 [00:03<00:08,  1.84it/s][A
+Files (final-conll17-sv_diachron_test):  33%|███▎      | 7/21 [00:04<00:06,  2.11it/s][A
+Files (final-conll17-sv_diachron_test):  38%|███▊      | 8/21 [00:05<00:08,  1.52it/s][A
+Files (final-conll17-sv_diachron_test):  43%|████▎     | 9/21 [00:07<00:13,  1.15s/it][A
+Files (final-conll17-sv_diachron_test):  48%|████▊     | 10/21 [00:08<00:12,  1.11s/it][A
+Files (final-conll17-sv_diachron_test):  52%|█████▏    | 11/21 [00:09<00:09,  1.03it/s][A
+Files (final-conll17-sv_diachron_test):  57%|█████▋    | 12/21 [00:10<00:09,  1.08s/it][A
+Files (final-conll17-sv_diachron_test):  62%|██████▏   | 13/21 [00:11<00:08,  1.02s/it][A
+Files (final-conll17-sv_diachron_test):  67%|██████▋   | 14/21 [00:12<00:06,  1.06it/s][A
+Files (final-conll17-sv_diachron_test):  71%|███████▏  | 15/21 [00:12<00:05,  1.20it/s][A
+Files (final-conll17-sv_diachron_test):  76%|███████▌  | 16/21 [00:13<00:03,  1.29it/s][A
+Files (final-conll17-sv_diachron_test):  81%|████████  | 17/21 [00:14<00:03,  1.01it/s][A
+Files (final-conll17-sv_diachron_test):  86%|████████▌ | 18/21 [00:15<00:02,  1.10it/s][A
+Files (final-conll17-sv_diachron_test):  90%|█████████ | 19/21 [00:15<00:01,  1.29it/s][A
+Files (final-conll17-sv_diachron_test):  95%|█████████▌| 20/21 [00:16<00:00,  1.27it/s][A
+Files (final-conll17-sv_diachron_test): 100%|██████████| 21/21 [00:17<00:00,  1.10it/s][A
+                                                                                       [AModels:  93%|█████████▎| 13/14 [04:14<00:19, 19.99s/it]2026-03-24 14:53:47 INFO: Loading these models for language: sv (Swedish):
+=======================================
+| Processor | Package                 |
+---------------------------------------
+| tokenize  | talbanken               |
+| pos       | talbanken_charlm        |
+| lemma     | talbanken_nocharlm      |
+| depparse  | saved_mode...inal_v2.pt |
+=======================================
+
+2026-03-24 14:53:47 INFO: Using device: xpu
+2026-03-24 14:53:47 INFO: Loading: tokenize
+2026-03-24 14:53:47 INFO: Loading: pos
+2026-03-24 14:53:48 INFO: Loading: lemma
+2026-03-24 14:53:48 INFO: Loading: depparse
+2026-03-24 14:53:48 INFO: Done loading processors!
+Max memory allocated so far: 0.93 GB
+Max memory allocated so far: 0.93 GB
+Max memory allocated so far: 0.93 GB
+Max memory allocated so far: 0.93 GB
+Max memory allocated so far: 0.93 GB
+Max memory allocated so far: 0.93 GB
+Max memory allocated so far: 0.93 GB
+Max memory allocated so far: 0.93 GB
+Max memory allocated so far: 0.93 GB
+Max memory allocated so far: 0.93 GB
+Max memory allocated so far: 0.93 GB
+Max memory allocated so far: 0.93 GB
+Max memory allocated so far: 0.93 GB
+Max memory allocated so far: 0.93 GB
+Max memory allocated so far: 0.93 GB
+Max memory allocated so far: 0.93 GB
+Max memory allocated so far: 0.93 GB
+Max memory allocated so far: 0.93 GB
+Max memory allocated so far: 0.93 GB
+Max memory allocated so far: 0.93 GB
+Max memory allocated so far: 0.93 GB
+Completed model final-conll17-sv_diachron_test. Parsed sentences this run: 109
+Loaded 24 sentence IDs to exclude from evaluation (used in validation).
+
+======================================================================
+Evaluating: /home/urdatorn/git/gh/Diachronic_Treebanks_DigPhil/parsed_data/new_eval_of_old_models/final-conll17-sv_diachron_test
+Output: eval/scores/language_mix/scores_final-conll17-sv_diachron_test.txt
+======================================================================
+
+DEBUG sample_name: svediakorp-sec987-spf144
+DEBUG period value: 2
+  Excluded 2 validation sentences from svediakorp-sec987-spf144.conllu
+DEBUG period value: 2
+DEBUG time_periods: ['1700-1750', '1750-1800', '1800-1850', '1850-1900', '1900-1950']
+DEBUG sample_name: svediakorp-sec613-EngstromA_StrindbergOchJag
+DEBUG period value: 4
+  Excluded 2 validation sentences from svediakorp-sec613-EngstromA_StrindbergOchJag.conllu
+DEBUG period value: 4
+DEBUG time_periods: ['1700-1750', '1750-1800', '1800-1850', '1850-1900', '1900-1950']
+DEBUG sample_name: svediakorp-sec268-DulciU_VitterhetsNojen3
+DEBUG period value: 1
+  Excluded 6 validation sentences from svediakorp-sec268-DulciU_VitterhetsNojen3.conllu
+DEBUG period value: 1
+DEBUG time_periods: ['1700-1750', '1750-1800', '1800-1850', '1850-1900', '1900-1950']
+DEBUG sample_name: svediakorp-sec25-Runius
+DEBUG period value: 0
+  Excluded 1 validation sentences from svediakorp-sec25-Runius.conllu
+DEBUG period value: 0
+DEBUG time_periods: ['1700-1750', '1750-1800', '1800-1850', '1850-1900', '1900-1950']
+DEBUG sample_name: svediakorp-sec208-Anonym_DetGrasligaMordet
+DEBUG period value: 3
+  Excluded 1 validation sentences from svediakorp-sec208-Anonym_DetGrasligaMordet.conllu
+DEBUG period value: 3
+DEBUG time_periods: ['1700-1750', '1750-1800', '1800-1850', '1850-1900', '1900-1950']
+DEBUG sample_name: svediakorp-sec324-GranbergPA_Enslighetsalskaren
+DEBUG period value: 2
+  Excluded 1 validation sentences from svediakorp-sec324-GranbergPA_Enslighetsalskaren.conllu
+DEBUG period value: 2
+DEBUG time_periods: ['1700-1750', '1750-1800', '1800-1850', '1850-1900', '1900-1950']
+DEBUG sample_name: svediakorp-sec254-CederborghF_BerattelseOmJohnHall
+DEBUG period value: 2
+  Excluded 1 validation sentences from svediakorp-sec254-CederborghF_BerattelseOmJohnHall.conllu
+DEBUG period value: 2
+DEBUG time_periods: ['1700-1750', '1750-1800', '1800-1850', '1850-1900', '1900-1950']
+DEBUG sample_name: svediakorp-sec397-AngeredStrandbergH_UnderSodernsSol
+DEBUG period value: 4
+  Excluded 3 validation sentences from svediakorp-sec397-AngeredStrandbergH_UnderSodernsSol.conllu
+DEBUG period value: 4
+DEBUG time_periods: ['1700-1750', '1750-1800', '1800-1850', '1850-1900', '1900-1950']
+DEBUG sample_name: svediakorp-sec452-NyblomH_FantasierFyra
+DEBUG period value: 3
+  Excluded 3 validation sentences from svediakorp-sec452-NyblomH_FantasierFyra.conllu
+DEBUG period value: 3
+DEBUG time_periods: ['1700-1750', '1750-1800', '1800-1850', '1850-1900', '1900-1950']
+DEBUG sample_name: svediakorp-sec252-BremerF_Teckningar1
+DEBUG period value: 2
+  Excluded 1 validation sentences from svediakorp-sec252-BremerF_Teckningar1.conllu
+DEBUG period value: 2
+DEBUG time_periods: ['1700-1750', '1750-1800', '1800-1850', '1850-1900', '1900-1950']
+DEBUG sample_name: svediakorp-sec486-SchwartzMS_BellmansSkor
+DEBUG period value: 3
+  Excluded 2 validation sentences from svediakorp-sec486-SchwartzMS_BellmansSkor.conllu
+DEBUG period value: 3
+DEBUG time_periods: ['1700-1750', '1750-1800', '1800-1850', '1850-1900', '1900-1950']
+DEBUG sample_name: svediakorp-sec330-GyllenborgC_SwenskaSpratthoken
+DEBUG period value: 0
+  Excluded 3 validation sentences from svediakorp-sec330-GyllenborgC_SwenskaSpratthoken.conllu
+DEBUG period value: 0
+DEBUG time_periods: ['1700-1750', '1750-1800', '1800-1850', '1850-1900', '1900-1950']
+DEBUG sample_name: svediakorp-sec631-HasselskogN_HallaHallaGronkoping
+DEBUG period value: 4
+  Excluded 3 validation sentences from svediakorp-sec631-HasselskogN_HallaHallaGronkoping.conllu
+DEBUG period value: 4
+DEBUG time_periods: ['1700-1750', '1750-1800', '1800-1850', '1850-1900', '1900-1950']
+DEBUG sample_name: svediakorp-sec277-EnbomPU_MedborgeligtSkalde
+DEBUG period value: 1
+  Excluded 6 validation sentences from svediakorp-sec277-EnbomPU_MedborgeligtSkalde.conllu
+DEBUG period value: 1
+DEBUG time_periods: ['1700-1750', '1750-1800', '1800-1850', '1850-1900', '1900-1950']
+DEBUG sample_name: svediakorp-sec1102-spf259
+DEBUG period value: 3
+  Excluded 4 validation sentences from svediakorp-sec1102-spf259.conllu
+DEBUG period value: 3
+DEBUG time_periods: ['1700-1750', '1750-1800', '1800-1850', '1850-1900', '1900-1950']
+DEBUG sample_name: svediakorp-sec991-spf148
+DEBUG period value: 2
+  Excluded 3 validation sentences from svediakorp-sec991-spf148.conllu
+DEBUG period value: 2
+DEBUG time_periods: ['1700-1750', '1750-1800', '1800-1850', '1850-1900', '1900-1950']
+DEBUG sample_name: svediakorp-sec639-HeidenstamV_Proletarfilosofiens
+DEBUG period value: 4
+  Excluded 2 validation sentences from svediakorp-sec639-HeidenstamV_Proletarfilosofiens.conllu
+DEBUG period value: 4
+DEBUG time_periods: ['1700-1750', '1750-1800', '1800-1850', '1850-1900', '1900-1950']
+DEBUG sample_name: svediakorp-sec988-spf145
+DEBUG period value: 2
+  Excluded 1 validation sentences from svediakorp-sec988-spf145.conllu
+DEBUG period value: 2
+DEBUG time_periods: ['1700-1750', '1750-1800', '1800-1850', '1850-1900', '1900-1950']
+DEBUG sample_name: svediakorp-sec1063-spf220
+DEBUG period value: 3
+DEBUG period value: 3
+DEBUG time_periods: ['1700-1750', '1750-1800', '1800-1850', '1850-1900', '1900-1950']
+DEBUG sample_name: svediakorp-sec1033-spf190
+DEBUG period value: 4
+  Excluded 2 validation sentences from svediakorp-sec1033-spf190.conllu
+DEBUG period value: 4
+DEBUG time_periods: ['1700-1750', '1750-1800', '1800-1850', '1850-1900', '1900-1950']
+DEBUG sample_name: svediakorp-letter141673-Stalhammar
+DEBUG period value: 0
+  Excluded 3 validation sentences from svediakorp-letter141673-Stalhammar.conllu
+DEBUG period value: 0
+DEBUG time_periods: ['1700-1750', '1750-1800', '1800-1850', '1850-1900', '1900-1950']
+Results saved to eval/scores/language_mix/scores_final-conll17-sv_diachron_test.txt
+Running model: saved_models/depparse/old/final_v2.pt
+
+Files (final_v2):   0%|          | 0/21 [00:00<?, ?it/s][A
+Files (final_v2):   5%|▍         | 1/21 [00:00<00:19,  1.05it/s][A
+Files (final_v2):  10%|▉         | 2/21 [00:01<00:14,  1.34it/s][A
+Files (final_v2):  14%|█▍        | 3/21 [00:02<00:12,  1.41it/s][A
+Files (final_v2):  19%|█▉        | 4/21 [00:03<00:12,  1.35it/s][A
+Files (final_v2):  24%|██▍       | 5/21 [00:03<00:10,  1.49it/s][A
+Files (final_v2):  29%|██▊       | 6/21 [00:03<00:08,  1.75it/s][A
+Files (final_v2):  33%|███▎      | 7/21 [00:04<00:06,  2.03it/s][A
+Files (final_v2):  38%|███▊      | 8/21 [00:05<00:08,  1.50it/s][A
+Files (final_v2):  43%|████▎     | 9/21 [00:07<00:13,  1.15s/it][A
+Files (final_v2):  48%|████▊     | 10/21 [00:08<00:12,  1.11s/it][A
+Files (final_v2):  52%|█████▏    | 11/21 [00:09<00:09,  1.04it/s][A
+Files (final_v2):  57%|█████▋    | 12/21 [00:10<00:09,  1.07s/it][A
+Files (final_v2):  62%|██████▏   | 13/21 [00:11<00:08,  1.01s/it][A
+Files (final_v2):  67%|██████▋   | 14/21 [00:12<00:06,  1.07it/s][A
+Files (final_v2):  71%|███████▏  | 15/21 [00:12<00:04,  1.21it/s][A
+Files (final_v2):  76%|███████▌  | 16/21 [00:13<00:03,  1.29it/s][A
+Files (final_v2):  81%|████████  | 17/21 [00:14<00:03,  1.02it/s][A
+Files (final_v2):  86%|████████▌ | 18/21 [00:15<00:02,  1.11it/s][A
+Files (final_v2):  90%|█████████ | 19/21 [00:15<00:01,  1.30it/s][A
+Files (final_v2):  95%|█████████▌| 20/21 [00:16<00:00,  1.28it/s][A
+Files (final_v2): 100%|██████████| 21/21 [00:17<00:00,  1.11it/s][A
+                                                                 [AModels: 100%|██████████| 14/14 [04:34<00:00, 19.91s/it]Models: 100%|██████████| 14/14 [04:34<00:00, 19.62s/it]
+Max memory allocated so far: 0.93 GB
+Max memory allocated so far: 0.93 GB
+Max memory allocated so far: 0.93 GB
+Max memory allocated so far: 0.93 GB
+Max memory allocated so far: 0.93 GB
+Max memory allocated so far: 0.93 GB
+Max memory allocated so far: 0.93 GB
+Max memory allocated so far: 0.93 GB
+Max memory allocated so far: 0.93 GB
+Max memory allocated so far: 0.93 GB
+Max memory allocated so far: 0.93 GB
+Max memory allocated so far: 0.93 GB
+Max memory allocated so far: 0.93 GB
+Max memory allocated so far: 0.93 GB
+Max memory allocated so far: 0.93 GB
+Max memory allocated so far: 0.93 GB
+Max memory allocated so far: 0.93 GB
+Max memory allocated so far: 0.93 GB
+Max memory allocated so far: 0.93 GB
+Max memory allocated so far: 0.93 GB
+Max memory allocated so far: 0.93 GB
+Completed model final_v2. Parsed sentences this run: 109
+Loaded 24 sentence IDs to exclude from evaluation (used in validation).
+
+======================================================================
+Evaluating: /home/urdatorn/git/gh/Diachronic_Treebanks_DigPhil/parsed_data/new_eval_of_old_models/final_v2
+Output: eval/scores/language_mix/scores_final_v2.txt
+======================================================================
+
+DEBUG sample_name: svediakorp-sec987-spf144
+DEBUG period value: 2
+  Excluded 2 validation sentences from svediakorp-sec987-spf144.conllu
+DEBUG period value: 2
+DEBUG time_periods: ['1700-1750', '1750-1800', '1800-1850', '1850-1900', '1900-1950']
+DEBUG sample_name: svediakorp-sec613-EngstromA_StrindbergOchJag
+DEBUG period value: 4
+  Excluded 2 validation sentences from svediakorp-sec613-EngstromA_StrindbergOchJag.conllu
+DEBUG period value: 4
+DEBUG time_periods: ['1700-1750', '1750-1800', '1800-1850', '1850-1900', '1900-1950']
+DEBUG sample_name: svediakorp-sec268-DulciU_VitterhetsNojen3
+DEBUG period value: 1
+  Excluded 6 validation sentences from svediakorp-sec268-DulciU_VitterhetsNojen3.conllu
+DEBUG period value: 1
+DEBUG time_periods: ['1700-1750', '1750-1800', '1800-1850', '1850-1900', '1900-1950']
+DEBUG sample_name: svediakorp-sec25-Runius
+DEBUG period value: 0
+  Excluded 1 validation sentences from svediakorp-sec25-Runius.conllu
+DEBUG period value: 0
+DEBUG time_periods: ['1700-1750', '1750-1800', '1800-1850', '1850-1900', '1900-1950']
+DEBUG sample_name: svediakorp-sec208-Anonym_DetGrasligaMordet
+DEBUG period value: 3
+  Excluded 1 validation sentences from svediakorp-sec208-Anonym_DetGrasligaMordet.conllu
+DEBUG period value: 3
+DEBUG time_periods: ['1700-1750', '1750-1800', '1800-1850', '1850-1900', '1900-1950']
+DEBUG sample_name: svediakorp-sec324-GranbergPA_Enslighetsalskaren
+DEBUG period value: 2
+  Excluded 1 validation sentences from svediakorp-sec324-GranbergPA_Enslighetsalskaren.conllu
+DEBUG period value: 2
+DEBUG time_periods: ['1700-1750', '1750-1800', '1800-1850', '1850-1900', '1900-1950']
+DEBUG sample_name: svediakorp-sec254-CederborghF_BerattelseOmJohnHall
+DEBUG period value: 2
+  Excluded 1 validation sentences from svediakorp-sec254-CederborghF_BerattelseOmJohnHall.conllu
+DEBUG period value: 2
+DEBUG time_periods: ['1700-1750', '1750-1800', '1800-1850', '1850-1900', '1900-1950']
+DEBUG sample_name: svediakorp-sec397-AngeredStrandbergH_UnderSodernsSol
+DEBUG period value: 4
+  Excluded 3 validation sentences from svediakorp-sec397-AngeredStrandbergH_UnderSodernsSol.conllu
+DEBUG period value: 4
+DEBUG time_periods: ['1700-1750', '1750-1800', '1800-1850', '1850-1900', '1900-1950']
+DEBUG sample_name: svediakorp-sec452-NyblomH_FantasierFyra
+DEBUG period value: 3
+  Excluded 3 validation sentences from svediakorp-sec452-NyblomH_FantasierFyra.conllu
+DEBUG period value: 3
+DEBUG time_periods: ['1700-1750', '1750-1800', '1800-1850', '1850-1900', '1900-1950']
+DEBUG sample_name: svediakorp-sec252-BremerF_Teckningar1
+DEBUG period value: 2
+  Excluded 1 validation sentences from svediakorp-sec252-BremerF_Teckningar1.conllu
+DEBUG period value: 2
+DEBUG time_periods: ['1700-1750', '1750-1800', '1800-1850', '1850-1900', '1900-1950']
+DEBUG sample_name: svediakorp-sec486-SchwartzMS_BellmansSkor
+DEBUG period value: 3
+  Excluded 2 validation sentences from svediakorp-sec486-SchwartzMS_BellmansSkor.conllu
+DEBUG period value: 3
+DEBUG time_periods: ['1700-1750', '1750-1800', '1800-1850', '1850-1900', '1900-1950']
+DEBUG sample_name: svediakorp-sec330-GyllenborgC_SwenskaSpratthoken
+DEBUG period value: 0
+  Excluded 3 validation sentences from svediakorp-sec330-GyllenborgC_SwenskaSpratthoken.conllu
+DEBUG period value: 0
+DEBUG time_periods: ['1700-1750', '1750-1800', '1800-1850', '1850-1900', '1900-1950']
+DEBUG sample_name: svediakorp-sec631-HasselskogN_HallaHallaGronkoping
+DEBUG period value: 4
+  Excluded 3 validation sentences from svediakorp-sec631-HasselskogN_HallaHallaGronkoping.conllu
+DEBUG period value: 4
+DEBUG time_periods: ['1700-1750', '1750-1800', '1800-1850', '1850-1900', '1900-1950']
+DEBUG sample_name: svediakorp-sec277-EnbomPU_MedborgeligtSkalde
+DEBUG period value: 1
+  Excluded 6 validation sentences from svediakorp-sec277-EnbomPU_MedborgeligtSkalde.conllu
+DEBUG period value: 1
+DEBUG time_periods: ['1700-1750', '1750-1800', '1800-1850', '1850-1900', '1900-1950']
+DEBUG sample_name: svediakorp-sec1102-spf259
+DEBUG period value: 3
+  Excluded 4 validation sentences from svediakorp-sec1102-spf259.conllu
+DEBUG period value: 3
+DEBUG time_periods: ['1700-1750', '1750-1800', '1800-1850', '1850-1900', '1900-1950']
+DEBUG sample_name: svediakorp-sec991-spf148
+DEBUG period value: 2
+  Excluded 3 validation sentences from svediakorp-sec991-spf148.conllu
+DEBUG period value: 2
+DEBUG time_periods: ['1700-1750', '1750-1800', '1800-1850', '1850-1900', '1900-1950']
+DEBUG sample_name: svediakorp-sec639-HeidenstamV_Proletarfilosofiens
+DEBUG period value: 4
+  Excluded 2 validation sentences from svediakorp-sec639-HeidenstamV_Proletarfilosofiens.conllu
+DEBUG period value: 4
+DEBUG time_periods: ['1700-1750', '1750-1800', '1800-1850', '1850-1900', '1900-1950']
+DEBUG sample_name: svediakorp-sec988-spf145
+DEBUG period value: 2
+  Excluded 1 validation sentences from svediakorp-sec988-spf145.conllu
+DEBUG period value: 2
+DEBUG time_periods: ['1700-1750', '1750-1800', '1800-1850', '1850-1900', '1900-1950']
+DEBUG sample_name: svediakorp-sec1063-spf220
+DEBUG period value: 3
+DEBUG period value: 3
+DEBUG time_periods: ['1700-1750', '1750-1800', '1800-1850', '1850-1900', '1900-1950']
+DEBUG sample_name: svediakorp-sec1033-spf190
+DEBUG period value: 4
+  Excluded 2 validation sentences from svediakorp-sec1033-spf190.conllu
+DEBUG period value: 4
+DEBUG time_periods: ['1700-1750', '1750-1800', '1800-1850', '1850-1900', '1900-1950']
+DEBUG sample_name: svediakorp-letter141673-Stalhammar
+DEBUG period value: 0
+  Excluded 3 validation sentences from svediakorp-letter141673-Stalhammar.conllu
+DEBUG period value: 0
+DEBUG time_periods: ['1700-1750', '1750-1800', '1800-1850', '1850-1900', '1900-1950']
+Results saved to eval/scores/language_mix/scores_final_v2.txt
+
+Finished parsing.
+Total sentences parsed: 1526
+Total time: 4.58 minutes
+Max memory allocated: 0.93 GB
+

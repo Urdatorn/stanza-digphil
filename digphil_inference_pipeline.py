@@ -18,8 +18,8 @@ elif torch.cuda.is_available():
 
 vanilla = False
 
-conllu_in_dir = Path("/home/urdatorn/git/Diachronic_Treebanks_DigPhil/parsed_data/stanza_results_normalized")
-conllu_out_dir = Path("/home/urdatorn/git/Diachronic_Treebanks_DigPhil/parsed_data/stanza_results_normalized_transformer_seen_gold_no_silver")
+conllu_in_dir = Path("/home/urdatorn/git/Diachronic_Treebanks_DigPhil/parsed_data/validated")
+conllu_out_dir = Path("/home/urdatorn/git/Diachronic_Treebanks_DigPhil/parsed_data/new_eval_of_old_models")
 
 depparse_model_path = "saved_models/depparse/transformer_seen_gold_no_silver.pt"
 
